@@ -1,17 +1,52 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kenneth Chatfield's Assignment Portal</title>
   <meta name="description" content="Assignment portal for Kenneth Chatfield in CIT 230: Web Frontend Development at Brigham Young University - Idaho">
   <meta name="author" content="Kenneth Chatfield">
 
-  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+  <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
 <body>
-  <!-- <script src="js/scripts.js"></script> -->
-  Hello World
+  <div id="body-content">
+    <header>
+      <h1 id="name-header">Kenneth Robert Chatfield II</h1>
+      <img id="self-portrait" src="images/portrait-picture.jpg" />
+    </header>
+    <main>
+      <h2 id="portal-title">CIT 230: Assignment Portal</h2>
+      <ul id="portal-items">
+        <li class="portal-item">
+          <span>Lesson 02: <a class="assignment-link" href="#"> Assignment Link </a></span>
+        </li>
+        <li class="portal-item">
+          <span>Lesson 03: <a class="assignment-link" href="#"> Assignment Link </a></span>
+        </li>
+        <li class="portal-item">
+          <span>Lesson 04: <a class="assignment-link" href="#"> Link </a> <div class="link-divider">&#x7c;</div> <a class="assignment-link" href="#"> Link </a></span>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <div id="footer-information">
+        <span id="current-year">&#x24B8;</span>
+        <div class="vert-rod-divider">&#x7c;</div>
+        <span>Kenneth Robert Chatfield II</span>
+        <div class="vert-rod-divider">&#x7c;</div>
+        <span>Utah</span>
+        <div class="vert-rod-divider">&#x7c;</div>
+        <a href="#" > BYUI Online Learning </a>
+      </div>
+      <div id="last-modified-container">
+        <span id="last-modified-label">Last Updated:</span>
+        <span id="last-modified-date"></span>
+      </div>
+    </footer>
+  </div>
+  <script src="js/lastModified.js"></script>
+  <script src="js/currentYear.js"></script>
 </body>
 </html>
