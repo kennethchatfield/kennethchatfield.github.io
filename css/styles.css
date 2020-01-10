@@ -1,5 +1,9 @@
-body{
+html{
     margin: 0;
+    width:100%;
+    height: 100%;
+}
+body{
     font-family: Verdana, Geneva, sans-serif;
     color: #000000be;
 }
@@ -11,7 +15,6 @@ h2{
     color: #000000cc;
 }
 header{
-    margin-top: 1px;
     width:100%;
     background-color:#234463;
     height: 75px;
@@ -32,14 +35,9 @@ footer{
     color: whitesmoke;
     display: flex;
     padding: 0 30px;
-    bottom: 1px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-#body-content{
-    width:100%;
-    height: 100%;
 }
 #name-header{
     padding-left: 10%;
