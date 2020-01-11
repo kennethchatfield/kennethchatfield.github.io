@@ -22,8 +22,8 @@ header{
     border-radius: 10px;
     color: whitesmoke;
     justify-content: space-between;
-    display: flex;
-    flex-flow: row nowrap;
+    /* display: flex;
+    flex-flow: row wrap; */
 }
 main{
     padding: 10px 30px 30px 10px;
@@ -40,7 +40,7 @@ footer{
     justify-content: center;
 }
 #name-header{
-    padding-left: 10%;
+    padding-left: 40px;
     white-space: nowrap;
 }
 #self-portrait{
@@ -49,12 +49,14 @@ footer{
     margin: 10px 30px 0 0;
     border-radius: 3px;
     box-shadow: 8px 8px 8px #262335;
+    float: right;
 }
 #portal-title{
     border-bottom: 1px solid #a2a3bb;
 }
 .portal-item>span{
     display: flex;
+    flex-flow: row wrap;
 }
 #footer-information{
     display: flex;
@@ -77,4 +79,7 @@ footer{
 }
 .vert-rod-divider{
     padding: 5px;
+}
+#current-year{
+    white-space: nowrap;
 }
