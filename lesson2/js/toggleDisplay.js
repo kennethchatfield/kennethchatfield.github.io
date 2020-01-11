@@ -9,13 +9,11 @@ const targetMapping = {
     console.log({targetClass,index});
     const targetElement = document.getElementsByClassName(targetClass)[index];
     console.log(targetElement);
-    let display = targetElement.style.display;
+    console.log('targetElement.style.display', targetElement.style.display);
     if( targetElement.style.display === "none"){
-      targetElement.style = {}
+      targetElement.style = {};
     } else {
-      targetElement.style = {
-        display: "none"
-      };
+      targetElement.style.display = "none"
     }
   
   }
