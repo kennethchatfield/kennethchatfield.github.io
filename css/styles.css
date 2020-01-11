@@ -6,6 +6,7 @@ html{
 body{
     font-family: Verdana, Geneva, sans-serif;
     color: #000000be;
+    margin: 0;
 }
 h1{
     font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -26,7 +27,6 @@ header{
 }
 main{
     padding: 10px 30px 30px 10px;
-    min-height: 30%;
 }
 footer{
     background-color:#234463;
