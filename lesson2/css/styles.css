@@ -38,11 +38,16 @@ h3{
 .expand{}
 .collapse{}
 
-#design-principles-content{}
+#design-principles-content{
+    display: flex;
+    justify-content: center;
+}
 .principle-item{
     margin: 30px;
     border: 1px solid #dfe1e5;
     background-color: white;
+    width: 100%;
+    max-width:  700px;
 }
 .principle-title-container{
     padding-left: 15px;
