@@ -6,26 +6,24 @@ const stylesByClass = {
 }
 
 const expandableClasses = [
-    "principle-content-container",
     "principle-description",
-    "principle-example-container"
+    "principle-example-container",
+    "principle-application"
 ];
 
 
 
 const expandableTargetMapping = {
-    "principle-title-container": "principle-content-container",
-    "description-title-container": "principle-description",
-    "example-title-container": "principle-example-container"
+    "principle-title-container": ["principle-description","principle-example-container", "principle-application"],
+    "description-title-container": ["principle-description"],
+    "example-title-container": ["principle-example-container"],
+    "application-title-container": ["principle-application"]
 };
 
 const expandableActionClasses = Object.keys(expandableTargetMapping);
 
 const onShowStylesByActionClass = {
     "principle-title-container":{
-        "principle-title-container":{
-            "box-shadow": "none"
-        },
         "principle-title-arrow":{
             "transform": "rotate(180deg)"
         }
@@ -37,6 +35,14 @@ const onShowStylesByActionClass = {
     },
     "example-title-container":{
         "example-title-arrow":{
+            "transform": "rotate(180deg)"
+        },
+        "description-title-container":{
+            "border-top": "none"
+        }
+    },
+    "application-title-container":{
+        "application-title-arrow":{
             "transform": "rotate(180deg)"
         }
     }
@@ -44,9 +50,6 @@ const onShowStylesByActionClass = {
 
 const onHideStylesByActionClass = {
     "principle-title-container":{
-        "principle-title-container":{
-            "box-shadow": "4px 4px 4px rgb(192, 192, 192)"
-        },
         "principle-title-arrow":{
             "transform": "none"
         }
@@ -58,6 +61,14 @@ const onHideStylesByActionClass = {
     },
     "example-title-container":{
         "example-title-arrow":{
+            "transform": "none"
+        },
+        "description-title-container":{
+            "border-top": "1px solid #dfe1e5"
+        }
+    },
+    "application-title-container":{
+        "application-title-arrow":{
             "transform": "none"
         }
     }

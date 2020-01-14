@@ -51,21 +51,24 @@ function toggleDisplayAll(action){
 
 function toggleDisplay(className, index, action){
     const actionElement = document.getElementsByClassName(className)[index];
-    const targetClass = expandableTargetMapping[className];
-    const targetElement = document.getElementsByClassName(targetClass)[index];
-    if(!action ){
-        if( targetElement.style.display === "none") action = 'show'; 
-        else action = 'hide';
-    }
-    if( action ){
-        executeInternalEvent({
-            targetElement,
-            actionElement,
-            targetClass,
-            actionClass: className,
-            index,
-            action
-        })
-    }
+    const targetClasses = expandableTargetMapping[className];
+    targetClasses.map( targetClass =>{
+        const targetElement = document.getElementsByClassName(targetClass)[index];
+        if(!action ){
+            if( targetElement.style.display === "none") action = 'show'; 
+            else action = 'hide';
+        }
+        if( action ){
+            executeInternalEvent({
+                targetElement,
+                actionElement,
+                targetClass,
+                actionClass: className,
+                index,
+                action
+            })
+        }
+    })
+    
 
 }

@@ -1,33 +1,45 @@
 html{
-    margin:0;
     width:100%;
-    height:100%;
+    height:100%; 
     background-color: rgb(233, 230, 220);
 }
 body{
-    margin:0;
-    width:100%;
-    height:100%;
 }
 h1{
     margin: 0;
     padding: 0;
 }
-h3{
+h2{
+    margin: 0;
     /* padding: 5px; */
+}
+h3{
     margin: 0;
 }
 
 #top-bar{
+    margin: 0;
     background-color: white;
     box-shadow: 4px 4px 4px rgb(192, 192, 192);
-    border-bottom: 1px solid rgb(163, 163, 163);
     display: flex;
-    padding: 10px;
+    padding: 20px 10px;
     justify-content: space-between;
     align-items: center;
 }
-.expand-collapse-inputs{}
+#document-title-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    flex-grow: 1;
+}
+#document-title-container>h2{
+    padding-top: 5px;
+}
+.expand-collapse-inputs{
+    display: flex;
+    flex-direction: column;
+}
 .expand-collapse-inputs>*{
     color: #3437ec;
     border: 2px solid #3a3a3a;
@@ -35,19 +47,25 @@ h3{
     border-radius: 3px;
     margin-left: 5px;
 }
-.expand{}
+#expand{
+    margin-bottom: 10px;
+}
 .collapse{}
 
 #design-principles-content{
-    display: flex;
     justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.principle-item-container{
+    padding: 10px;
 }
 .principle-item{
-    margin: 30px;
     border: 1px solid #dfe1e5;
     background-color: white;
     width: 100%;
-    max-width:  700px;
+    box-shadow: 4px 4px 4px rgb(192, 192, 192);
+    border-radius: 10px;
 }
 .principle-title-container{
     padding-left: 15px;
@@ -55,7 +73,6 @@ h3{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border-bottom: 1px solid #dfe1e5; */
 }
 .principle-title{
     padding: 0;
@@ -64,9 +81,9 @@ h3{
 .principle-title-arrow{
     display: flex;
 }
-.principle-content-container{
-
-}
+.principle-content-container{}
+.application-title-container,
+.example-title-container,
 .description-title-container{
     border-top: 1px solid #dfe1e5;
     cursor: pointer;
@@ -75,29 +92,32 @@ h3{
     align-items: center;
     padding-left: 25px;
 }
+.description-title-container{
+    border-top: none;
+}
+.application-title,
+.example-title,
 .description-title{}
+.application-title-arrow,
 .example-title-arrow,
 .description-title-arrow{
     display: flex;
 }
+.principle-application,
 .principle-description{
     padding: 0 35px 15px 35px;
 }
-.principle-example-container{
-    padding: 0 35px;
+.principle-example-container{}
+.example-link{
+    margin-left: 20px;
 }
-.example-link{}
 .example-content-container{
+    text-align: center;
+}
+.example-content{
+    text-align: left;
+}
 
+.mobile-example-image{
+    border: 1px solid rgb(163, 163, 163);
 }
-.example-content{}
-.example-title-container{
-    border-top: 1px solid #dfe1e5;
-    padding-left: 25px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.example-title{}
-.mobile-example-image{}

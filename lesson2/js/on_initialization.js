@@ -26,4 +26,4 @@ function onInitialization(){
     [...expandableClasses, ...Object.keys(stylesByClass)].map(initStyles);
 }
   
-  window.onload = onInitialization;
+window.onload = fitExampleImagesToPrincipleItemContainer;
