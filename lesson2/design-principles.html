@@ -3,40 +3,213 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CIT230 Lesson 2</title>
-  <meta name="description" content="CIT230 Lesson 2">
+  <title>CIT230 Lesson: 2 - Design Principles</title>
+  <meta name="description" content="CIT230 Lesson: 2 - Design Principles">
   <meta name="author" content="Kenneth Chatfield">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
 <body>
-  <h1>Design Principles</h1>
-  <div id="design-principles-content">
-    <div class="principle-item">
-        <header >
-          <h2 class="principle-title" onclick="toggleDisplay('principle-title', 0)">Visual Hierarchy</h2>
-          <div class="principle-content-container">
-            <h3 class="desciption-title" onclick="toggleDisplay('desciption-title', 0)">Desciption</h3>
-            <span class="principle-description">
-              Visual hierarchy is the order in which a user processes information on a page; its function in user interface (UI) design is to allow users to understand information easily. By assigning different visual characteristics to sections of information (e.g., larger fonts for headings), a designer can influence what users will perceive as being further up in the hierarchy.
-            </span>
-            <h3 class="example-title" onclick="toggleDisplay('example-title', 0)">Example</h3>
-            <div class="principle-example-container">
-              <a class="example-link" href="http://google.com">example-link-to-website.com</a>
-              <div class="example-content-container">
-                <div class="example-content"></div>
-                <img class="mobile-example-image" />
-                
-              </div>
-            </div>
-          </div>
-        </header>
-        <main></main>
-        <footer></footer>
-      
+  <div id="top-bar">
+    <div id="document-title-container">
+      <h1>Design Principles Document</h1>
+      <h2>Kenneth R. Chatfield</h1>
     </div>
+    <div class="expand-collapse-inputs">
+      <input id="expand" type="submit" value="Expand All" onclick="toggleDisplayAll('show')" />
+      <input id="collapse" type="submit" value="Collapse All" onclick="toggleDisplayAll('hide')" />
+    </div>
+  </div>
+  <div id="design-principles-content">
+
+<div class="principle-item-container">
+    <div class="principle-item">
+      <div class="principle-title-container" onclick="toggleDisplay('principle-title-container', 0)">
+        <h2 class="principle-title">White Space and Clean Design</h2>
+        <div class="principle-title-arrow" >
+          <svg height="48" width="50" viewBox="0 0 48 50">
+            <g transform="scale(2)">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="principle-content-container">
+        <div class="example-title-container" onclick="toggleDisplay('example-title-container', 0)">
+          <h3 class="example-title">Quicksilver</h3>
+          <div class="example-title-arrow" >
+            <svg height="36" width="38" viewBox="0 0 36 38">
+              <g transform="scale(1.5)">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="principle-example-container">
+          <a class="example-link" href="http://quicksilver.com">quicksilver.com</a>
+          <div class="example-content-container">
+            <img class="mobile-example-image" src="images/quicksilver-visual-heirarchy.png" />
+          </div>
+        </div>
+
+        <div class="description-title-container" onclick="toggleDisplay('description-title-container', 0)">
+          <h3 class="description-title" >Principle Definition</h3>
+          <div class="description-title-arrow" >
+            <svg height="36" width="38" viewBox="0 0 36 38">
+              <g transform="scale(1.5)">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="principle-description">
+          Visual hierarchy is the arrangement of graphic elements in a design in order of importance of each element. The visual weight defines the importance of an element in a design’s hierarchy, communicating to a viewer’s eyes what to focus on and in what order.
+        </div>
+
+        <div class="application-title-container" onclick="toggleDisplay('application-title-container', 0)">
+          <h3 class="application-title" >Principle Application</h3>
+          <div class="application-title-arrow" >
+            <svg height="36" width="38" viewBox="0 0 36 38">
+              <g transform="scale(1.5)">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="principle-application">
+          Visual hierarchy is the arrangement of graphic elements in a design in order of importance of each element. The visual weight defines the importance of an element in a design’s hierarchy, communicating to a viewer’s eyes what to focus on and in what order.
+        </div>
+
+      </div>
+    </div>
+</div>
+
+<div class="principle-item-container">
+  <div class="principle-item">
+    <div class="principle-title-container" onclick="toggleDisplay('principle-title-container', 1)">
+      <h2 class="principle-title">Visual Hierarchy</h2>
+      <div class="principle-title-arrow" >
+        <svg height="48" width="50" viewBox="0 0 48 50">
+          <g transform="scale(2)">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="principle-content-container">
+      <div class="example-title-container" onclick="toggleDisplay('example-title-container', 1)">
+        <h3 class="example-title">Quicksilver</h3>
+        <div class="example-title-arrow" >
+          <svg height="36" width="38" viewBox="0 0 36 38">
+            <g transform="scale(1.5)">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="principle-example-container">
+        <a class="example-link" href="http://quicksilver.com">quicksilver.com</a>
+        <div class="example-content-container">
+          <img class="mobile-example-image" src="images/quicksilver-visual-heirarchy.png" />
+        </div>
+      </div>
+
+      <div class="description-title-container" onclick="toggleDisplay('description-title-container', 1)">
+        <h3 class="description-title" >Principle Definition</h3>
+        <div class="description-title-arrow" >
+          <svg height="36" width="38" viewBox="0 0 36 38">
+            <g transform="scale(1.5)">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="principle-description">
+        Visual hierarchy is the arrangement of graphic elements in a design in order of importance of each element. The visual weight defines the importance of an element in a design’s hierarchy, communicating to a viewer’s eyes what to focus on and in what order.
+      </div>
+
+      <div class="application-title-container" onclick="toggleDisplay('application-title-container', 1)">
+        <h3 class="application-title" >Principle Application</h3>
+        <div class="application-title-arrow" >
+          <svg height="36" width="38" viewBox="0 0 36 38">
+            <g transform="scale(1.5)">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="principle-application">
+        Visual hierarchy is the arrangement of graphic elements in a design in order of importance of each element. The visual weight defines the importance of an element in a design’s hierarchy, communicating to a viewer’s eyes what to focus on and in what order.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="principle-item-container">
+  <div class="principle-item">
+    <div class="principle-title-container" onclick="toggleDisplay('principle-title-container', 2)">
+      <h2 class="principle-title">principle 3</h2>
+      <div class="principle-title-arrow" >
+        <svg height="48" width="50" viewBox="0 0 48 50">
+          <g transform="scale(2)">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="principle-content-container">
+      <div class="example-title-container" onclick="toggleDisplay('example-title-container', 2)">
+        <h3 class="example-title">Quicksilver</h3>
+        <div class="example-title-arrow" >
+          <svg height="36" width="38" viewBox="0 0 36 38">
+            <g transform="scale(1.5)">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="principle-example-container">
+        <a class="example-link" href="http://quicksilver.com">quicksilver.com</a>
+        <div class="example-content-container">
+          <img class="mobile-example-image" src="images/quicksilver-visual-heirarchy.png" />
+        </div>
+      </div>
+
+      <div class="description-title-container" onclick="toggleDisplay('description-title-container', 2)">
+        <h3 class="description-title" >Principle Definition</h3>
+        <div class="description-title-arrow" >
+          <svg height="36" width="38" viewBox="0 0 36 38">
+            <g transform="scale(1.5)">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="principle-description">
+        Visual hierarchy is the arrangement of graphic elements in a design in order of importance of each element. The visual weight defines the importance of an element in a design’s hierarchy, communicating to a viewer’s eyes what to focus on and in what order.
+      </div>
+
+      <div class="application-title-container" onclick="toggleDisplay('application-title-container', 2)">
+        <h3 class="application-title" >Principle Application</h3>
+        <div class="application-title-arrow" >
+          <svg height="36" width="38" viewBox="0 0 36 38">
+            <g transform="scale(1.5)">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="principle-application">
+        Visual hierarchy is the arrangement of graphic elements in a design in order of importance of each element. The visual weight defines the importance of an element in a design’s hierarchy, communicating to a viewer’s eyes what to focus on and in what order.
+      </div>
+
+    </div>
+  </div>
+</div>
     
 <!--     <div class="principle-item">
         <header >
@@ -59,7 +232,9 @@
     </div> -->
     
   </div>
+  <script src="js/global_variables.js"></script>
   <script src="js/toggle_display.js"></script>
+  <script src="js/fit_to_container.js"></script>
   <script src="js/on_initialization.js"></script>
 </body>
 </html>
