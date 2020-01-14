@@ -13,5 +13,6 @@ const fitExampleImagesToPrincipleItemContainer = () => {
     }
 }
 
+window.onload = fitExampleImagesToPrincipleItemContainer;
 window.onresize = fitExampleImagesToPrincipleItemContainer;
 
