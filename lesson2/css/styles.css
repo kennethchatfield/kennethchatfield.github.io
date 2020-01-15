@@ -6,12 +6,16 @@ html{
 h1{
     margin: 0;
     padding: 0;
+    font-family: 'Public Sans', sans-serif;
 }
 h2{
     margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 h3{
     margin: 0;
+    font-family: 'Public Sans', sans-serif;
+    
 }
 
 #top-bar{
@@ -35,6 +39,7 @@ h3{
 }
 #document-title-container>h2{
     padding-top: 5px;
+    font-family: 'Public Sans', sans-serif;
 }
 .expand-collapse-inputs{
     display: flex;
@@ -60,6 +65,7 @@ h3{
 }
 .principle-item-container{
     padding: 10px;
+    font-family: 'Zilla Slab', serif;
 }
 .principle-item{
     background-color: white;
