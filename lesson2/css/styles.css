@@ -17,7 +17,6 @@ h3{
     font-family: 'Public Sans', sans-serif;
     
 }
-
 #top-bar{
     margin: 0;
     color: white;
@@ -56,7 +55,6 @@ h3{
 #expand{
     margin-bottom: 10px;
 }
-.collapse{}
 
 #design-principles-content{
     justify-content: center;
@@ -94,7 +92,6 @@ h3{
 .principle-title-arrow>svg>g>path{
     fill: white;
 }
-.principle-content-container{}
 .application-title-container,
 .example-title-container,
 .description-title-container{
@@ -108,9 +105,6 @@ h3{
 .description-title-container{
     border-top: none;
 }
-.application-title,
-.example-title,
-.description-title{}
 .application-title-arrow,
 .example-title-arrow,
 .description-title-arrow{
@@ -120,7 +114,6 @@ h3{
 .principle-description{
     padding: 0 35px 15px 35px;
 }
-.principle-example-container{ }
 .example-link{
     margin-left: 25px;
 }
