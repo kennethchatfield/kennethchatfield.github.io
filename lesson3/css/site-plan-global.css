@@ -1,6 +1,12 @@
 
 html{
-    background: blanchedalmond;
+    background: whitesmoke;
+    /* background: blanchedalmond; */
+}
+#site-footer{
+    background: #E0995E;
+    padding: 10px;
+    margin-top: 20px;
 }
 
 .site-plan-main{}
@@ -15,7 +21,8 @@ html{
     align-items: center;
     justify-content: center;
     padding: 10px;
-    background: whitesmoke;
+    /* background: whitesmoke; */
+    background: blanchedalmond;
 }
 .site-header-title-container{
     padding-left: 20px;
@@ -26,11 +33,12 @@ html{
 }
 .motto-container{}
 .site-plan-navigation-container{
-    background: rgb(53, 53, 53);
+    background: #4F5D73;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+    box-shadow: 0 2px 4px rgb(46, 46, 46);
 }
 .site-plan-navigation{
     display: none;
@@ -38,7 +46,7 @@ html{
 }
 
 .site-plan-nav-item{
-    padding: 0 5px;
+    padding: 5px;
     text-decoration: none;
     color: white;
 }
@@ -55,6 +63,7 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 5px;
 }
 #nav-menu-toggle{
     display: none;
@@ -79,8 +88,8 @@ html{
         justify-content: center;
     }
     #nav-menu-toggle:checked ~ label{
-        /* box-shadow: 0 4px 4px rgb(46, 46, 46); */
         width: 100%;
+        border-bottom: 1px solid rgb(163, 163, 163);
     }
 }
 @media only screen and (min-width: 769px) {

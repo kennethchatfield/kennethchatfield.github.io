@@ -1,0 +1,18 @@
+.color-pallet{
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 10px;
+    width: 80%
+}
+#color-priority-table{
+    border-collapse: collapse;
+}
+#color-priority-table,
+#color-priority-table tr th,
+#color-priority-table tr td {
+    border: 1px solid black;
+}
+
+#color-priority-table tr th,
+#color-priority-table tr td{
+    padding: 10px;
+}
