@@ -2,9 +2,7 @@
 html{
     background: blanchedalmond;
 }
-.site-plan-header{
-    
-}
+
 .site-plan-main{}
 .site-plan-footer{}
 
@@ -27,19 +25,79 @@ html{
     margin: 0;
 }
 .motto-container{}
-.site-plan-navigation{
+.site-plan-navigation-container{
+    background: rgb(53, 53, 53);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(53, 53, 53);
-    padding: 5px;
+    color: white;
+}
+.site-plan-navigation{
+    display: none;
+    width:100%;
 }
 
 .site-plan-nav-item{
-    color: white;
     padding: 0 5px;
     text-decoration: none;
+    color: white;
 }
 .active-page{
     text-decoration: underline;
+}
+
+.nav-menu-icon{
+    height: 18px;
+    width: 18px;
+    padding: 0 5px 2px 0;
+}
+#nav-menu-toggle-label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#nav-menu-toggle{
+    display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .site-plan-header{
+
+    }
+    .menu-title{
+        display: flex;
+        align-items: center;
+    }
+    .site-plan-navigation-container{
+        flex-direction: column;
+    }
+    #nav-menu-toggle:checked ~ nav{
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #nav-menu-toggle:checked ~ label{
+        /* box-shadow: 0 4px 4px rgb(46, 46, 46); */
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 769px) {
+    .menu-title{
+        display: none;
+    }
+    .site-plan-navigation-container{
+        flex-direction: row;
+    }
+    .site-plan-navigation{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    #nav-menu-toggle-label,
+    #nav-menu-toggle{
+        display: none;
+    }
 }
