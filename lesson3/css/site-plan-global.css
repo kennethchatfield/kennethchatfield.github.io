@@ -1,7 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial|Varela+Round&display=swap');
 
 html{
     background: whitesmoke;
     /* background: blanchedalmond; */
+    font-family: 'Questrial', sans-serif;
+    /* font-family: 'Varela Round', sans-serif; */
+}
+h1, h2, h3{
+    /* font-family: 'Questrial', sans-serif; */
+    font-family: 'Varela Round', sans-serif;
+}
+.questrial{
+    font-family: 'Questrial', sans-serif;
+}
+.varela-round{
+    font-family: 'Varela Round', sans-serif;
 }
 #site-footer{
     background: #E0995E;
