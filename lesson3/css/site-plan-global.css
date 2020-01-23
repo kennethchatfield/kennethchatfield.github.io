@@ -5,10 +5,30 @@ html{
     /* background: blanchedalmond; */
     font-family: 'Questrial', sans-serif;
     /* font-family: 'Varela Round', sans-serif; */
+    color: #0a0f0d
 }
 h1, h2, h3{
     /* font-family: 'Questrial', sans-serif; */
     font-family: 'Varela Round', sans-serif;
+    color: #E0995E;
+}
+footer.site-footer,
+main.main-content-container{
+    display: flex;
+    justify-content: center;
+}
+footer.site-footer div.footer-content,
+main.main-content-container div.main-content{
+    max-width: 900px;
+}
+div.main-content{
+    padding: 10px;
+}
+h1.page-title{
+    text-align: center;
+}
+.content-indent{
+    margin-left: 10px;
 }
 .questrial{
     font-family: 'Questrial', sans-serif;
@@ -16,10 +36,20 @@ h1, h2, h3{
 .varela-round{
     font-family: 'Varela Round', sans-serif;
 }
-#site-footer{
+/* footer.site-footer{
     background: #E0995E;
+    
     padding: 10px;
     margin-top: 20px;
+    max-width: 900px;
+} */
+footer.site-footer div.footer-content{
+    margin-top: 20px;
+    /* background: #E0995E; */
+    color: white;
+    background: #4F5D73;
+    width:100%;
+    padding: 10px
 }
 
 .site-plan-main{}
@@ -43,6 +73,9 @@ h1, h2, h3{
 .site-header-title{
     padding: 0;
     margin: 0;
+    color: #4F5D73;
+    font-size: 40px;
+    font-family: 'Varela Round', sans-serif;
 }
 .motto-container{}
 .site-plan-navigation-container{
@@ -59,9 +92,10 @@ h1, h2, h3{
 }
 
 .site-plan-nav-item{
-    padding: 5px;
+    padding: 5px 2%;
     text-decoration: none;
     color: white;
+    white-space: nowrap;
 }
 .active-page{
     text-decoration: underline;
