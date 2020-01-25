@@ -1,4 +1,4 @@
-th.persona-table-lable{
+th.persona-table-label{
     background-color: blanchedalmond;
     padding: 10px;
 }
@@ -8,7 +8,7 @@ table.persona-table{
 }
 table.persona-table,
 tr.persona-table-row,
-th.persona-table-lable,
+th.persona-table-label,
 td.persona-table-value{
     border: 1px solid #E0995E;
 }
