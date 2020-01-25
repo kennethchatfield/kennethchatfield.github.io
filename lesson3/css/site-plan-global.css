@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial|Varela+Round&display=swap');
+
+html{
+    background: whitesmoke;
+    /* background: blanchedalmond; */
+    font-family: 'Questrial', sans-serif;
+    /* font-family: 'Varela Round', sans-serif; */
+    color: #0a0f0d
+}
+h1, h2, h3{
+    /* font-family: 'Questrial', sans-serif; */
+    font-family: 'Varela Round', sans-serif;
+    color: #E0995E;
+}
+footer.site-footer,
+main.main-content-container{
+    display: flex;
+    justify-content: center;
+}
+footer.site-footer div.footer-content,
+main.main-content-container div.main-content{
+    max-width: 900px;
+}
+div.main-content{
+    padding: 10px;
+}
+h1.page-title{
+    text-align: center;
+}
+.content-indent{
+    margin-left: 10px;
+}
+.questrial{
+    font-family: 'Questrial', sans-serif;
+}
+.varela-round{
+    font-family: 'Varela Round', sans-serif;
+}
+/* footer.site-footer{
+    background: #E0995E;
+    
+    padding: 10px;
+    margin-top: 20px;
+    max-width: 900px;
+} */
+footer.site-footer div.footer-content{
+    margin-top: 20px;
+    /* background: #E0995E; */
+    color: white;
+    background: #4F5D73;
+    width:100%;
+    padding: 10px
+}
+
+.site-plan-main{}
+.site-plan-footer{}
+
+.site-logo{
+    width: 80px;
+    height: 80px;
+}
+.site-header-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    /* background: whitesmoke; */
+    background: blanchedalmond;
+}
+.site-header-title-container{
+    padding-left: 20px;
+}
+.site-header-title{
+    padding: 0;
+    margin: 0;
+    color: #4F5D73;
+    font-size: 40px;
+    font-family: 'Varela Round', sans-serif;
+}
+.motto-container{}
+.site-plan-navigation-container{
+    background: #4F5D73;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 2px 4px rgb(46, 46, 46);
+}
+.site-plan-navigation{
+    display: none;
+    width:100%;
+}
+
+.site-plan-nav-item{
+    padding: 5px 2%;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+}
+.active-page{
+    text-decoration: underline;
+}
+
+.nav-menu-icon{
+    height: 18px;
+    width: 18px;
+    padding: 0 5px 2px 0;
+}
+#nav-menu-toggle-label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+#nav-menu-toggle{
+    display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .site-plan-header{
+
+    }
+    .menu-title{
+        display: flex;
+        align-items: center;
+    }
+    .site-plan-navigation-container{
+        flex-direction: column;
+    }
+    #nav-menu-toggle:checked ~ nav{
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #nav-menu-toggle:checked ~ label{
+        width: 100%;
+        border-bottom: 1px solid rgb(163, 163, 163);
+    }
+}
+@media only screen and (min-width: 769px) {
+    .menu-title{
+        display: none;
+    }
+    .site-plan-navigation-container{
+        flex-direction: row;
+    }
+    .site-plan-navigation{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    #nav-menu-toggle-label,
+    #nav-menu-toggle{
+        display: none;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .site-plan-navigation{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}

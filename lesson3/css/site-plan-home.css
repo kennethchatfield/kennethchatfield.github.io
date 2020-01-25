@@ -1,0 +1,7 @@
+.domain-container{
+    display: flex;
+    align-items: center;
+}
+.domain-container>svg{
+    margin-right: 10px;
+}
