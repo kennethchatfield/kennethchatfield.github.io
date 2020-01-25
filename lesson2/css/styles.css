@@ -59,11 +59,11 @@ h3{
 #design-principles-content{
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 .principle-item-container{
     padding: 10px;
     font-family: 'Zilla Slab', serif;
+    grid-column: 1;
 }
 .principle-item{
     background-color: white;
