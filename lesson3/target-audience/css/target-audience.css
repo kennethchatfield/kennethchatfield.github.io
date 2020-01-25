@@ -1,0 +1,17 @@
+th.persona-table-lable{
+    background-color: blanchedalmond;
+    padding: 10px;
+}
+
+table.persona-table{
+    border-collapse: collapse;
+}
+table.persona-table,
+tr.persona-table-row,
+th.persona-table-lable,
+td.persona-table-value{
+    border: 1px solid #E0995E;
+}
+td.persona-table-value{
+    padding: 10px;
+}
