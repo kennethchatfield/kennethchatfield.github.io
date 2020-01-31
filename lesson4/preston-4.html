@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preston Page - The Weather Watch</title>
+  <meta name="description" content="Preston Page for The Weather Watch">
+  <meta name="author" content="Kenneth Chatfield">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/global-styles.css">
+  <link rel="stylesheet" href="css/medium.css">
+  <link rel="stylesheet" href="css/large.css">
+  
+
+</head>
+<body>
+    <header class="site-plan-header">
+        <div class="site-header-content">
+            <img class="site-logo" src="images/iconfinder_weather.png" alt="Weather Logo" />
+            <div class="site-header-title-container">
+                <h1 class="site-header-title">The Weather Watch</h1>
+                <div>Join us in the community weather watch</div>
+            </div>
+        </div>
+    </header>
+    <div class="site-plan-navigation-container">
+        
+        <label id="nav-menu-toggle-label" onclick="toggleExpand()">
+            <svg class="nav-menu-icon" height="32px" viewBox="0 0 32 32" width="32px" >
+                <path fill="white" d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+            </svg>
+            Menu
+        </label>
+        <nav class="site-plan-navigation">
+            <a class="site-plan-nav-item" href="#"> Home </a>
+            <a class="site-plan-nav-item active-page" href="target-audience/target-audience.html"> Preston </a>
+            <a class="site-plan-nav-item" href="#"> Soda Springs </a>
+            <a class="site-plan-nav-item" href="#"> Fish Haven </a>
+            <a class="site-plan-nav-item" href="#"> Storm Center </a>
+            <a class="site-plan-nav-item" href="#"> Gallery </a>
+        </nav>
+    </div>
+    <main class="main-content-container">
+        <div class="main-content">
+            <h1 class="page-title"> Preston Idaho </h1>
+            <div class="place-holder-content"> Hero w/ weather summary </div>
+            <div class="place-holder-content"> 5 Day Forecast </div>
+            <div class="place-holder-content"> Article </div>
+            <div class="place-holder-content"> Contact Information </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-information">
+                <span id="current-year">&#x24B8; The Weather Watch </span>
+                <div class="vert-rod-divider">&#x7c;</div>
+                <span>Attributions</span>
+                <div class="vert-rod-divider">&#x7c;</div>
+                <span>Kenneth R. Chatfield</span>
+            </div>
+            <div>
+                <span id="current-date"></span>
+            </div>
+        </div>
+    </footer>
+    <script src="js/toggle_expand.js"></script>
+    <script src="js/current_date.js"></script>
+</body>
+</html>
