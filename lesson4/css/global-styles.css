@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
+html{
+    background: whitesmoke;
+    font-family: 'Questrial', sans-serif;
+    color: #0a0f0d
+}
+h1, h2, h3{
+    font-family: 'Varela Round', sans-serif;
+    color: #E0995E;
+}
+
+main.main-content-container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+div.main-content{
+    max-width: 900px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+h1.page-title{
+    text-align: center;
+}
+
+.questrial{
+    font-family: 'Questrial', sans-serif;
+}
+.varela-round{
+    font-family: 'Varela Round', sans-serif;
+}
+footer.site-footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+div.footer-content{
+    max-width: 900px;
+    color: white;
+    background: #4F5D73;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    flex-grow: 1;
+}
+.footer-information{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-logo{
+    width: 80px;
+    height: 80px;
+}
+.site-header-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: blanchedalmond;
+}
+.site-header-title-container{
+    padding-left: 20px;
+}
+.site-header-title{
+    padding: 0;
+    margin: 0;
+    color: #4F5D73;
+    font-size: 40px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.site-plan-navigation-container{
+    background: #4F5D73;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 2px 4px rgb(46, 46, 46);
+    flex-direction: column;
+}
+.site-plan-navigation{
+    display: none;
+    width:100%;
+}
+
+.site-plan-nav-item{
+    padding: 5px 2%;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+}
+.active-page{
+    text-decoration: underline;
+    color: #E0995E;
+    font-size: 1.2em;
+}
+
+
+.vert-rod-divider{
+    padding: 5px;
+}
+#current-year{
+    white-space: nowrap;
+}
+
+.nav-menu-icon{
+    height: 18px;
+    width: 18px;
+    padding: 0 5px 2px 0;
+}
+#nav-menu-toggle-label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+label#nav-menu-toggle.expand{
+    width: 100%;
+    border-bottom: 1px solid rgb(163, 163, 163);
+}
+label#nav-menu-toggle-label.expand ~ nav{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.place-holder-content{
+    padding: 15px;
+    background-color: #eee;
+    border: 1px dashed #000;
+    display: block;
+    font-style: italic;
+}
