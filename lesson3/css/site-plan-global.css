@@ -2,13 +2,10 @@
 
 html{
     background: whitesmoke;
-    /* background: blanchedalmond; */
     font-family: 'Questrial', sans-serif;
-    /* font-family: 'Varela Round', sans-serif; */
     color: #0a0f0d
 }
 h1, h2, h3{
-    /* font-family: 'Questrial', sans-serif; */
     font-family: 'Varela Round', sans-serif;
     color: #E0995E;
 }
@@ -36,16 +33,9 @@ h1.page-title{
 .varela-round{
     font-family: 'Varela Round', sans-serif;
 }
-/* footer.site-footer{
-    background: #E0995E;
-    
-    padding: 10px;
-    margin-top: 20px;
-    max-width: 900px;
-} */
+
 footer.site-footer div.footer-content{
     margin-top: 20px;
-    /* background: #E0995E; */
     color: white;
     background: #4F5D73;
     width:100%;
@@ -64,7 +54,6 @@ footer.site-footer div.footer-content{
     align-items: center;
     justify-content: center;
     padding: 10px;
-    /* background: whitesmoke; */
     background: blanchedalmond;
 }
 .site-header-title-container{

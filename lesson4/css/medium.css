@@ -1,17 +1,27 @@
 @media only screen and (min-width: 769px) {
-    .site-plan-navigation-container{
-        flex-direction: row;
-    }
     .site-plan-navigation{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
+        color: white;
+        text-align: center;
     }
     #nav-menu-toggle-label{
         display: none;
     }
-    #nav-menu-toggle{
-        display: none;
+    #nav-items{
+        display: block;
+    }
+    .nav-item{
+        display: inline-block;
+    }
+    footer.site-footer{
+        font-size: 1em;
+    }
+    .site-header-title{
+        font-size: 37px;
+    }
+    h1.page-title{
+        font-size: 34px;
+    }
+    main.main-content-container{
+        font-size: 1em;
     }
 }
