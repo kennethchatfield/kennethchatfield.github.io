@@ -15,14 +15,15 @@ main.main-content-container{
     display: flex;
     text-align: center;
     justify-content: center;
+    font-size: .9em;
 }
 div.main-content{
-    max-width: 900px;
     flex-grow: 1;
     justify-content: center;
 }
 
 h1.page-title{
+    font-size: 32px;
     text-align: center;
 }
 
@@ -36,9 +37,9 @@ footer.site-footer{
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    font-size: 0.9em;
 }
 div.footer-content{
-    max-width: 900px;
     color: white;
     background: #4F5D73;
     display: flex;
@@ -71,31 +72,34 @@ div.footer-content{
     padding: 0;
     margin: 0;
     color: #4F5D73;
-    font-size: 40px;
+    font-size: 34px;
     font-family: 'Varela Round', sans-serif;
 }
 
-.site-plan-navigation-container{
-    background: #4F5D73;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    box-shadow: 0 2px 4px rgb(46, 46, 46);
-    flex-direction: column;
+#nav-items{
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
 }
 .site-plan-navigation{
-    display: none;
     width:100%;
+    background: #4F5D73;
+    box-shadow: 0 2px 4px rgb(46, 46, 46);
+    color: white;
 }
 
-.site-plan-nav-item{
+.nav-item{
     padding: 5px 2%;
     text-decoration: none;
-    color: white;
     white-space: nowrap;
 }
-.active-page{
+.nav-item a {
+    color: white;
+    text-decoration: none;
+}
+a.active-page{
     text-decoration: underline;
     color: #E0995E;
     font-size: 1.2em;
@@ -120,15 +124,13 @@ div.footer-content{
     justify-content: center;
     padding: 5px;
 }
-label#nav-menu-toggle.expand{
+label#nav-menu-toggle-label.expand{
     width: 100%;
     border-bottom: 1px solid rgb(163, 163, 163);
 }
-label#nav-menu-toggle-label.expand ~ nav{
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+label#nav-menu-toggle-label.expand ~ ul{
+    display: block; 
+    text-align: center;
 }
 
 .place-holder-content{
