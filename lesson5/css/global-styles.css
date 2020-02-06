@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
+html{
+    background: whitesmoke;
+    font-family: 'Questrial', sans-serif;
+    color: #0a0f0d
+}
+h1, h2, h3{
+    font-family: 'Varela Round', sans-serif;
+    color: #E0995E;
+}
+
+main.main-content-container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: .9em;
+}
+div.main-content{
+    flex-grow: 1;
+    justify-content: center;
+}
+
+h1.page-title{
+    font-size: 32px;
+    text-align: center;
+}
+
+.questrial{
+    font-family: 'Questrial', sans-serif;
+}
+.varela-round{
+    font-family: 'Varela Round', sans-serif;
+}
+footer.site-footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+div.footer-content{
+    color: white;
+    background: #4F5D73;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    flex-grow: 1;
+}
+.footer-information{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-logo{
+    width: 80px;
+    height: 80px;
+}
+.site-header-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: blanchedalmond;
+}
+.site-header-title-container{
+    padding-left: 20px;
+}
+.site-header-title{
+    padding: 0;
+    margin: 0;
+    color: #4F5D73;
+    font-size: 34px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+#nav-items{
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+.site-plan-navigation{
+    width:100%;
+    background: #4F5D73;
+    box-shadow: 0 2px 4px rgb(46, 46, 46);
+    color: white;
+}
+
+.nav-item{
+    padding: 5px 2%;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.nav-item a {
+    color: white;
+    text-decoration: none;
+}
+a.active-page{
+    text-decoration: underline;
+    color: #E0995E;
+    font-size: 1.2em;
+}
+
+
+.vert-rod-divider{
+    padding: 5px;
+}
+#current-year{
+    white-space: nowrap;
+}
+
+.nav-menu-icon{
+    height: 18px;
+    width: 18px;
+    padding: 0 5px 2px 0;
+}
+#nav-menu-toggle-label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+label#nav-menu-toggle-label.expand{
+    width: 100%;
+    border-bottom: 1px solid rgb(163, 163, 163);
+}
+label#nav-menu-toggle-label.expand ~ ul{
+    display: block; 
+    text-align: center;
+}
+
+.place-holder-content{
+    padding: 15px;
+    background-color: #eee;
+    border: 1px dashed #000;
+    display: block;
+    font-style: italic;
+}
+
+#weather-summary-section{
+
+}
+#forecast-section{}
+#article-section{
+    border: 1px solid rgb(184, 184, 184);
+    padding: 2%;
+    text-align: left;
+    background-color: rgba(255, 235, 205, 0.15);
+}
+
+.weather-summary-container{
+    position: relative;
+    width: 100%;
+}
+.weather-summary-banner{
+    width: 100%;
+}
+.weather-summary-table{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 15px 10px 0px 10px;
+    background-color: #4F5D73;
+    opacity: 75%;
+    color: white;
+
+    display: grid;
+    padding-bottom: 10px;
+}
+.weather-summary-caption{
+    grid-row: 1;
+    border-bottom: 1px solid white;
+}
+.weather-summary-data{
+    padding-top: 5px;
+    grid-row: 2;
+    display: grid;
+}
+.weather-summary-column:first-child{
+    grid-row: 2;
+    grid-column: 1;
+}
+.weather-summary-column:last-child{
+    grid-column: 2;
+    grid-row: 2;
+}
+.weather-summary-column{
+    display: grid;
+}
+.weather-summary-field{
+    text-align: right;
+}
+.weather-summary-value{
+    color: rgb(250, 142, 54);
+    padding-left: 10px;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.forecast-section{
+    display: none;
+}
+
+.article-name{
+    font-size: 1.5em;
+    color: #4F5D73;
+    font-weight: bold;
+}
+.article-author{
+    font-style: italic;
+}
+
+#contact-info-section{
+    background-color: rgba(79, 93, 115, 0.5);
+    display: flex;
+    justify-content: center;
+}
+.contact-info-container{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.phone-email-container{
+    
+    padding: 0 0 20px;
+}
+.address-container{
+    padding: 20px 0;
+}
+.address-site-name{
+
+}
+.street-address{
+
+}
+.contact-icon{
+    height: 15px;
+    width: 15px;
+}
+.preston-map{
+    width: 50%;
+    display: none;
+}
