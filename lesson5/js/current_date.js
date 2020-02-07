@@ -38,8 +38,9 @@ const formattedDateString = [
     yearString
 ].join(" ")
 
-console.log(formattedDateString)
-
-// console.log('Last Modified', new Date( document.lastModified).getUTCMonth)
+const getCurrentDayOfWeek = () => {
+    let date = new Date();
+    return days[ date.getDay() ];
+}
 
 document.getElementById("current-date").textContent = formattedDateString;

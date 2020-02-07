@@ -1,4 +1,4 @@
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 700px) {
     .site-plan-navigation{
         color: white;
         text-align: center;
@@ -12,8 +12,17 @@
     .nav-item{
         display: inline-block;
     }
+    .nav-item:hover{
+        font-size: 1.2em;
+        padding: 3px 1%;
+    }
+    .nav-item:last-child:hover,
+    .nav-item:first-child:hover{
+        font-size: 1.2em;
+        padding: 3px 1.5%;
+    }
     footer.site-footer{
-        font-size: 1em;
+        font-size: 1.1em;
     }
     .site-header-title{
         font-size: 37px;
@@ -22,6 +31,21 @@
         font-size: 34px;
     }
     main.main-content-container{
-        font-size: 1em;
+        font-size: 1.1em;
+    }
+    #forecast-section{
+        display: block;
+    }
+    .carnival-image{
+        width: 600px;
+        margin: 0 auto;
+    }
+    .preston-map{
+        display: block;
+    }
+    .contact-map-container{
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 10% 15px 15px;
     }
 }

@@ -8,18 +8,28 @@ html{
 }
 h1, h2, h3{
     font-family: 'Varela Round', sans-serif;
-    color: #E0995E;
+    color: #fa913b;
 }
 
 main.main-content-container{
     display: flex;
     text-align: center;
     justify-content: center;
-    font-size: .9em;
+    font-size: 1em;
 }
-div.main-content{
-    flex-grow: 1;
-    justify-content: center;
+
+#announcement-banner{
+    background-image: radial-gradient(#ffba82, #fa913b);
+    box-shadow: 0 2px 8px #a3a3a3;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #a3a3a3;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 18px;
+    display: none;
+}
+#announcement-banner.show{
+    display: block;
 }
 
 h1.page-title{
@@ -36,8 +46,7 @@ h1.page-title{
 footer.site-footer{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 div.footer-content{
     color: white;
@@ -45,8 +54,8 @@ div.footer-content{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
     flex-grow: 1;
+    padding-bottom: 5px;
 }
 .footer-information{
     display: flex;
@@ -99,9 +108,13 @@ div.footer-content{
     color: white;
     text-decoration: none;
 }
+.nav-item:hover{
+    font-size: 1.2em;
+    padding: 3px 2%;
+}
 a.active-page{
     text-decoration: underline;
-    color: #E0995E;
+    color: #fa913b;
     font-size: 1.2em;
 }
 
@@ -141,15 +154,9 @@ label#nav-menu-toggle-label.expand ~ ul{
     font-style: italic;
 }
 
-#weather-summary-section{
 
-}
-#forecast-section{}
-#article-section{
-    border: 1px solid rgb(184, 184, 184);
-    padding: 2%;
-    text-align: left;
-    background-color: rgba(255, 235, 205, 0.15);
+#weather-summary-section{
+    font-size: 1.2em;
 }
 
 .weather-summary-container{
@@ -164,16 +171,16 @@ label#nav-menu-toggle-label.expand ~ ul{
     top: 10px;
     left: 10px;
     padding: 15px 10px 0px 10px;
-    background-color: #4F5D73;
-    opacity: 75%;
-    color: white;
-
+    background-color: rgba(79, 93, 115, 0.95);
+    color: whitesmoke;
+    box-shadow: 0 2px 4px rgb(46, 46, 46);
     display: grid;
     padding-bottom: 10px;
+    border: 1px solid rgb(134, 134, 134);
 }
 .weather-summary-caption{
     grid-row: 1;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid whitesmoke;
 }
 .weather-summary-data{
     padding-top: 5px;
@@ -195,23 +202,71 @@ label#nav-menu-toggle-label.expand ~ ul{
     text-align: right;
 }
 .weather-summary-value{
-    color: rgb(250, 142, 54);
+    color: #fa913b;
+    font-weight: bolder;
     padding-left: 10px;
     padding-right: 20px;
     text-align: left;
 }
 
-.forecast-section{
+
+
+#forecast-section{
     display: none;
+    color: black;
+}
+.forecast-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.forecast-container-days{
+    display: flex;
+    border: 1px solid rgb(184, 184, 184);
+    
+}
+.forecast-day-container{
+    background: rgba(255, 235, 205, 0.65);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgb(184, 184, 184);
+}
+.forecast-day-container:last-child{
+    border-right: none;
+}
+.forecast-day{
+    background-color: #4F5D73;
+    color: white;
+    padding: 5px;
+    border-bottom: 1px solid rgb(184, 184, 184);
+}
+.forecast-temp{
+    padding: 5px;
+}
+.day-forecast-icon{
+    padding: 10px 25px 0 25px;
+}
+#article-section{
+    margin: 5% 2%;
+    border: 1px solid rgb(184, 184, 184);
+    padding: 5%;
+    text-align: left;
+    background-color: rgba(255, 235, 205, 0.15);
 }
 
 .article-name{
     font-size: 1.5em;
     color: #4F5D73;
     font-weight: bold;
+    margin-top: 20px;
 }
 .article-author{
     font-style: italic;
+}
+.carnival-image{
+    display: block;
+    width: 100%;
+    box-shadow: 0 2px 4px rgb(46, 46, 46);
 }
 
 #contact-info-section{
@@ -223,19 +278,13 @@ label#nav-menu-toggle-label.expand ~ ul{
     display: flex;
     flex-direction: column;
     text-align: left;
+    justify-content: center;
 }
 .phone-email-container{
-    
     padding: 0 0 20px;
 }
 .address-container{
     padding: 20px 0;
-}
-.address-site-name{
-
-}
-.street-address{
-
 }
 .contact-icon{
     height: 15px;
@@ -244,4 +293,15 @@ label#nav-menu-toggle-label.expand ~ ul{
 .preston-map{
     width: 50%;
     display: none;
+}
+.social-media-icons{
+    margin-bottom: 10px;
+}
+.social-media-icon-link{
+    margin-right: 5px;
+}
+.social-media-icon{
+    border-radius: 14px;
+    width: 28px;
+    height: 28px;
 }

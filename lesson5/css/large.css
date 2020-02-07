@@ -2,11 +2,20 @@
     div.footer-content{
         max-width: 900px;
     }
+    .nav-item:hover{
+        font-size: 1.2em;
+        padding: 3px 1.5%;
+    }
+    .nav-item:last-child:hover,
+    .nav-item:first-child:hover{
+        font-size: 1.2em;
+        padding: 3px 1.75%;
+    }
     div.main-content{
         max-width: 900px;
     }
     footer.site-footer{
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
     .site-header-title{
         font-size: 40px;
@@ -15,6 +24,18 @@
         font-size: 36px;
     }
     main.main-content-container{
-        font-size: 1.1em;
+        font-size: 1.2em;
+    }
+    #forecast-section{
+        display: block;
+    }
+    .carnival-image{
+        width: 550px;
+        float:right;
+    }
+    .contact-map-container{
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 10% 15px 15px;
     }
 }
