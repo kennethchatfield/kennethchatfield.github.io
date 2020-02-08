@@ -8,7 +8,7 @@ html{
 }
 h1, h2, h3{
     font-family: 'Varela Round', sans-serif;
-    color: #fa913b;
+    color: #ff3c00;
 }
 
 main.main-content-container{
@@ -114,7 +114,7 @@ div.footer-content{
 }
 a.active-page{
     text-decoration: underline;
-    color: #fa913b;
+    color: #ffcfa7;
     font-size: 1.2em;
 }
 
@@ -202,7 +202,7 @@ label#nav-menu-toggle-label.expand ~ ul{
     text-align: right;
 }
 .weather-summary-value{
-    color: #fa913b;
+    color: #ffcfa7;
     font-weight: bolder;
     padding-left: 10px;
     padding-right: 20px;
@@ -270,7 +270,7 @@ label#nav-menu-toggle-label.expand ~ ul{
 }
 
 #contact-info-section{
-    background-color: rgba(79, 93, 115, 0.5);
+    background-color: rgba(79, 93, 115, 0.25);
     display: flex;
     justify-content: center;
 }
