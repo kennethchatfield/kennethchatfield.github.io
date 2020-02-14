@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preston Page - The Weather Watch</title>
+  <meta name="description" content="Preston Page for The Weather Watch">
+  <meta name="author" content="Kenneth Chatfield">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/global-styles.css">
+  <link rel="stylesheet" href="css/medium.css">
+  <link rel="stylesheet" href="css/large.css">
+  
+
+</head>
+<body>
+    <section id="announcement-banner">
+        <div><b>Saturday = Preston Pancakes in the Park!</b></div>
+        <div><b>9:00 a.m. Saturday at the city park pavilion.</b></div>
+    </section>
+    <header class="site-plan-header">
+        <div class="site-header-content">
+            <img class="site-logo" src="images/iconfinder_weather.png" alt="Weather Logo" />
+            <div class="site-header-title-container">
+                <h1 class="site-header-title">The Weather Watch</h1>
+                <div>Join us in the community weather watch</div>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="site-plan-navigation">
+        <label id="nav-menu-toggle-label" onclick="toggleExpand()">
+            <svg class="nav-menu-icon" height="32px" viewBox="0 0 32 32" width="32px" >
+                <path fill="white" d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+            </svg>
+            Menu
+        </label>
+        <ul id="nav-items">
+            <li class="nav-item"><a  href="#"> Home </a></li>
+            <li class="nav-item"><a class="active-page" href="target-audience/target-audience.html"> Preston </a></li>
+            <li class="nav-item"><a href="#"> Soda Springs </a></li>
+            <li class="nav-item"><a href="#"> Fish Haven </a></li>
+            <li class="nav-item"><a  href="#"> Storm Center </a></li>
+            <li class="nav-item"><a  href="#"> Gallery </a></li>
+        </ul>
+    </nav>
+    <main class="main-content-container">
+        <div class="main-content">
+            <h1 class="page-title"> Preston Idaho </h1>
+            <section id="weather-summary-section">
+                <div class="weather-summary-container">
+                    <div class="weather-summary-table">
+                        <div class="weather-summary-caption"> Weather Summary </div>
+                        <div class="weather-summary-data">
+                            <div class="weather-summary-column">
+                                <div class="weather-summary-field"> Currently: </div>
+                                <div class="weather-summary-field"> High: </div>
+                                <div class="weather-summary-field"> Wind Chill: </div>
+                                <div class="weather-summary-field"> Humidity: </div>
+                                <div class="weather-summary-field"> Wind Speed: </div>
+                            </div>
+                            <div class="weather-summary-column">
+                                <div class="weather-summary-value"> Cloudy </div>
+                                <div class="weather-summary-value"> <span id="current-high-temp"> 30 </span> &#176;F </div>
+                                <div id="wind-chill" class="weather-summary-value"> N/A </div>
+                                <div class="weather-summary-value"> 69% </div>
+                                <div class="weather-summary-value"> <span id="wind-speed"> 6 </span> mph </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-view-type">
+                        <div id="large-view-type">Large</div>
+                        <div id="medium-view-type">Medium</div>
+                        <div id="small-view-type">Small</div>
+                    </div>
+                    <picture>
+                        <source srcset="images/hero-banner/cit230_image_franklin1200compressed.jpg" media="(min-width: 850px)">
+                        <source srcset="images/hero-banner/cit230_image_franklin850compressed.jpg" media="(min-width: 600px) and (max-width: 849)">
+                        <img class="weather-summary-banner" src="images/hero-banner/cit230_image_franklin600compressed.jpg" alt="preston-town-banner" />
+                    </picture>
+                </div>
+            </section>
+            <section id="forecast-section">
+                <div class="forecast-container">
+                    <h2 class="forecast-caption">5 Day Forecast</h2>
+                    <div class="forecast-container-days">
+                        <div class="forecast-day-container">
+                            <div class="forecast-day">Wed</div>
+                            <img class="day-forecast-icon" src="images/sunny-icon.png" alt="day forecast icon">
+                            <div class="forecast-temp">89 F</div>
+                        </div>
+                        <div class="forecast-day-container">
+                            <div class="forecast-day">Thu</div>
+                            <img class="day-forecast-icon" src="images/sunny-icon.png" alt="day forecast icon">
+                            <div class="forecast-temp">87 F</div>
+                        </div>
+                        <div class="forecast-day-container">
+                            <div class="forecast-day">Fri</div>
+                            <img class="day-forecast-icon" src="images/sunny-icon.png" alt="day forecast icon">
+                            <div class="forecast-temp">78 F</div>
+                        </div>
+                        <div class="forecast-day-container">
+                            <div class="forecast-day">Sat</div>
+                            <img class="day-forecast-icon" src="images/sunny-icon.png" alt="day forecast icon">
+                            <div class="forecast-temp">75 F</div>
+                        </div>
+                        <div class="forecast-day-container">
+                            <div class="forecast-day">Sun</div>
+                            <img class="day-forecast-icon" src="images/sunny-icon.png" alt="day forecast icon">
+                            <div class="forecast-temp">72 F</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            <section id="article-section">
+                <picture>
+                    <source srcset="images/carnival/carnival550compressed.jpg" media="(min-width: 850px)">
+                    <source srcset="images/carnival/carnival600compressed.jpg" media="(min-width: 600px) and (max-width: 849)">
+                    <img class="carnival-image" src="images/carnival/carnival500compressed.jpg" alt="Founder Carnival Picture" />
+                </picture>
+            
+                <div class="article-name"> <b >Founder Day Carnival </b></div>
+                <div class="article-author"> by James Matthews </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur enim urna, dignissim sed massa id, blandit sagittis dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis ut purus nec nunc rhoncus vulputate. Aenean commodo magna venenatis, luctus velit a, fringilla sapien. Nullam volutpat ut dui accumsan lacinia. Curabitur sit amet orci at nulla tempus finibus quis ac enim. Ut ac augue risus. Cras tempus, ligula eget maximus venenatis, velit nisl vehicula purus, eu sagittis felis nulla varius neque. Etiam nisi tellus, porttitor in turpis vel, dignissim iaculis magna. Nam ultrices vitae dolor ut venenatis. Maecenas sodales varius ligula. Integer placerat sollicitudin cursus.</p>
+                <p>Etiam interdum congue arcu, in imperdiet magna ultrices eu. Proin dapibus velit vitae ante convallis, quis tristique ipsum tristique. Duis ut nunc at mauris imperdiet rhoncus ac ornare dolor. Praesent venenatis, nunc eget auctor tempus, odio mi sollicitudin elit, vitae mattis tellus nisi non leo. Quisque vel ante sed ligula elementum auctor. Donec pulvinar cursus lobortis. In ut ullamcorper metus. Fusce facilisis, elit eget pretium elementum, erat augue cursus leo, nec rhoncus enim elit id mi. Maecenas elit diam, tempor ac ipsum ut, vulputate interdum ipsum. Donec aliquet mi a risus auctor tristique. In viverra, enim tempus ultrices semper, lacus mauris malesuada ex, nec ullamcorper eros ligula nec libero. Nullam in urna arcu. Nulla laoreet sapien nec justo accumsan dictum.</p>
+                <p>Cras lobortis rutrum risus nec vulputate. Cras velit lorem, pellentesque a ligula id, convallis ultrices enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ornare nunc, et luctus risus. Aenean at viverra magna. Donec lobortis mauris non fermentum auctor. Pellentesque eu quam enim.</p>
+            </section>
+            <section id="contact-info-section">
+                <div class="contact-map-container">
+                    <img class="preston-map" src="images/preston-map.jpg" alt="Preston Map" />
+                    <div class="contact-info-container">
+                        <div class="address-container">
+                            <div class="address-site-name"> The Weather Watch  </div>
+                            <div class="street-address"> 30 N 1st E</div>
+                            <div class="street-address"> Preston, ID 83263 </div>
+                        </div>
+                        <div class="phone-email-container">
+                            <div> <img class="contact-icon" src="images/telephone_icon.jpg" alt="Telephone" /> 999.999.9999</div>
+                            <div> <img class="contact-icon" src="images/evelope_icon.png" alt="Email" />  theweatherwatch@tww.com</div>
+                        </div>
+                        <div class="social-media-icons">
+                            <a class="social-media-icon-link" href="https://www.facebook.com/">
+                                <img class="social-media-icon" src="images/facebook-icon.png" alt="facebook">
+                            </a>
+                            <a class="social-media-icon-link" href="https://www.twitter.com/">
+                                <img class="social-media-icon" src="images/twitter-icon.png" alt="twitter">
+                            </a>
+                            <a class="social-media-icon-link" href="https://www.YouTube.com/">
+                                <img class="social-media-icon" src="images/youtube-icon.png" alt="youtube">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-information">
+                <span id="current-year">&#x24B8; The Weather Watch </span>
+                <div class="vert-rod-divider">&#x7c;</div>
+                <span>Attributions</span>
+                <div class="vert-rod-divider">&#x7c;</div>
+                <span>Kenneth R. Chatfield</span>
+            </div>
+            <div>
+                <span id="current-date"></span>
+            </div>
+        </div>
+    </footer>
+    <script src="js/toggle_expand.js"></script>
+    <script src="js/current_date.js"></script>
+    <script src="js/banner.js"></script>
+    <script src="js/windchill.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+        google: {
+            families: ['Questrial', 'Varela Round']
+        }
+        });
+    </script>
+</body>
+</html>
