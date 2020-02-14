@@ -37,7 +37,7 @@
         display: block;
     }
     .carnival-image{
-        width: 600px;
+        max-width: 600px;
         margin: 0 auto;
     }
     .preston-map{
