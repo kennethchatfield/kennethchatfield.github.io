@@ -1,0 +1,42 @@
+@media only screen and (min-width: 950px) {
+    .nav-item:hover{
+        font-size: 1.2em;
+        padding: 3px 1.5%;
+    }
+    .nav-item:last-child:hover,
+    .nav-item:first-child:hover{
+        font-size: 1.2em;
+        padding: 3px 1.75%;
+    }
+    div.main-content{
+        max-width: 900px;
+    }
+    footer.site-footer{
+        font-size: 1.2em;
+    }
+    .site-header-title{
+        font-size: 40px;
+    }
+    h1.page-title{
+        font-size: 36px;
+    }
+
+    .gallery{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: auto;
+    }
+    .gallery-item:nth-child(3n){
+        grid-column: 3;
+    }
+    .gallery-item:nth-child(3n-1){
+        grid-column: 2;
+    }
+    .gallery-item:nth-child(3n-2){
+        grid-column: 1;
+    }
+    .gallery-item:hover{
+        box-shadow: 0 0 50px #333;
+    }
+}
