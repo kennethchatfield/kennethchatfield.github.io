@@ -1,12 +1,18 @@
 body{
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
-picture{
-    display: block;
-}
-img{
+body div{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    overflow: hidden;
     width: 300px;
+}
+
+img{
     height: 400px;
 }
 img[data-src] {
