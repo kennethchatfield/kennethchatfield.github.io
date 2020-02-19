@@ -1,0 +1,19 @@
+body{
+    width: 100%;
+    text-align: center;
+}
+picture{
+    display: block;
+}
+img{
+    width: 300px;
+    height: 400px;
+}
+img[data-src] {
+    filter: blur(0.2em);
+}
+  
+img {
+    filter: blur(0em);
+    transition: filter 0.5s;
+}
