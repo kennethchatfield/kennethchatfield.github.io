@@ -1,0 +1,145 @@
+html{
+    background: whitesmoke;
+    font-family: 'Questrial', sans-serif;
+    color: #0a0f0d
+}
+h1, h2, h3{
+    font-family: 'Varela Round', sans-serif;
+    color: #ff3c00;
+}
+.site-logo{
+    width: 80px;
+    height: 80px;
+}
+.site-header-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: blanchedalmond;
+}
+.site-header-title-container{
+    padding-left: 20px;
+}
+.site-header-title{
+    padding: 0;
+    margin: 0;
+    color: #4F5D73;
+    font-size: 34px;
+    font-family: 'Varela Round', sans-serif;
+}
+h1.page-title{
+    text-align: center;
+    font-size: 32px;
+}
+
+#nav-items{
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+.site-plan-navigation{
+    width:100%;
+    background: #4F5D73;
+    box-shadow: 0 2px 4px rgb(46, 46, 46);
+    color: white;
+}
+
+.nav-item{
+    padding: 5px 2%;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.nav-item a {
+    color: white;
+    text-decoration: none;
+}
+.nav-item:hover{
+    font-size: 1.2em;
+    padding: 3px 2%;
+}
+.nav-menu-icon{
+    height: 18px;
+    width: 18px;
+    padding: 0 5px 2px 0;
+}
+#nav-menu-toggle-label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+label#nav-menu-toggle-label.expand{
+    width: 100%;
+    border-bottom: 1px solid rgb(163, 163, 163);
+}
+label#nav-menu-toggle-label.expand ~ ul{
+    display: block; 
+    text-align: center;
+}
+a.active-page{
+    text-decoration: underline;
+    color: #ffcfa7;
+    font-size: 1.2em;
+}
+
+.vert-rod-divider{
+    padding: 5px;
+}
+#current-year{
+    white-space: nowrap;
+}
+footer.site-footer{
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+}
+div.footer-content{
+    color: white;
+    background: #4F5D73;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    padding-bottom: 5px;
+}
+.footer-information{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    font-size: 1.1em;
+    width: 100%;
+}
+
+
+picture img{
+    width: 100%;
+}
+img[data-src] {
+    filter: blur(0.2em);
+}
+  
+img {
+    filter: blur(0em);
+    transition: filter 0.5s;
+}
+.gallery-item{
+    box-shadow: 0 2px 6px #929292;
+    margin:  0 5% 30px 5%;
+}
+.gallery{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-description{
+    padding: 10px;
+}

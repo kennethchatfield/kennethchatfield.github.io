@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W07 Activity: Progressive Loading of Images</title>
+  <meta name="description" content="Lazy Load Images">
+  <meta name="author" content="Kenneth Chatfield">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/medium.css">
+  <link rel="stylesheet" href="css/large.css">
+  
+
+</head>
+<body>
+    <header class="site-plan-header">
+        <div class="site-header-content">
+            <img class="site-logo" src="images/iconfinder_weather.png" alt="Weather Logo" />
+            <div class="site-header-title-container">
+                <h1 class="site-header-title">The Weather Watch</h1>
+                <div>Join us in the community weather watch</div>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="site-plan-navigation">
+        <label id="nav-menu-toggle-label" onclick="toggleExpand()">
+            <svg class="nav-menu-icon" height="32px" viewBox="0 0 32 32" width="32px" >
+                <path fill="white" d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+            </svg>
+            Menu
+        </label>
+        <ul id="nav-items">
+            <li class="nav-item"><a  href="#"> Home </a></li>
+            <li class="nav-item"><a href="../lesson6/preston-6.html"> Preston </a></li>
+            <li class="nav-item"><a href="#"> Soda Springs </a></li>
+            <li class="nav-item"><a href="#"> Fish Haven </a></li>
+            <li class="nav-item"><a  href="#"> Storm Center </a></li>
+            <li class="nav-item"><a class="active-page" href="#"> Gallery </a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h1 class="page-title">Weather Gallery</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <picture>
+                        <img src="images/placeholder-image.jpg" data-src="https://images.pexels.com/photos/108941/pexels-photo-108941.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Franklin Fields Rainbow" />
+                    </picture>
+                    <div class="item-description">
+                        <i>Rainbow over Franklin Fields</i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <picture>
+                        <img src="images/placeholder-image.jpg" data-src="https://images.pexels.com/photos/789380/pexels-photo-789380.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Jarren's Outpost Snow" />
+                    </picture>
+                    <div class="item-description">
+                        <i>First snow hits Jarren's Outpost</i>
+                    </div> 
+                </div>
+                
+                <div class="gallery-item">
+                    <picture>
+                        <img src="images/placeholder-image.jpg" data-src="https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Sunny Valley" />
+                    </picture>
+                    <div class="item-description">
+                        <id>Beautiful sunny day in the valley</id>
+                    </div> 
+                </div>
+                
+                <div class="gallery-item">
+                    <picture>
+                        <img src="images/placeholder-image.jpg" data-src="https://images.pexels.com/photos/773583/pexels-photo-773583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Franklin Fields Fog" />
+                    </picture>
+                    <div class="item-description">
+                        <i>Foggy morning in Franklin Fields</i>
+                    </div> 
+                </div>
+                
+                <div class="gallery-item">
+                    <picture>
+                        <img src="images/placeholder-image.jpg" data-src="https://images.pexels.com/photos/2752781/pexels-photo-2752781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Preston Lightning" />
+                    </picture>
+                    <div class="item-description">
+                        <i>Relentless lighting hits Preston</i>
+                    </div> 
+                </div>
+                
+                <div class="gallery-item">
+                    <picture>
+                        <img src="images/placeholder-image.jpg" data-src="https://images.pexels.com/photos/1446076/pexels-photo-1446076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Franklin Fields Tornado" />
+                    </picture>
+                    <div class="item-description">
+                        <i>Tornado hits Franklin Fields</i>
+                    </div> 
+                </div>
+                
+                <div class="gallery-item">
+                    <picture>
+                        <img src="images/placeholder-image.jpg" data-src="https://images.pexels.com/photos/1741696/pexels-photo-1741696.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Fall Sherfield Pond" />
+                    </picture>
+                    <div class="item-description">
+                        <i>Fall and its beautiful colors at Sherfield Pond</i>
+                    </div> 
+                </div>
+                
+                <div class="gallery-item">
+                    <picture>
+                        <img src="images/placeholder-image.jpg" data-src="https://images.pexels.com/photos/99577/barn-lightning-bolt-storm-99577.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Franklin Fields Lightning" />
+                    </picture>
+                    <div class="item-description">
+                        <i>Lightning caught in the act at Franklin Fields</i>
+                    </div> 
+                </div>
+
+                <div class="gallery-item">
+                    <picture>
+                        <img src="images/placeholder-image.jpg" data-src="https://images.pexels.com/photos/1229042/pexels-photo-1229042.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Jarren's Outpost Night Sky" />
+                    </picture>
+                    <div class="item-description">
+                        <i>Typical night sky over Jarren's Outpost</i>
+                    </div> 
+                </div>
+            </div>
+    
+        
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-information">
+                <div id="current-year">&#x24B8; The Weather Watch </div>
+                <div class="vert-rod-divider">&#x7c;</div>
+                <div>Attributions</div>
+                <div class="vert-rod-divider">&#x7c;</div>
+                <div>Kenneth R. Chatfield</div>
+            </div>
+            <div>
+                <div id="current-date"></div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/progressive_load.js"></script>
+    <script src="js/toggle_expand.js"></script>
+    <script src="../lesson6/js/current_date.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+        google: {
+            families: ['Questrial', 'Varela Round']
+        }
+        });
+    </script>
+</body>
+</html>
