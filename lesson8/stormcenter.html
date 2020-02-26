@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W07 Activity: Progressive Loading of Images</title>
+  <meta name="description" content="Lazy Load Images">
+  <meta name="author" content="Kenneth Chatfield">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/medium.css">
+  <link rel="stylesheet" href="css/large.css">
+  
+
+</head>
+<body>
+    <header class="site-plan-header">
+        <div class="site-header-content">
+            <img class="site-logo" src="../lesson7/images/iconfinder_weather.png" alt="Weather Logo" />
+            <div class="site-header-title-container">
+                <h1 class="site-header-title">The Weather Watch</h1>
+                <div>Join us in the community weather watch</div>
+            </div>
+        </div>
+    </header>
+    <nav class="site-plan-navigation">
+        <label id="nav-menu-toggle-label" onclick="toggleExpand()">
+            <svg class="nav-menu-icon" height="32px" viewBox="0 0 32 32" width="32px" >
+                <path fill="white" d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+            </svg>
+            Menu
+        </label>
+        <ul id="nav-items">
+            <li class="nav-item"><a  href="#"> Home </a></li>
+            <li class="nav-item"><a href="../lesson6/preston-6.html"> Preston </a></li>
+            <li class="nav-item"><a href="#"> Soda Springs </a></li>
+            <li class="nav-item"><a href="#"> Fish Haven </a></li>
+            <li class="nav-item"><a class="active-page" href="#"> Storm Center </a></li>
+            <li class="nav-item"><a href="../lesson7/gallery-7.html"> Gallery </a></li>
+        </ul>
+    </nav>
+    
+    <main>
+
+        <form action="./thanks.html">
+
+            <fieldset>
+                <legend> Contact Information </legend>
+                <label for="name"> 
+                    <span class="label-text">Full name</span>
+                    <br>
+                    <input type="text" id="name" name="name" required minlength="5" pattern="^[a-zA-Z ]*$" />
+                 </label>
+                 <br>
+                <label for="email">
+                     <span class="label-text">Email</span>
+                     <br>
+                     <input type="text" id="email" name="email" placeholder="username@email.com" required />
+                </label>
+                <br>
+                <label for="phone"> 
+                    <span class="label-text">Phone</span>
+                    <br>
+                    <input type="tel" id="phone" name="phone" placeholder="###-###-####" required />
+                 </label>
+                 <br>
+                <label for="zip"> 
+                    <span class="label-text">Zip</span>
+                    <br>
+                    <input type="number" id="zip" name="zip" required pattern="(\d{5}([\-]\d{4})?)" />
+                </label>
+                <br>
+            </fieldset>
+            
+            <fieldset>
+                <legend> Storm Information </legend>
+                <label for="date"> 
+                    <span class="label-text">Date of occurrence</span>
+                    <br>
+                    <input type="date" id="date" name="date" />
+                </label>
+                <br>
+                <label for="storm_type"> 
+                    <span class="label-text">Type of storm</span>
+                    <br>
+                    <input type="text" list="storm_types" id="storm_type" name="storm_type" />
+                    <datalist id="storm_types">  
+                        <option value="Flash Flood">  
+                        <option value="Hail">  
+                        <option value="Hurricane">  
+                        <option value="Thunderstorm">  
+                        <option value="Tornado">  
+                    </datalist>  
+                 </label>
+                 <br>
+                <label for="severity"> 
+                    <span class="label-text">Severity</span>
+                    <br>
+                    <input type="range" id="severity" name="severity"  min="1" max="10" step="1" list="tickmarks" /> <span id="severity_display">5</span>
+                    <datalist id="tickmarks">
+                        <option value="0">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                      </datalist>
+                 </label>
+                 <br>
+                 <label for="region"> 
+                    <span class="label-text">Region</span>
+                    <br>
+                    <select id="region" name="region">
+                        <option selected disabled> Select Region ... </option>
+                        <option value="preston"> Preston </option>
+                        <option value="soda_springs"> Soda Springs </option>
+                        <option value="fish_haven"> Fish Haven </option>
+                    </select>
+                 </label>
+                 <br>
+                 <label class="danger-label"> 
+                    <span class="label-text">Are you in danger?</span>
+                    <br>
+                    <div class="section">
+                        <label for="danger_level_yes">
+                            <input type="radio" id="danger_level_yes" name="danger_level" value="yes" />
+                            Yes
+                        </label>
+                    </div>
+                    <div class="section">
+                        <label for="danger_level_maybe">
+                            <input type="radio" id="danger_level_maybe" name="danger_level" value="maybe" />
+                            Maybe
+                        </label>
+                    </div>
+                    <div class="section">
+                        <label for="danger_level_no">
+                            <input type="radio" id="danger_level_no" name="danger_level" value="no" />
+                            No
+                        </label>
+                    </div>
+                    
+                 </label>
+                 <br>
+                 <label for="comments"> 
+                    <span class="label-text">Comments</span>
+                    <br>
+                    <textarea id="comments" name="comments" ></textarea>
+                 </label>
+            </fieldset>
+            <fieldset>
+                <input type="submit" value="Submit Storm Report" />
+            </fieldset>
+        </form>
+    
+        
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-information">
+                <div id="current-year">&#x24B8; The Weather Watch </div>
+                <div class="vert-rod-divider">&#x7c;</div>
+                <div>Attributions</div>
+                <div class="vert-rod-divider">&#x7c;</div>
+                <div>Kenneth R. Chatfield</div>
+            </div>
+            <div>
+                <div id="current-date"></div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/progressive_load.js"></script>
+    <script src="js/toggle_expand.js"></script>
+    <script src="../lesson6/js/current_date.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+        google: {
+            families: ['Questrial', 'Varela Round']
+        }
+        });
+    </script>
+</body>
+</html>
