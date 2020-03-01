@@ -97,7 +97,7 @@
                 <label for="severity"> 
                     <span class="label-text">Severity</span>
                     <br>
-                    <input type="range" id="severity" name="severity"  min="1" max="10" step="1" list="tickmarks" /> <span id="severity_display">5</span>
+                    <input onchange="severityChangeHandler(this.value)" value="5" type="range" id="severity" name="severity"  min="1" max="10" step="1" list="tickmarks" /> <span id="severity_display">5</span>
                     <datalist id="tickmarks">
                         <option value="0">
                         <option value="1">
@@ -177,6 +177,7 @@
     </footer>
     <script src="../lesson7/js/toggle_expand.js"></script>
     <script src="../lesson6/js/current_date.js"></script>
+    <script src="severity.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
         WebFont.load({
