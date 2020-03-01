@@ -163,7 +163,7 @@ input[type="radio"]{
 }
 #severity_display{
     position: absolute;
-    padding: 7px 0 7px 20px;
+    padding: 15px 0 7px 20px;
 }
 .danger-label > .section{
     display: inline-block;

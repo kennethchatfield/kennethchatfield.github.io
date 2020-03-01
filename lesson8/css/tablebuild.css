@@ -16,6 +16,7 @@ caption{
     border-left: 1px solid #a0a0a0;
     padding: 5px;
     font-size: 24px;
+    font-weight: bolder;
 }
 div{
     display: inline-block;
@@ -29,7 +30,7 @@ div{
 .achieved,
 th{
     padding: 5px;
-    background-color: #4b6486;
+    background-color: #628ca6;
     color: white;
 }
 
@@ -37,10 +38,10 @@ th{
 
 tr{
     border-bottom: 1px solid #a0a0a0;
-    background-color: #d3d3d3;
+    background-color: #e7f0ed;
 }
 tr:nth-child(even){
-    background-color: #cbe9dc;
+    background-color: #e7ffed;
 }
 td, th{
     border-right: 1px solid #a0a0a0;
@@ -52,5 +53,9 @@ td{
 }
 caption,
 tfoot > tr{
-    background-color: #61aaaa;
+    background-color: #7fb9c2;
+}
+
+tbody tr:nth-child(5) td:nth-child(1) {
+    font-style: italic;
 }
