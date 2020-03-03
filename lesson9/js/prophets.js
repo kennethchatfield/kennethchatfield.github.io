@@ -6,8 +6,6 @@
 
 
 const handleData = data => {
-    console.table( data.prophets )
-
     const { prophets } = data;
 
     for (let i = 0; i < prophets.length; i++ ) {
@@ -54,11 +52,10 @@ fetch(requestURL)
         if( response.status === 200 ){
             return response.json()
         } else {
-            console.log('response::',response);
             throw new Error(`Response failed with Status Code: ${ response.status }`)
         }
     })
     .then( handleData )
     .catch( err => {
-        console.log("err::", err);
+        console.error(err)
     })

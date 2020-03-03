@@ -1,0 +1,35 @@
+@media only screen and (min-width: 700px) {
+    .site-plan-navigation{
+        color: white;
+        text-align: center;
+    }
+    #nav-menu-toggle-label{
+        display: none;
+    }
+    #nav-items{
+        display: block;
+    }
+    .nav-item{
+        display: inline-block;
+    }
+    .nav-item:hover{
+        font-size: 1.2em;
+        padding: 3px 1%;
+    }
+    .nav-item:last-child:hover,
+    .nav-item:first-child:hover{
+        font-size: 1.2em;
+        padding: 3px 1.5%;
+    }
+    footer.site-footer{
+        font-size: 1.1em;
+    }
+    .site-header-title{
+        font-size: 37px;
+    }
+    h1.page-title{
+        font-size: 34px;
+        text-align: left;
+        margin-left: 20px;
+    }
+}

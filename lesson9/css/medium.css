@@ -1,19 +1,19 @@
 
-@media only screen and (min-width: 650px) and (max-width: 949px) {
-    .cards{
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+    .town-card{
+        max-width: none;
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: auto;
+        margin: 10px 5%;
     }
-    section{
-        margin: 3px;
+    .town-body{
+        
     }
-    section:nth-child(even){
-        grid-column: 2;
-        margin-right: 10px;
+    img.town-photo{
+        max-width: 400px;
     }
-    section:nth-child(odd){
-        grid-column: 1;
-        margin-left: 10px;
+    .town-info{
+        flex-grow: 1;
     }
 }
