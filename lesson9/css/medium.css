@@ -1,0 +1,19 @@
+
+@media only screen and (min-width: 650px) and (max-width: 949px) {
+    .cards{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+    }
+    section{
+        margin: 3px;
+    }
+    section:nth-child(even){
+        grid-column: 2;
+        margin-right: 10px;
+    }
+    section:nth-child(odd){
+        grid-column: 1;
+        margin-left: 10px;
+    }
+}
