@@ -2,6 +2,10 @@
 body{
     padding: 5px;
 }
+h2, h1{
+    font-family: Wellfleet, Helvetica, sans-serif;
+    color: #303096;
+}
 header{
     text-align: center;
 }
@@ -26,9 +30,7 @@ img{
     width: 150px;
     box-shadow: 0 2px 6px #929292;
 }
+.birth-place,
 .birth-date{
-
-}
-.birth-place{
-
+    margin-bottom: 5px;
 }
