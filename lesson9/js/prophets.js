@@ -11,7 +11,6 @@ const getProphetImg = ({ imageurl, fullName, order }) => {
     image.className = "prophet-photo"
     image.setAttribute('data-src', imageurl);
     image.setAttribute('src', '../lesson7/images/placeholder-image.jpg');
-    // image.setAttribute('src', imageurl);
     image.setAttribute('alt', `${fullName} - ${ order }`);
     picture.appendChild(image);
     return picture;
