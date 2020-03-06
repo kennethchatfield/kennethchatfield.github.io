@@ -4,6 +4,30 @@ main{
     width: 100%;
     padding: 10px 0;
 }
+
+#article-section{
+    margin: 5% 2%;
+    border: 1px solid rgb(184, 184, 184);
+    padding: 5%;
+    text-align: left;
+    background-color: rgba(255, 235, 205, 0.15);
+}
+
+.article-name{
+    font-size: 1.5em;
+    color: #4F5D73;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.article-author{
+    font-style: italic;
+}
+.carnival-image{
+    display: block;
+    width: 100%;
+    box-shadow: 0 2px 4px rgb(46, 46, 46);
+}
+
 .town-cards{
     
     background-color: #bacbe9;
@@ -25,9 +49,11 @@ img.town-photo{
 
 h2.town-name{
     margin: 0;
+    padding-top: 15px;
 }
 p.town-motto{
     margin: 0;
+    font-style: italic;
 }
 .town-info{
     display: flex;
@@ -47,4 +73,8 @@ p.town-motto{
 .town-header{
     display: flex;
     flex-direction: column;
+}
+
+.wire-frame-links{
+    padding-left: 10px;
 }
