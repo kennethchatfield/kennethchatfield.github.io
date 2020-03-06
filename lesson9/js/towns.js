@@ -3,12 +3,15 @@ const cardsContainer = document.querySelector('div.town-cards');
 
 const getTownImg = ({ photo }) => {
     const imgPath = `images/${ photo }`;
-    let image = document.createElement('img');
+    let image = document.createElement('img'),
+        picture = document.createElement('picture');
     image.className = "town-photo"
-    image.setAttribute('src', imgPath);
+    image.setAttribute('data-src', imgPath);
+    image.setAttribute('src', 'images/placeholder-image.jpg');
     image.setAttribute('alt', photo.replace(".jpg", " town photo"));
     image.onload = windowSize;
-    return image;
+    picture.appendChild(image);
+    return picture;
 }
 const getTownHeader = ({name, motto, ...townData}) => {
     let townHeader = document.createElement('div'),
@@ -58,9 +61,7 @@ const getTownInfo = ( townData ) => {
 const getTownBody = (townData) => {
     let townBody = document.createElement('div');
     townBody.className = "town-body";
-    // const townInfo = getTownInfo( townData );
     const townImg = getTownImg( townData );
-    // townBody.appendChild( townInfo );
     townBody.appendChild( townImg );
     return townBody;
 }
@@ -107,6 +108,7 @@ fetch(requestURL)
         }
     })
     .then( handleData )
+    .then( progressiveLoad )
     .catch( err => {
         console.error(err)
     })
@@ -126,4 +128,5 @@ const windowSize = ( ) => {
 }
 
 window.onresize = windowSize;
+window.onload = windowSize;
     

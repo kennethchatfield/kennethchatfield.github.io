@@ -4,6 +4,17 @@
 
 
 
+const getProphetImg = ({ imageurl, fullName, order }) => {
+
+    let image = document.createElement('img'),
+        picture = document.createElement('picture');
+    image.className = "prophet-photo"
+    image.setAttribute('data-src', imageurl);
+    image.setAttribute('src', '../lesson7/images/placeholder-image.jpg');
+    image.setAttribute('alt', `${fullName} - ${ order }`);
+    picture.appendChild(image);
+    return picture;
+}
 
 const handleData = data => {
     const { prophets } = data;
@@ -15,22 +26,21 @@ const handleData = data => {
             imageurl,
             birthdate,
             birthplace,
-            order
+            order,
+            photo
         } = prophets[i];
         const fullName = name + ' ' + lastname;
         let card = document.createElement('section'),
             h2 = document.createElement('h2'),
             birthDayDiv = document.createElement('div'),
             birthPlaceDiv = document.createElement('div'),
-            image = document.createElement('img');
+            image = getProphetImg({ ...prophets[i], fullName});
 
 
         birthDayDiv.className = "birth-date"
         birthPlaceDiv.className = "birth-place"
 
         h2.textContent = fullName;
-        image.setAttribute('src', imageurl);
-        image.setAttribute('alt', `${fullName} - ${ order }`);
         birthDayDiv.innerHTML = `Date of Birth: ${ birthdate }`;
         birthPlaceDiv.innerHTML = `Place of Birth: ${ birthplace }`;
 
@@ -56,6 +66,7 @@ fetch(requestURL)
         }
     })
     .then( handleData )
+    .then( progressiveLoad )
     .catch( err => {
         console.error(err)
     })
