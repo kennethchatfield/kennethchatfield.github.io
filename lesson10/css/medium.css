@@ -1,4 +1,4 @@
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 600px) {
     .site-plan-navigation{
         color: white;
         text-align: center;
@@ -29,5 +29,31 @@
     }
     h1.page-title{
         font-size: 34px;
+    }
+    main.main-content-container{
+        font-size: 1.1em;
+    }
+    #forecast-section{
+        display: block;
+    }
+    .carnival-image{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .preston-map{
+        display: block;
+    }
+    .contact-map-container{
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 10% 15px 15px;
+    }
+    #large-view-type,
+    #small-view-type{
+        display: none;
+    }
+    #medium-view-type{
+        display: block;
+        font-size: 40px;
     }
 }

@@ -41,8 +41,6 @@ function onHide(targetElement){
 }
 
 function toggleDisplayAll(action){
-    console.log('action',action)
-    console.log('expandableActionClasses',expandableActionClasses)
     if( action ){
         const principleItemElements = document.getElementsByClassName('principle-item');
         for (let i = 0; i < principleItemElements.length; i++) {

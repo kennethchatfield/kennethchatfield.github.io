@@ -9,7 +9,10 @@
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="css/global-styles.css">
+  <link rel="stylesheet" href="../css/styles-global.css">
+  <link rel="stylesheet" href="../css/medium-global.css">
+  <link rel="stylesheet" href="../css/large-global.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/medium.css">
   <link rel="stylesheet" href="css/large.css">
   
@@ -62,11 +65,11 @@
                                 <div class="weather-summary-field"> Wind Speed: </div>
                             </div>
                             <div class="weather-summary-column">
-                                <div class="weather-summary-value"> Cloudy </div>
-                                <div class="weather-summary-value"> <span id="current-high-temp"> 30 </span> &#176;F </div>
-                                <div id="wind-chill" class="weather-summary-value"> N/A </div>
-                                <div class="weather-summary-value"> 69% </div>
-                                <div class="weather-summary-value"> <span id="wind-speed"> 6 </span> mph </div>
+                                <div class="weather-summary-value"> <span id="current-currently"> N/A </span> </div>
+                                <div class="weather-summary-value"> <span id="current-high-temp"> N/A </span> &#176;F </div>
+                                <div class="weather-summary-value"> <span id="current-wind-chill"> N/A </span> &#176;F </div>
+                                <div class="weather-summary-value"> <span id="current-humidity"> N/A </span> % </div>
+                                <div class="weather-summary-value"> <span id="current-wind-speed"> N/A </span> mph </div>
                             </div>
                         </div>
                     </div>
@@ -85,8 +88,8 @@
             <section id="forecast-section">
                 <div class="forecast-container">
                     <h2 class="forecast-caption">5 Day Forecast</h2>
-                    <div class="forecast-container-days">
-                        <div class="forecast-day-container">
+                    <div id="forecast-container-days">
+                        <!-- <div class="forecast-day-container">
                             <div class="forecast-day">Wed</div>
                             <img class="day-forecast-icon" src="images/sunny-icon.png" alt="day forecast icon">
                             <div class="forecast-temp">89 F</div>
@@ -110,7 +113,7 @@
                             <div class="forecast-day">Sun</div>
                             <img class="day-forecast-icon" src="images/sunny-icon.png" alt="day forecast icon">
                             <div class="forecast-temp">72 F</div>
-                        </div>
+                        </div> -->
                     </div>
                     
                 </div>
@@ -173,10 +176,11 @@
         </div>
     </footer>
     
-    <script src="js/toggle_expand.js"></script>
-    <script src="js/current_date.js"></script>
-    <script src="js/banner.js"></script>
+    <script src="../lesson6/js/toggle_expand.js"></script>
+    <script src="../lesson6/js/current_date.js"></script>
+    <script src="../lesson6/js/banner.js"></script>
     <script src="js/windchill.js"></script>
+    <script src="js/weather_data_api.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
         WebFont.load({

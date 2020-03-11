@@ -7,9 +7,6 @@ function round_to_precision(x, precision) {
 const currentTemp = parseFloat( document.getElementById("current-high-temp").textContent );
 const windSpeed = parseFloat( document.getElementById("wind-speed").textContent );
 
-console.log('currentTemp::',currentTemp)
-console.log('windSpeed::',windSpeed)
-
 const windSpeedFactor = Math.pow( windSpeed, 0.16 );
 
 const windChill = 35.74 + (0.6215 * currentTemp) - ( 35.75 * windSpeedFactor ) + ( 0.4275 * currentTemp * windSpeedFactor );

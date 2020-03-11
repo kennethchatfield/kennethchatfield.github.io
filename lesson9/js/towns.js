@@ -87,7 +87,6 @@ const displayTowns = [
 
 const handleData = data => {
     const { towns } = data;
-    console.table( towns );
 
     towns.filter( ({name}) => displayTowns.includes(name))
         .map( getTownMarkUp )
