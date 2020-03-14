@@ -111,12 +111,12 @@ const handle_forecast_data = (data) => {
 }
 
 const get_forecast_data = () => {
-  const apiURL = `http://api.openweathermap.org/data/2.5/forecast?id=${ cityId }&APPID=${ APIKEY }&units=${ units }`;
+  const apiURL = `https://api.openweathermap.org/data/2.5/forecast?id=${ cityId }&APPID=${ APIKEY }&units=${ units }`;
     return fetch(apiURL)
       .then((response) => response.json())
 }
 const get_weather_data = () => {
-  const apiURL = `http://api.openweathermap.org/data/2.5/weather?id=${ cityId }&APPID=${ APIKEY }&units=${ units }`;
+  const apiURL = `https://api.openweathermap.org/data/2.5/weather?id=${ cityId }&APPID=${ APIKEY }&units=${ units }`;
     return fetch(apiURL)
       .then((response) => response.json())
 }
