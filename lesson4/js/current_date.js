@@ -40,8 +40,5 @@ const formattedDateString = [
     yearString
 ].join(" ")
 
-console.log(formattedDateString)
-
-// console.log('Last Modified', new Date( document.lastModified).getUTCMonth)
 
 document.getElementById("current-date").textContent = formattedDateString;

@@ -112,3 +112,6 @@ div.footer-content{
     justify-content: center;
 }
 
+.footer-information a{
+    color: white;
+}

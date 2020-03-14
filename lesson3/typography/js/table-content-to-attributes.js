@@ -4,11 +4,10 @@ const table = document.getElementsByTagName("table")[0];
 const tableRows = table.getElementsByTagName("tr");
 const headers = ["element","font-family","font-size", "color", "background", "example"]
 const acceptableStyleAttributes = [ "font-family","font-size", "color", "background" ]
-console.log('tableRows::',tableRows);
 for( let i = 1; i < tableRows.length; i++){
     const tableRow = tableRows[i];
     const tableCells = tableRow.getElementsByTagName("td");
-    console.log('tableCells::',tableCells);
+
     let newStyleAttributes = {};
     for( let c = 0; c < tableCells.length; c++){
         const tableCell = tableCells[c];
@@ -19,7 +18,6 @@ for( let i = 1; i < tableRows.length; i++){
             newStyleAttributes[header] =  cellContent;
         }
     }
-    console.log('newStyleAttributes::',newStyleAttributes);
     if( Object.keys(newStyleAttributes).length > 0){
         for( let c = 0; c < tableCells.length; c++){
             const tableCell = tableCells[c];
