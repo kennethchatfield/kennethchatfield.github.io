@@ -1,13 +1,4 @@
 
-// const days = [
-//   "Monday",
-//   "Tuesday",
-//   "Wednessday",
-//   "THursday",
-//   "Friday",
-//   "Saturday",
-//   "Sunday"
-// ];
 
 const htmlToElement = (htmlString) => {
   const template = document.createElement('template');
@@ -19,13 +10,6 @@ const htmlToElement = (htmlString) => {
 function round_to_precision(x, precision) {
   const y = +x + (precision === undefined ? 0.5 : precision/2);
   const result = y - (y % (precision === undefined ? 1 : + precision ));
-  // const resultsDeconstructed = `${result}`.split(".");
-  // const resultsInt = resultsDeconstructed[0];
-  // const resultsDecimals = resultsDeconstructed[1];
-  // const precisionDecimals = `${precision}`.split(".")[1];
-  // const truncResultDecimals = resultsDecimals.substring(0, precisionDecimals.length);
-
-  // return parseFloat( resultsInt + "." + truncResultDecimals );
   return result;
 }
 
@@ -42,7 +26,7 @@ function calculate_wind_chill(params){
   const roundedWindCHill = round_to_precision( windChill, 0.1 );
   
   if( currentTemp <= 50 && windSpeed > 3 ){
-      document.getElementById("current-wind-chill").textContent = roundedWindCHill;
+      document.getElementById("current-wind-chill").textContent = roundedWindCHill + "&#176;F";
   } else {
       document.getElementById("current-wind-chill").textContent = "N/A";
   }
@@ -112,7 +96,7 @@ const build_forecast_item = ( forecastItem ) => {
   const desc = currentWeather.description; 
   return (`
     <div class="forecast-day-container">
-      <div class="forecast-day">${ days[ forecastDate.getDay() ] }</div>
+      <div class="forecast-day">${ days[ forecastDate.getDay() ].slice(0,3) }</div>
       <img class="day-forecast-icon" src=${ imagesrc } alt=${desc}>
       <div class="forecast-temp">${ temp_max } &#176;F</div>
     </div>
@@ -139,18 +123,33 @@ const get_weather_data = () => {
 
 
 const elementIdToFieldNameMap = {
-  "current-currently":"weather.0.main",
-  "current-high-temp":"main.temp_max",
-  "current-humidity":"main.humidity",
-  "current-wind-speed":"wind.speed"
+  "current-currently":{
+    path: "weather.0.main"
+  },
+  "current-high-temp": {
+    path: "main.temp_max",
+    units: String.fromCharCode(176) + " " + "F"
+  },
+  "current-humidity": {
+    path: "main.humidity",
+    units: "%"
+  },
+  "current-wind-speed": {
+    path: "wind.speed",
+    units: "mph"
+  }
 };
 function set_weather_summary( weatherData ){
   let results = {};
   Object.keys( elementIdToFieldNameMap ).map( elementId => {
     const element = document.getElementById( elementId );
-    const value = getValue( weatherData, elementIdToFieldNameMap[ elementId ] );
-    element.textContent = value;
+    const value = getValue( weatherData, elementIdToFieldNameMap[ elementId ].path );
     results[ elementId ] = value;
+    if( elementIdToFieldNameMap[ elementId ].units ){
+      element.textContent = value + " " + elementIdToFieldNameMap[ elementId ].units;
+    } else {
+      element.textContent = value;
+    }
   })
   
   return ( results['current-high-temp'] !== undefined && results['current-wind-speed'] !== undefined ) ? {
@@ -163,7 +162,6 @@ function set_weather_summary( weatherData ){
 
 get_forecast_data()
   .then( handle_forecast_data )
-  // .then( get_most_recent_item )
   .then( get_weather_data )
   .then( set_weather_summary )
   .then( calculate_wind_chill )

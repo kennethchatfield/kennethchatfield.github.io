@@ -40,10 +40,13 @@
         max-width: 600px;
         margin: 0 auto;
     }
-    .preston-map{
+    .town-map{
         display: block;
+        height: 350px;
+        width:60%
     }
     .contact-map-container{
+        flex-grow: 1;
         display: flex;
         justify-content: space-between;
         margin: 15px 10% 15px 15px;

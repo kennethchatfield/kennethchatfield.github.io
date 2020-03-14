@@ -181,7 +181,7 @@ main.main-content-container{
     width: 15px;
 }
 .preston-map{
-    width: 50%;
+
     display: none;
 }
 .social-media-icons{
@@ -194,4 +194,10 @@ main.main-content-container{
     border-radius: 14px;
     width: 28px;
     height: 28px;
+}
+
+.town-map{
+    width: 50%;
+    display: none;
+    height: 350px;
 }

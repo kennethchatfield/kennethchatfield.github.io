@@ -37,6 +37,7 @@
         display: flex;
         justify-content: space-between;
         margin: 15px 10% 15px 15px;
+        flex-grow: 1;
     }
     #small-view-type,
     #medium-view-type{
