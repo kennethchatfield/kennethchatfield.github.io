@@ -26,7 +26,7 @@ function calculate_wind_chill(params){
   const roundedWindCHill = round_to_precision( windChill, 0.1 );
   
   if( currentTemp <= 50 && windSpeed > 3 ){
-      document.getElementById("current-wind-chill").textContent = roundedWindCHill + "&#176;F";
+      document.getElementById("current-wind-chill").textContent = roundedWindCHill + " " + String.fromCharCode(176)  + "F";
   } else {
       document.getElementById("current-wind-chill").textContent = "N/A";
   }
@@ -128,7 +128,7 @@ const elementIdToFieldNameMap = {
   },
   "current-high-temp": {
     path: "main.temp_max",
-    units: String.fromCharCode(176) + " " + "F"
+    units:" " + String.fromCharCode(176) + "F"
   },
   "current-humidity": {
     path: "main.humidity",
