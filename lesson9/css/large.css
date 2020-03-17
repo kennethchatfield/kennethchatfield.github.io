@@ -18,4 +18,7 @@
         max-width: 95%;
         margin: 5px auto;
     }
+.carnival-image{
+    width: 550px;
+    float:right;
 }

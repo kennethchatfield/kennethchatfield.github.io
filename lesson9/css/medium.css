@@ -16,4 +16,8 @@
     .town-info{
         flex-grow: 1;
     }
+    .carnival-image{
+        max-width: 600px;
+        margin: 0 auto;
+    }
 }
