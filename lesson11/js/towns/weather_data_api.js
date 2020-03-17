@@ -5,9 +5,15 @@ const date = new Date();
 
 
 function round_to_precision(x, precision) {
-  const y = +x + (precision === undefined ? 0.5 : precision/2);
+  const y = + x + (precision === undefined ? 0.5 : precision/2);
   const result = y - (y % (precision === undefined ? 1 : + precision ));
-  return result;
+  if( !`${result}`.includes(".") ) return result;
+  const resultData = `${result}`.split(".")
+  const integer = resultData[0];
+  const precisionLength = `${precision}`.split(".")[1].length;
+  const decimals = resultData[1].substring(0, precisionLength);
+  
+  return `${integer}.${decimals}`;
 }
 
 function calculate_wind_chill(params){

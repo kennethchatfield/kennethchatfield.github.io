@@ -189,6 +189,7 @@ main.main-content-container{
     margin-bottom: 10px;
 }
 .social-media-icon-link{
+    text-decoration: none;
     margin-right: 5px;
 }
 .social-media-icon{

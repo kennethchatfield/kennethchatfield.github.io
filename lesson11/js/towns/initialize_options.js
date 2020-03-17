@@ -6,11 +6,11 @@ const optionsByPage = {
     name: "Preston"
   },
   "soda-springs-page": {
-    cityId: 5604473,
+    cityId: 5607916,
     name: "Soda Springs"
   },
   "fish-haven-page": {
-    cityId: 5604473,
+    cityId: 5585010,
     name: "Fish Haven"
   }
 }
