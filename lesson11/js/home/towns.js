@@ -1,17 +1,21 @@
 
 const cardsContainer = document.querySelector('div.town-cards');
 
-const getTownImg = ({ photo }) => {
+const getTownImg = ({ photo, name }) => {
     const imgPath = `images/home/${ photo }`;
     let image = document.createElement('img'),
-        picture = document.createElement('picture');
+        picture = document.createElement('picture'),
+        link = document.createElement('a');
+
+    link.href = name.toLowerCase().split(" ").join("-") + ".html"
     image.className = "town-photo"
     image.setAttribute('data-src', imgPath);
     image.setAttribute('src', 'images/placeholder-image.jpg');
     image.setAttribute('alt', photo.replace(".jpg", " town photo"));
     image.onload = windowSize;
     picture.appendChild(image);
-    return picture;
+    link.appendChild( picture )
+    return link;
 }
 const getTownHeader = ({name, motto, ...townData}) => {
     let townHeader = document.createElement('div'),
