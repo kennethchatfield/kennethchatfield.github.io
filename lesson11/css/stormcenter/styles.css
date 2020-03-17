@@ -1,0 +1,80 @@
+
+main{
+    padding: 30px 0;
+    font-size: 1.1em;
+    width: 100%;
+    text-align: center;
+}
+
+form{
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    max-width: 550px;
+}
+fieldset{
+    border: 0;
+    padding: 15px;
+}
+legend{
+    color: #0b4075;
+    font-size: 1.3em;
+}
+textarea{
+    margin-top: 10px;
+    width: 98%;
+    resize: vertical; 
+}
+input, select  {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 16px;
+    background-color: white;
+}
+input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 7px 10px;
+}
+select{
+    height: 34px;
+}
+
+input[type="range"]{
+    width: 90%;
+}
+input[type="radio"]{
+    width: 14px;
+}
+#severity_display{
+    position: absolute;
+    padding: 15px 0 7px 20px;
+}
+.danger-label > .section{
+    display: inline-block;
+    padding-top: 5px;
+    width: 30%;
+}
+
+input[type="submit"]{
+    background-color: #16b;
+    background-image: linear-gradient(#2d8cec,#16b);
+    border-color: #16b #0b4075 #0b4075;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.75);
+    cursor: pointer;
+    font-weight: bold;
+}
+legend,
+span.label-text{
+    font-weight: bolder;
+    font-family: 'Varela Round', sans-serif;
+}
+span.label-text{
+    color: #444;
+}

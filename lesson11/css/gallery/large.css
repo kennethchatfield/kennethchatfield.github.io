@@ -1,0 +1,20 @@
+@media only screen and (min-width: 950px) {
+    .gallery{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: auto;
+    }
+    .gallery-item:nth-child(3n){
+        grid-column: 3;
+    }
+    .gallery-item:nth-child(3n-1){
+        grid-column: 2;
+    }
+    .gallery-item:nth-child(3n-2){
+        grid-column: 1;
+    }
+    .gallery-item:hover{
+        box-shadow: 0 0 50px #333;
+    }
+}
