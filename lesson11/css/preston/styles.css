@@ -221,7 +221,6 @@ main.main-content-container{
     display: flex;
     width: 100%;
     max-width: 500px;
-    /* border: 1px solid rgb(184, 184, 184); */
 }
 .event-column{
     display: flex;
