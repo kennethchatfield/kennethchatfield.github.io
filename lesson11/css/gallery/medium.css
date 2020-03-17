@@ -1,0 +1,26 @@
+@media only screen and (min-width: 700px) {
+    h1.page-title{
+        font-size: 34px;
+        text-align: left;
+        margin-left: 20px;
+    }
+    main{
+        font-size: 1.1em;
+    }
+    .gallery{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+    }
+    .gallery-item:nth-child(even){
+        grid-column: 2;
+    }
+    .gallery-item:nth-child(odd){
+        grid-column: 1;
+    }
+    .gallery-item{
+        max-width: 90%;
+        margin: 15px auto;
+    }
+}

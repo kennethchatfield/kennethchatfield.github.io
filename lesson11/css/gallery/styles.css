@@ -1,0 +1,33 @@
+
+
+main{
+    font-size: 1.1em;
+    width: 100%;
+}
+
+
+picture img{
+    width: 100%;
+}
+img[data-src] {
+    filter: blur(0.2em);
+}
+  
+img {
+    filter: blur(0em);
+    transition: filter 0.5s;
+}
+.gallery-item{
+    box-shadow: 0 2px 6px #929292;
+    margin:  0 5% 30px 5%;
+}
+.gallery{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-description{
+    padding: 10px;
+}
