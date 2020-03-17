@@ -1,11 +1,8 @@
 
 
-const htmlToElement = (htmlString) => {
-  const template = document.createElement('template');
-  htmlString = htmlString.trim();
-  template.innerHTML = htmlString;
-  return template.content.firstChild;
-}
+
+const date = new Date();
+
 
 function round_to_precision(x, precision) {
   const y = +x + (precision === undefined ? 0.5 : precision/2);
@@ -41,19 +38,13 @@ const getValue = (obj, path) => {
   return object;
 }
 
-const APIKEY = 'ab77c470222b292dac0b5ace3c31fb06',
-  cityId = 5604473,
-  targetTime = '18:00:00',
-  units = 'imperial',
-  date = new Date();
-
 const get_most_recent_item = ({ list }) => list[0];
 const getItemByTargetTime = ({ list }) => {
 
   let item, index = 0;
   while( !item && index < list.length ){
     const dataItem = list[index];
-    if( dataItem.dt_txt.includes( targetTime ) ){
+    if( dataItem.dt_txt.includes( options.targetTime ) ){
       item = dataItem;
     }
     index++
@@ -65,7 +56,7 @@ const get_forecast_items = ( { list } ) => {
   let items = [], index = 0;
   while( index < list.length ){
     const dataItem = list[index];
-    if( dataItem.dt_txt.includes( targetTime ) ) items.push( dataItem );
+    if( dataItem.dt_txt.includes( options.targetTime ) ) items.push( dataItem );
     index++
   }
   return items;
@@ -76,7 +67,7 @@ const build_forecast = ( forecastItems ) => {
     const element = htmlToElement( elementText );
     container.appendChild( element );
   }
-  build_all = ( forecastItem ) => {
+  const build_all = ( forecastItem ) => {
     const elementText = build_forecast_item( forecastItem );
     appendToContainer( elementText );
   }
@@ -111,12 +102,12 @@ const handle_forecast_data = (data) => {
 }
 
 const get_forecast_data = () => {
-  const apiURL = `https://api.openweathermap.org/data/2.5/forecast?id=${ cityId }&APPID=${ APIKEY }&units=${ units }`;
+  const apiURL = `https://api.openweathermap.org/data/2.5/forecast?id=${ options.cityId }&APPID=${ options.APIKEY }&units=${ options.units }`;
     return fetch(apiURL)
       .then((response) => response.json())
 }
 const get_weather_data = () => {
-  const apiURL = `https://api.openweathermap.org/data/2.5/weather?id=${ cityId }&APPID=${ APIKEY }&units=${ units }`;
+  const apiURL = `https://api.openweathermap.org/data/2.5/weather?id=${ options.cityId }&APPID=${ options.APIKEY }&units=${ options.units }`;
     return fetch(apiURL)
       .then((response) => response.json())
 }
@@ -159,9 +150,9 @@ function set_weather_summary( weatherData ){
   
 }
 
-
-get_forecast_data()
-  .then( handle_forecast_data )
-  .then( get_weather_data )
+get_weather_data()
   .then( set_weather_summary )
   .then( calculate_wind_chill )
+  .then( get_forecast_data )
+  .then( handle_forecast_data )
+

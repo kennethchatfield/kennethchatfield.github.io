@@ -113,6 +113,7 @@ main.main-content-container{
 #forecast-container-days{
     display: flex;
     border: 1px solid rgb(184, 184, 184);
+    box-shadow: 1px 1px 4px #acacac;
     
 }
 .forecast-day-container{
@@ -153,7 +154,7 @@ main.main-content-container{
 .article-author{
     font-style: italic;
 }
-.carnival-image{
+.article-image{
     display: block;
     width: 100%;
     box-shadow: 0 2px 4px rgb(46, 46, 46);
@@ -201,3 +202,53 @@ main.main-content-container{
     display: none;
     height: 350px;
 }
+
+#events-section{
+    color: black;
+    width: 100%;
+}
+.events-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.events-caption{}
+
+#events{
+    box-shadow: 1px 1px 4px #acacac;
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    /* border: 1px solid rgb(184, 184, 184); */
+}
+.event-column{
+    display: flex;
+    flex-direction: column;
+}
+.event-column:nth-child(2){
+    background-color: rgba(255, 235, 205, 0.25);;
+    flex-grow: 1;
+}
+.event-column:first-child{
+    background-color: #4F5D73;
+    color: white;
+}
+.event-column:first-child .event-item{
+    justify-content: flex-end;
+}
+.event-column:nth-child(2) .event-item{
+    border-bottom: 1px solid #b8b8b8
+}
+.event-column:nth-child(2) .event-item:last-child{
+    border-bottom: none;
+}
+.event-item{
+    padding: 5px 20px;
+    display: flex;
+}
+.event-date{
+    
+    
+}
+.event-name{}
