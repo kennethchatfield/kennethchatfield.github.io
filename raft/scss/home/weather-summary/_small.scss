@@ -1,0 +1,40 @@
+#weather-summary-container{
+
+    height: 300px;
+    background-image: url("../images/weather-summary-banner.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+
+    .units{
+        margin-left: 5px;
+    }
+
+    .caption{
+        text-align: center;
+        padding: 5px;
+    }
+
+    .widget{
+        background-color: #fbf9ff;
+        display: inline-block;
+        margin: 20px;
+        border-radius: 10px;
+        border: 1px solid #2a1e5c;
+    }
+    .column:first-child{
+        background-color: #2a1e5c;
+        color: #fbf9ff;
+    }
+    .table{
+        display: flex;
+    }
+    .cell{   
+        padding: 5px 20px;
+    }
+    .cell.value{
+        border-top: 1px solid #2a1e5c;
+        
+    }
+
+}
