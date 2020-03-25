@@ -1,0 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css?family=Days+One|Krona+One|Nunito|Sen:400,700&display=swap');
+
+@import "global-styles";
+
+@import "navigation/small";
+@import "main-content/small";
+@import "site-header/small";
+
+@import "home/weather-summary/small";
+@import "home/activities/small";
+
+
+@media only screen and (min-width: 560px) {    
+    @import "navigation/medium";
+}

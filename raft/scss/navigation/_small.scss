@@ -1,0 +1,30 @@
+
+
+#nav-menu{
+    width: 100%;
+    grid-row: 1;
+    
+}
+#nav-menu nav{
+    height: 60px;
+    background-color: #2a1e5c;
+    box-shadow: 0 2px 6px #929292;
+}
+#nav-menu ul{
+    padding: 0;
+    margin: 0;
+}
+#nav-menu a{
+    text-decoration: none;
+    border-radius: 4px;
+}
+#nav-menu a:hover{
+    box-shadow: 0 1px 4px #575757;
+    text-decoration: underline;
+}
+#nav-menu li{
+    list-style: none;
+}
+#nav-menu li.active a{
+    color: #30bced;
+}

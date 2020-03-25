@@ -1,0 +1,29 @@
+#site-header{
+    position: relative;
+    overflow:hidden;
+    transition: height 0.3s ease-out; // note that we're transitioning transform, not height!
+    height: 250px;
+    text-align: center;
+    background-color: black;
+    background-image: url("../images/site-header.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    h1.site-name{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-right: 10px;
+        color: white;
+        font-size: 36px;
+        text-shadow: black 1px 1px 1px;
+        background-color: transparent;
+        font-family: Days One, sans-serif;
+    }
+}
+
+#site-header.collapsed{
+    transition: height 0.3s ease-in;
+    height: 0;
+}

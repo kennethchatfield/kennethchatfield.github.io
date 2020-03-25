@@ -1,0 +1,32 @@
+console.log('Home Page Main.js')
+
+import { MainContent } from '../modules/mainContent.js'
+import { Navigation } from '../modules/navigation.js'
+import { SiteHeader } from '../modules/siteHeader.js'
+import { WeatherSummary } from './modules/weatherSummary.js';
+import { Activities } from './modules/activities.js';
+
+const pageId = "home";
+
+const navigation = new Navigation();
+navigation.create();
+navigation.setActivePage( pageId )
+
+const siteHeader = new SiteHeader(navigation.container);
+siteHeader.create();
+
+const mainContent = new MainContent();
+mainContent.create();
+mainContent.addTitle("Home Page");
+mainContent.element.onscroll = () => {
+    const scrollTop = mainContent.element.scrollTop;
+    if( scrollTop > 0 && siteHeader.visible || scrollTop === 0 && !siteHeader.visible ) { 
+        siteHeader.toggleVisibility(); 
+    }
+}
+
+const weatherSummary = new WeatherSummary(mainContent.element);
+weatherSummary.create();
+
+const activities = new Activities( mainContent.element );
+activities.create();
