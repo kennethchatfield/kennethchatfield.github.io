@@ -7,9 +7,12 @@ class MainContent {
     }
   
     create() {
-        this.element = document.createElement('main');
-        this.element.id = this.id;
-        this.parent.append(this.element);
+      this.elementContainer = document.createElement('div');
+      this.element = document.createElement('main');
+      this.element.id = this.id;
+      this.elementContainer.id = "main-content-container";
+      this.elementContainer.appendChild( this.element )
+      this.parent.append( this.elementContainer );
     }
 
     addTitle( title ){
@@ -17,6 +20,13 @@ class MainContent {
         this.title.classList.add("page-title");
         this.title.innerHTML = title;
         this.element.prepend( this.title );
+    }
+
+    addBreaks( limit ){
+      for(let index = 0; index < limit; index++){
+        let br = document.createElement("br");
+        this.element.appendChild( br );
+      }
     }
 
   }

@@ -5,6 +5,7 @@
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
+    border-radius: 5px;
 
     .units{
         margin-left: 5px;
@@ -12,7 +13,8 @@
 
     .caption{
         text-align: center;
-        padding: 5px;
+    
+        margin: 10px;
     }
 
     .widget{
@@ -21,10 +23,13 @@
         margin: 20px;
         border-radius: 10px;
         border: 1px solid #2a1e5c;
+        box-shadow: 0 1px 4px #575757;
     }
     .column:first-child{
         background-color: #2a1e5c;
         color: #fbf9ff;
+        font-family: Nunito, sans-serif;
+        font-weight: 700;
     }
     .table{
         display: flex;

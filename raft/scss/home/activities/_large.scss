@@ -1,0 +1,29 @@
+#activities{
+
+    .activity{
+
+        display: grid;
+        grid-template-columns: 45% 55%;
+        grid-template-rows: auto auto auto;
+
+        .activity-header{
+            grid-area: 1 / 1 / span 3 / span 1;
+            width: 100%;
+        }
+        .activity-detail{
+            grid-row: 1;
+            grid-column: 2;
+            width: 95%;
+        }
+        .activity-services{
+            grid-row: 2;
+            grid-column: 2;
+            width: 95%;
+        }
+        .activity-prices{
+            grid-row: 3;
+            grid-column: 2;
+            width: 100%;
+        }
+    }
+}

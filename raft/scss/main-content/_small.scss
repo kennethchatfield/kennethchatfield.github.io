@@ -1,10 +1,13 @@
 #main-content{
     width: 96%;
-    grid-row: 2;
-    height: 100%;
-    overflow-y: scroll;
     padding: 0 2%;
     h1.page-title{
-        // color: #30a8ed;
+        color: #ff5100;
     }
+}
+#main-content-container{
+    grid-row: 2;
+    width: 100%;
+    overflow-y: scroll;
+    height: 100%;
 }

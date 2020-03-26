@@ -19,7 +19,15 @@ const activitiesMap = [
       group: 39.95
     },
     image: "activity.jpg",
-    description: fakeDescription
+    description: fakeDescription,
+    services: [
+      "River rafting safety & techniques training",
+      "ten miles of action-packed class III-IV white water",
+      "Meals: Snack between sections, and a lunch at the Ocoee Wildwater Rafting Center",
+      "Here you’ll drop through enormous rapids like Smileys, Slam Dunk, and the double-drop of Humongous",
+      "Photography included! While your busy we'll capture action shots in three hot spots along the river",
+      "Shuttles to and from the river to Salmon River Adventures"
+    ]
   },
   {
     index: 1,
@@ -35,7 +43,15 @@ const activitiesMap = [
       group: 39.95
     },
     image: "activity.jpg",
-    description: fakeDescription
+    description: fakeDescription,
+    services: [
+      "River rafting safety & techniques training",
+      "ten miles of action-packed class III-IV white water",
+      "Meals: Snack between sections, and a lunch at the Ocoee Wildwater Rafting Center",
+      "Here you’ll drop through enormous rapids like Smileys, Slam Dunk, and the double-drop of Humongous",
+      "Photography included! While your busy we'll capture action shots in three hot spots along the river",
+      "Shuttles to and from the river to Salmon River Adventures"
+    ]
   },
   {
     index: 2,
@@ -51,7 +67,15 @@ const activitiesMap = [
       group: 89.95
     },
     image: "activity.jpg",
-    description: fakeDescription
+    description: fakeDescription,
+    services: [
+      "River rafting safety & techniques training",
+      "ten miles of action-packed class III-IV white water",
+      "Meals: Snack between sections, and a lunch at the Ocoee Wildwater Rafting Center",
+      "Here you’ll drop through enormous rapids like Smileys, Slam Dunk, and the double-drop of Humongous",
+      "Photography included! While your busy we'll capture action shots in three hot spots along the river",
+      "Shuttles to and from the river to Salmon River Adventures"
+    ]
   }
 ]
 
@@ -98,9 +122,9 @@ class Activities {
     createActivity( activityData ){
       const activity = document.createElement('div');
       activity.classList.add("activity");
-      this.createActivityHeader( activityData, activity);
-      this.createActivityDetails( activityData, activity)
-      this.createActivityPrice( activityData, activity)
+      this.createActivityHeader( activityData, activity );
+      this.createActivityDetails( activityData, activity );
+      this.createActivityServices( activityData, activity );
       this.element.appendChild( activity );
     }
     createActivityHeader( activityData, parent ){
@@ -145,6 +169,30 @@ class Activities {
     
       parent.appendChild( activityDetail );
     }
+
+
+    createActivityServices( activityData, parent ){
+      const activityServices = document.createElement('div');
+      const servicesTitle = document.createElement('h3');
+      const servicesContents = document.createElement('div');
+      activityServices.classList.add("activity-services");
+      servicesTitle.classList.add("services-title");
+      servicesContents.classList.add("services-contents");
+      servicesTitle.innerHTML = "Services";
+      activityServices.appendChild( servicesTitle );
+
+      activityData.services.map( serviceText => {
+        const serviceItem = document.createElement('li');
+        serviceItem.classList.add("service-item");
+        serviceItem.innerHTML = serviceText;
+        activityServices.appendChild(serviceItem)
+      })
+
+      this.createActivityPrice( activityData, activityServices);
+
+      parent.appendChild( activityServices );
+    }
+
     createActivityPrice( activityData, parent ){
       const activityPrices = document.createElement('div');
       const priceTitle = document.createElement('h3');
@@ -187,7 +235,6 @@ class Activities {
 
         priceTable.appendChild(column)
       })
-
 
       parent.appendChild( priceTable );
 

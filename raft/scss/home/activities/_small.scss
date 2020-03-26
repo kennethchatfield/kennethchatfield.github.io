@@ -2,24 +2,17 @@
     display: flex;
     flex-direction: column;
     .activity{
-        display: flex;
         border-top: 1px solid #c0c0c0;
         padding-bottom: 20px;
-    }
-    .activity{
-        display: grid;
-        grid-template-columns: 45% 55%;
-        grid-template-rows: auto auto;
 
-        .activity-header{
-            grid-area: 1 / 1 / span 2 / span 1;
-            .activity-title{
-                font-size: 1.8em;
-            }
+        display: flex;
+        flex-direction: column;
+
+        .activity-title{
+            font-size: 2.5em;
         }
         .activity-detail{
-            grid-row: 1;
-            grid-column: 2;
+
             padding: 0 0 0 20px;
             .detail-item{
                 .label{
@@ -30,16 +23,19 @@
                 }
             }
         }
-        .activity-prices{
+        .activity-services{
             padding: 0 0 0 20px;
-            grid-row: 2;
-            grid-column: 2;
+
+        }
+        .activity-prices{
+            // padding: 0 0 0 20px;
+    
             // display: flex;
             // flex-direction: column;
             .price-table{
                 display: flex;
                 padding: 0 10px;
-                max-width: 80%;
+                // max-width: 80%;
                 .table-header{
                     font-family: Sen;
                     font-weight: 700;
