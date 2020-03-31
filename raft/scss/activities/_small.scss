@@ -4,15 +4,12 @@
     .activity{
         border-top: 1px solid #c0c0c0;
         padding-bottom: 20px;
-
         display: flex;
         flex-direction: column;
-
         .activity-title{
             font-size: 2.5em;
         }
         .activity-detail{
-
             padding: 0 0 0 20px;
             .detail-item{
                 .label{
@@ -28,14 +25,9 @@
 
         }
         .activity-prices{
-            // padding: 0 0 0 20px;
-    
-            // display: flex;
-            // flex-direction: column;
             .price-table{
                 display: flex;
                 padding: 0 10px;
-                // max-width: 80%;
                 .table-header{
                     font-family: Sen;
                     font-weight: 700;

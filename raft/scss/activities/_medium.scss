@@ -1,11 +1,8 @@
 #activities{
-
     .activity{
-
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: auto auto;
-
         .activity-title{
             margin-top: 5px;
         }
@@ -16,16 +13,9 @@
         .activity-detail{
             grid-row: 2;
             grid-column: 1;
-
         }
         .activity-services{
-            // grid-row: 1;
-            // grid-column: 2;
             grid-area: 1 / 2 / span 2 / span 1;
-        }
-        .activity-prices{
-            // grid-row: 2;
-            // grid-column: 2;
         }
     }
 }

@@ -20,6 +20,7 @@ class Form {
   addToFormInputs(id, input, label){
     if(!this.inputs) this.inputs = {};
     this.inputs[id] = {
+      id,
       element: input,
       label
     }
@@ -40,19 +41,60 @@ class Form {
     if( forId ) label.htmlFor = forId;
     return label;
   }
-  createInput( type ){
+  createTextArea( id ){
+    const textarea = document.createElement("textarea")
+    if( id ) input.id = id;
+    textarea.type = type;
+    textarea.classList.add(`form-input`);
+    return textarea;
+  }
+  createInput( type, id ){
     const input = document.createElement("input")
+    if( id ) input.id = id;
     input.type = type;
     input.classList.add(`form-input`);
     return input;
   }
-  createFullName(){}
-  // email, phone, adventure selection, start date selection, and a question/comment
-  createEmail(){}
-  createPhone(){}
+  createFullName(){
+    const id = "full-name-input";
+    const input = this.createInput( "text", id );
+    const label = this.createLabel("Full Name", id);
+    this.addToFormInputs(id, input, label);
+  }
+  createEmail(){
+    const id = "email-input";
+    const input = this.createInput( "text", id );
+    const label = this.createLabel( "Email", id );
+    this.addToFormInputs(id, input, label);
+  }
+  createPhone(){
+    const id = "phone-input";
+    const input = this.createInput( "phone", id );
+    const label = this.createLabel( "Phone Number", id );
+    this.addToFormInputs(id, input, label);
+  }
   createAdventureSelection(){}
-  createStartDate(){}
-  createComment(){}
+  createStartDate(){
+    const id = "phone-input";
+    const input = this.createInput( "phone", id );
+    const label = this.createLabel( "Phone Number", id );
+    this.addToFormInputs(id, input, label);
+  }
+  createComment(){
+    const id = "comment-input";
+    const textarea = this.createTextArea( id );
+    const label = this.createLabel( "Contact/Questions", id );
+    this.addToFormInputs(id, textarea, label);
+  }
+  createReservationsForm(){
+    this.create();
+    this.createFullName();
+    this.createEmail();
+    this.createPhone();
+    this.createAdventureSelection();
+    this.createStartDate();
+    this.createComment();
+  }
 }
 
 export { Form };

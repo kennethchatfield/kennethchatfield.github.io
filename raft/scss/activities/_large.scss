@@ -1,11 +1,8 @@
 #activities{
-
     .activity{
-
         display: grid;
         grid-template-columns: 45% 55%;
         grid-template-rows: auto auto auto;
-
         .activity-header{
             grid-area: 1 / 1 / span 3 / span 1;
             width: 100%;

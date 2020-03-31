@@ -9,15 +9,15 @@
 @import "footer/small";
 
 @import "home/weather-summary/small";
-@import "home/activities/small";
+@import "activities/small";
 
 
 
 @media only screen and (min-width: 560px) {    
     @import "navigation/medium";
-    @import "home/activities/medium";
+    @import "activities/medium";
 }
 
 @media only screen and (min-width: 960px) {    
-    @import "home/activities/large";
+    @import "activities/large";
 }
