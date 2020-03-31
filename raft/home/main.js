@@ -1,11 +1,9 @@
-console.log('Home Page Main.js')
-
 import { MainContent } from '../modules/mainContent.js'
 import { Navigation } from '../modules/navigation.js'
 import { Footer } from '../modules/footer.js'
 import { SiteHeader } from '../modules/siteHeader.js'
 import { WeatherSummary } from './modules/weatherSummary.js';
-import { Activities } from './modules/activities.js';
+import { Activities } from '../modules/activities.js';
 
 const pageId = "home";
 
