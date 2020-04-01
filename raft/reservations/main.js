@@ -27,6 +27,7 @@ mainContent.elementContainer.onscroll = () => {
 
 const activities = new Activities( mainContent.element );
 activities.create();
+activities.createActivitiesFilter();
 
 const footer = new Footer(mainContent.elementContainer);
 footer.create()

@@ -1,4 +1,5 @@
 import { Image } from './image.js'
+import { unique } from '../js/utilities.js';
 
 
 const fakeDescription = "Lorem ipsum dolor sit amet, has ei case brute laboramus, est eu possit suscipit temporibus, velit assum quaeque quo et. Quo ne inani cotidieque, dicant repudiandae te est, sed et dicant oportere prodesset. His et legere democritum. Mea solet putant appetere ea, cu cum phaedrum complectitur. Pri et iisque expetenda, nominavi copiosae singulis ei usu. Cu posse feugait consectetuer duo. Te essent melius instructior pri, at usu sumo eirmod, consul verear petentium per ei. Sed oporteat tractatos facilisis at. An pro reque clita ignota, error tantas malorum no vis. Rebum utroque pericula ne sed. Ut quo solet rationibus, sea vero explicari ea. Sea cu recusabo molestiae, erant viris feugait ne sea."
@@ -8,6 +9,7 @@ const activitiesMap = [
   {
     index: 0,
     name: "Salmon River Lower Rafting Trip",
+    adventureType: "raft",
     duration:{
       full: 3.5,
       river: 3,
@@ -32,6 +34,7 @@ const activitiesMap = [
   {
     index: 1,
     name: "Salmon River Upper Rafting Trip",
+    adventureType: "raft",
     duration:{
       full: 3,
       river: 1.5,
@@ -56,6 +59,7 @@ const activitiesMap = [
   {
     index: 2,
     name: "Salmon River Upper & Lower Rafting Trip",
+    adventureType: "raft",
     duration:{
       full: 6,
       river: 4,
@@ -80,6 +84,7 @@ const activitiesMap = [
   {
     index: 3,
     name: "Kayak: Salmon River Lower Rafting Trip",
+    adventureType: "kayak",
     duration:{
       full: 3.5,
       river: 3,
@@ -104,6 +109,7 @@ const activitiesMap = [
   {
     index: 4,
     name: "Kayak: Salmon River Upper Rafting Trip",
+    adventureType: "kayak",
     duration:{
       full: 3,
       river: 1.5,
@@ -128,6 +134,7 @@ const activitiesMap = [
   {
     index: 5,
     name: "Kayak: Salmon River Upper & Lower Rafting Trip",
+    adventureType: "kayak",
     duration:{
       full: 6,
       river: 4,
@@ -168,6 +175,47 @@ const getDetailContents = ( activity ) => {
   };
 }
 
+const filters = {
+  price:{
+    id: "price",
+    name: "Price",
+    filter: (item) => (
+      (item._var.max||1000) > item.price.individual && item.price.individual > (item._var.min||0)
+    ),
+    inputs: {
+      min: {
+        id: 'min',
+        name: 'Min',
+        tag: 'input',
+        type: 'number'
+      },
+      max: {
+        id: 'max',
+        name: 'Max',
+        tag: 'input',
+        type: 'number'
+      }
+    }
+  },
+  adventureType:{
+    id: "adventureType",
+    name: "Adventure Type",
+    filter: (item) => ( item.adventureType === item._var.adventureType ),
+    inputs: {
+      adventureType: {
+        id: 'adventureType',
+        name: 'Adventure Type',
+        tag: 'select',
+        type: 'text',
+        selectOptions:[
+          { id: "raft", name: "Raft"},
+          { id: "kayak", name: "Kayak"}
+        ]
+      }
+    }
+  }
+}
+
 
 class Activities {
     constructor( parent ) {
@@ -178,17 +226,159 @@ class Activities {
       this.element = document.createElement('div');
       this.element.id = "activities";
 
-      this.createActivities();
+      this.createActivities( activitiesMap );
 
       if( this.parent ) this.parent.append(this.element);
     }
-    createActivities(){
-      const activitiesHeader = document.createElement('h1');
-      activitiesHeader.classList.add("activities-header");
-      activitiesHeader.innerHTML = "Featured Activities and Services";
-      this.element.appendChild( activitiesHeader );
-      activitiesMap.map( activity => {
-        this.createActivity( activity );
+    onFiltersUpdate(){
+      this.clearActivities();
+      let activityList = activitiesMap;
+      if( this.filters ) Object.keys( this.filters ).map( filterId => {
+        const filter = filters[ filterId ].filter;
+        const activityList_var = activityList.map( listItem => (
+          Object.assign({}, listItem, {
+            _var: Object.assign({},
+              ...Object.keys( this.filters[ filterId ]  ).map( filterInputId =>{
+                let inputElementValue = this.filters[ filterId ][ filterInputId ].value;
+                const inputType = this.filters[ filterId ][ filterInputId ].type;
+                if( inputType === "number" && inputElementValue ) inputElementValue = parseFloat( inputElementValue );
+                else if( !inputElementValue ) inputElementValue = undefined;
+                return { [filterInputId]: inputElementValue }
+              })
+              )
+          })
+        ))
+        const filteredActivityList_var = activityList_var.filter( filter );
+        activityList = filteredActivityList_var.map( item => {
+          if(item._var) delete item["_var"];
+          return item;
+        })
+      })
+      this.createActivities( activityList );
+    }
+    createActivitiesFilter(){
+      this.activitiesFilterContainer = document.createElement('div');
+      this.activitiesFilterContainer.classList.add("activities-filter-container");
+      this.createActivitiesFilterHeader();
+      this.createSelectFilterContainer();
+      this.element.prepend( this.activitiesFilterContainer );
+    }
+    createActivitiesFilterHeader(){
+      this.activitiesFilterHeaderContainer = document.createElement('div');
+      this.activitiesFilterHeader = document.createElement('h2');
+      this.activitiesFilterHeaderContainer.classList.add("activities-filter-header-container");
+      this.activitiesFilterHeader.classList.add("activities-filter-header");
+      this.activitiesFilterHeader.innerHTML = "Adjust Search";
+
+      
+      this.activitiesFilterHeaderContainer.appendChild( this.activitiesFilterHeader );
+
+      this.activitiesFilterContainer.appendChild( this.activitiesFilterHeaderContainer );
+    }
+    createSelectFilterContainer(){
+      this.selectFilterContainer = document.createElement('div');
+      this.selectFilterContainer.classList.add("select-filter-container");
+
+
+      this.createSelectFilter();
+
+      this.activitiesFilterHeaderContainer.appendChild( this.selectFilterContainer );
+    }
+    createSelectFilter(){
+      this.selectFilter = document.createElement('select');
+      this.selectFilter.classList.add("select-filter");
+      
+      const placeHolderFilter = { id: "", name: "..." }
+      this.selectFilterOptions = [
+        this.createSelectFilterOption( placeHolderFilter ),
+        ...Object.values( filters ).map( filter => {
+          return this.createSelectFilterOption( filter )
+        })
+      ];
+
+      this.selectFilter.onchange = event => {
+        const filterId = event.target.value;
+        const filterObj = filters[ filterId ];
+        if( filterObj ){
+          this.createFilterInputs(filterObj, this.selectFilterContainer)
+        }
+      }
+
+      this.selectFilterContainer.appendChild( this.selectFilter );
+    }
+    createSelectOption(optionData, parent, className){
+      const {id, name} = optionData;
+      const option = document.createElement('option');
+      if(className) option.classList.add(className);
+      option.value = id;
+      option.innerHTML = name;
+
+      if( parent ) parent.appendChild(option)
+      return option;
+    }
+    createSelectFilterOption(filterObj){
+      return this.createSelectOption(filterObj, this.selectFilter, "select-filter-option");
+    }
+    addToInputs(filterId, inputId, element){
+      if(!this.filters) this.filters = {};
+      if(!this.filters[filterId]) this.filters[filterId] = {};
+      this.filters[filterId][inputId] = element;
+    }
+    createFilterInputs(filter, parent){
+      if(filter.inputs){
+        
+        Object.values( filter.inputs ).map( filterInput => {
+          const filterInputContainer = document.createElement('div');
+          const filterInputLabel = document.createElement('label');
+          const filterInputElement = document.createElement(filterInput.tag);
+          if( filterInput.tag === "select" && filterInput.selectOptions ){
+            this.createSelectOption({id:"", name: "..."}, filterInputElement, "filter-input-option");
+            filterInput.selectOptions.map( optionData => {
+              this.createSelectOption(optionData, filterInputElement, "filter-input-option");
+            })
+          }
+          filterInputContainer.classList.add("filter-input-container");
+          filterInputLabel.classList.add("filter-input-label");
+          filterInputElement.classList.add("filter-input");
+          if( filterInput.tag === "input") filterInputElement.type = filterInput.type;
+          filterInputElement.id = `filters-${filter.id}-${filterInput.id}`;
+          filterInputLabel.forId = filterInputElement.id;
+          filterInputLabel.innerHTML = filterInput.name;
+          filterInputElement.onchange = (event) => {
+            console.log('onchange filter input:::', this.filters[ filter.id ][ filterInput.id ].value);
+            this.onFiltersUpdate();
+          }
+          this.addToInputs( filter.id, filterInput.id, filterInputElement );
+          filterInputContainer.appendChild( filterInputLabel );
+          filterInputContainer.appendChild( filterInputElement );
+          parent.appendChild( filterInputContainer );
+        })
+
+      }
+    }
+
+
+    clearActivities(){
+      if( this.activitiesHeader ){
+        this.element.removeChild( this.activitiesHeader );
+        this.activitiesHeader = undefined;
+      }
+      if(this.activities){
+        this.activities.map( activity => {
+          this.element.removeChild( activity );
+        })
+        this.activities = undefined;
+      }
+    }
+
+
+    createActivities(activities){
+      this.activitiesHeader = document.createElement('h1');
+      this.activitiesHeader.classList.add("activities-header");
+      this.activitiesHeader.innerHTML = "Featured Activities and Services";
+      this.element.appendChild( this.activitiesHeader );
+      this.activities = activities.map( activity => {
+        return this.createActivity( activity );
       })
     }
     createActivity( activityData ){
@@ -198,6 +388,7 @@ class Activities {
       this.createActivityDetails( activityData, activity );
       this.createActivityServices( activityData, activity );
       this.element.appendChild( activity );
+      return activity;
     }
     createActivityHeader( activityData, parent ){
       const activityHeader = document.createElement('div');

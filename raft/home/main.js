@@ -29,6 +29,7 @@ weatherSummary.create();
 
 const activities = new Activities( mainContent.element );
 activities.create();
+activities.createActivities();
 
 const footer = new Footer(mainContent.elementContainer);
 footer.create()
