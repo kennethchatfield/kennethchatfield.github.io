@@ -1,9 +1,11 @@
+console.log('HOME.js')
+
 import { MainContent } from '../modules/mainContent.js'
 import { Navigation } from '../modules/navigation.js'
 import { Footer } from '../modules/footer.js'
 import { SiteHeader } from '../modules/siteHeader.js'
 import { WeatherSummary } from './modules/weatherSummary.js';
-import { Activities } from '../modules/activities.js';
+import { Activities } from '../modules/activities/index.js';
 
 const pageId = "home";
 
@@ -15,7 +17,7 @@ const siteHeader = new SiteHeader(navigation.container);
 siteHeader.create();
 
 const mainContent = new MainContent();
-mainContent.create();
+mainContent.create( );
 mainContent.addTitle("Adventure Awaits! Call: 555.555.5555");
 mainContent.elementContainer.onscroll = () => {
     const scrollTop = mainContent.elementContainer.scrollTop;
@@ -28,8 +30,8 @@ const weatherSummary = new WeatherSummary(mainContent.element);
 weatherSummary.create();
 
 const activities = new Activities( mainContent.element );
-activities.create();
-activities.createActivities();
+activities.create( "Featured Activities and Services" );
+// activities.createActivities();
 
 const footer = new Footer(mainContent.elementContainer);
 footer.create()

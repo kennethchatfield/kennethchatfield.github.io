@@ -7,11 +7,11 @@ body{
     display: grid;
     grid-template-rows: auto auto;
     margin: 0;
-    font-family: Nunito, sans-serif;
+    font-family: $fontFamily1;
 }
-h1, h2, h3{
-    font-family: Sen, sans-serif;
-    color: #2a1e5c;
+h1, h2, h3, h4{
+    font-family: $fontFamily2;
+    color: $sitePurple;
 }
 h3{
     font-size: 1.2em;
