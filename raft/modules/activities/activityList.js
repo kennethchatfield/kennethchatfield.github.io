@@ -44,7 +44,6 @@ export function createActivities(activities){
     this.activities = activities.map( activity => {
         return this.createActivity( activity );
     });
-    this.updateListCounter();
 }
 export function createActivity( activityData ){
     this.list.push( activityData );

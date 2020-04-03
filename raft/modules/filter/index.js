@@ -16,7 +16,6 @@ import {
     updateListCounter,
     createListCounter
 } from './filter.js';
-import {Activities} from "../activities";
 
 class Filter {
     constructor({parent, id, filterDefinitions, fullList, clearList, createList}) {
@@ -34,8 +33,9 @@ class Filter {
         this.element = document.createElement('div');
         if(this.id) this.element.id = this.id;
 
+        this.createActivitiesFilter();
 
-        this.parent.append(this.element );
+        if( this.parent ) this.parent.prepend(this.element );
     }
 }
 

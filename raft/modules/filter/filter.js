@@ -3,6 +3,7 @@
 
 export function onFiltersUpdate(){
     this.clearList();
+    console.log('this.fullList', this.fullList )
     let list = this.fullList;
     if( this.filters ) Object.keys( this.filters ).map( filterId => {
         const filter = this.filterDefinitions[ filterId ].filter;
@@ -31,7 +32,9 @@ export function onFiltersUpdate(){
         this.selectFilterContainer.removeChild( this.addFilterButton );
         this.addFilterButton = undefined;
     }
-    this.listContainer = this.createList( list );
+    this.createList( list );
+    this.list = list;
+    this.updateListCounter();
 }
 
 export function createFilterList(){

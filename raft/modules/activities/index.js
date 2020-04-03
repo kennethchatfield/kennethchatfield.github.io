@@ -1,4 +1,4 @@
-import filters from './activitiesFilterDefinition.js';
+// import filters from './activitiesFilterDefinition.js';
 import {
   onFiltersUpdate,
   createFilterList,
@@ -28,7 +28,7 @@ import {
   createActivityPrice,
   createPriceTable
 } from './activityList.js';
-import activitiesMap from "./activitiesMap.js";
+// import activitiesMap from "./activitiesMap.js";
 
 
 
@@ -37,10 +37,10 @@ import activitiesMap from "./activitiesMap.js";
 
 
 class Activities {
-    constructor( parent ) {
+    constructor( parent, activitiesMap, filterDefinitions ) {
       this.fullList = activitiesMap;
       this.list = activitiesMap;
-      this.filterDefinitions = filters;
+      this.filterDefinitions = filterDefinitions;
       this.parent = parent;
     }
   
