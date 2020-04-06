@@ -1,5 +1,6 @@
 import {Image} from "../image.js";
-
+import { VisibilityButton } from '../visibilityButton.js';
+import { Form } from "../form.js";
 
 const getDetailContents = ( activity ) => {
     return {
@@ -126,9 +127,9 @@ export function createActivityPrice( activityData, parent ){
     priceTitle.classList.add("price-title");
     priceTitle.innerHTML = "Pricing";
 
-    activityPrices.appendChild( priceTitle )
+    activityPrices.appendChild( priceTitle );
     this.createPriceTable(activityData, activityPrices );
-
+    this.createBookAdventureButton( activityData, activityPrices );
     parent.appendChild( activityPrices );
 }
 export function createPriceTable( activityData, parent ){
@@ -167,4 +168,18 @@ export function createPriceTable( activityData, parent ){
     tableFooter.classList.add("table-footer");
     tableFooter.innerHTML = "*Prices are per person & don't include taxes & fees.";
     parent.appendChild( tableFooter )
+}
+
+export function createBookAdventureButton( activityData, parent ){
+    this.bookAdventureButton = document.createElement('input');
+    this.bookAdventureButton.type = "submit";
+    this.bookAdventureButton.value = "Book an Adventure Today!";
+    this.bookAdventureButton.classList.add("book-adventure-button");
+    this.visibilityButton = new VisibilityButton( parent );
+    this.adventureForm = new Form();
+    this.adventureForm.createReservationsForm(activityData);
+    this.adventureForm.element.classList.add("activities-form");
+
+    this.visibilityButton.create( this.bookAdventureButton,  this.adventureForm.element)
+
 }

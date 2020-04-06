@@ -8,6 +8,7 @@ import { WeatherSummary } from './modules/weatherSummary.js';
 import { Activities } from '../modules/activities/index.js';
 
 const pageId = "home";
+import activitiesMap from "../modules/activities/activitiesMap.js";
 
 const navigation = new Navigation();
 navigation.create();
@@ -29,7 +30,7 @@ mainContent.elementContainer.onscroll = () => {
 const weatherSummary = new WeatherSummary(mainContent.element);
 weatherSummary.create();
 
-const activities = new Activities( mainContent.element );
+const activities = new Activities( mainContent.element, activitiesMap );
 activities.create( "Featured Activities and Services" );
 // activities.createActivities();
 

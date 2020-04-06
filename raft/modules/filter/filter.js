@@ -1,6 +1,7 @@
 
 
 
+
 export function onFiltersUpdate(){
     this.clearList();
     console.log('this.fullList', this.fullList )
@@ -32,6 +33,7 @@ export function onFiltersUpdate(){
         this.selectFilterContainer.removeChild( this.addFilterButton );
         this.addFilterButton = undefined;
     }
+    this.verifyFilterHeaderText();
     this.createList( list );
     this.list = list;
     this.updateListCounter();
@@ -58,6 +60,9 @@ export function clearActiveInputs( hardRemove ){
         this.activeFilterInputs = undefined;
         if( this.filters[ this.activeFilterId ] ){
             delete this.filters[ this.activeFilterId ];
+            if(Object.keys( this.filters ).length === 0){
+                delete this.filters;
+            }
         }
         if( hardRemove ){
             this.filterDefinitions[ this.activeFilterId ].inputs = Object.assign({},
@@ -81,7 +86,8 @@ export function addNewFilter(){
 }
 export function createAddFilterButton(){
     this.addFilterButton = document.createElement('input');
-    this.addFilterButton.value = "Add +";
+    this.addFilterButton.classList.add("add-filter-button");
+    this.addFilterButton.value = "+ Add Filter";
     this.addFilterButton.type = "submit";
     this.addFilterButton.onclick = () => {
         this.addNewFilter();
@@ -130,15 +136,25 @@ export function createListCounter() {
     this.activitiesFilterContainer.appendChild( this.listCounterContainer );
     this.updateListCounter();
 }
+export function verifyFilterHeaderText() {
+    if( !this.addFilterButton && !this.activitiesFilterHeader ){
+    // if( !this.filters && !this.activitiesFilterHeader ){
+        this.activitiesFilterHeader = document.createElement('h2');
+        this.activitiesFilterHeader.classList.add("activities-filter-header");
+        this.activitiesFilterHeader.innerHTML = "Active Filters";
+        this.activitiesFilterHeaderContainer.prepend( this.activitiesFilterHeader );
+    } else if( this.addFilterButton && this.activitiesFilterHeader ){
+// } else if( this.filters && this.activitiesFilterHeader ){
+        this.activitiesFilterHeaderContainer.removeChild( this.activitiesFilterHeader );
+        delete this.activitiesFilterHeader;
+    }
+
+}
 export function createActivitiesFilterHeader(){
     this.activitiesFilterHeaderContainer = document.createElement('div');
-    this.activitiesFilterHeader = document.createElement('h2');
     this.activitiesFilterHeaderContainer.classList.add("activities-filter-header-container");
-    this.activitiesFilterHeader.classList.add("activities-filter-header");
-    this.activitiesFilterHeader.innerHTML = "Adjust Search";
 
-
-    this.activitiesFilterHeaderContainer.appendChild( this.activitiesFilterHeader );
+    this.verifyFilterHeaderText();
 
     this.activitiesFilterContainer.appendChild( this.activitiesFilterHeaderContainer );
 }
@@ -155,7 +171,7 @@ export function createSelectFilter(){
     this.selectFilter = document.createElement('select');
     this.selectFilter.classList.add("select-filter");
 
-    const placeHolderFilter = { id: "", name: "Display All... " }
+    const placeHolderFilter = { id: "", name: "Display All" };
     this.selectFilterOptions = {
         default: this.createSelectFilterOption( placeHolderFilter ),
         ...Object.assign({},
@@ -180,16 +196,7 @@ export function createSelectFilter(){
     // this.onFiltersUpdate();
 }
 
-export function createSelectOption(optionData, parent, className){
-    const {id, name} = optionData;
-    const option = document.createElement('option');
-    if(className) option.classList.add(className);
-    option.value = id;
-    option.innerHTML = name;
 
-    if( parent ) parent.appendChild(option)
-    return option;
-}
 export function createSelectFilterOption(filterObj){
     return this.createSelectOption(filterObj, this.selectFilter, "select-filter-option");
 }
@@ -210,7 +217,6 @@ export function createFilterInputs(filter, parent, addLabel){
             const filterInputLabel = document.createElement('label');
             const filterInputElement = document.createElement(filterInput.tag);
             if( filterInput.tag === "select" && filterInput.selectOptions ){
-                this.createSelectOption({id:"", name: "..."}, filterInputElement, "filter-input-option");
                 filterInput.selectOptions.map( optionData => {
                     this.createSelectOption(optionData, filterInputElement, "filter-input-option");
                 })

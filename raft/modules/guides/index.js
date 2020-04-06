@@ -21,6 +21,11 @@ class Guides {
 
         this.parent.append(this.element );
     }
+    clearGuidesList(){
+        this.element.removeChild(this.guidesList);
+        delete this.guidesList;
+        delete this.guideElements;
+    }
     createGuidesList( guidesData ){
         this.guidesList = document.createElement('div');
         this.guidesList.classList.add("guides-list");

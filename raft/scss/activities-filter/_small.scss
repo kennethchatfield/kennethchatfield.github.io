@@ -8,6 +8,7 @@
     padding: 0 2%;
     display: flex;
     border-bottom: 1px solid hsl(0, 0%, 75%);
+    height: 70px;
 }
 .activities-filter-header{
     color: $siteOrange;
@@ -57,6 +58,10 @@
     font-size:1.1em; padding:.2em;
     width: 5ch;
 }
+select.filter-input{
+    min-width: 100px;
+    width: auto;
+}
 .filter-list{
     flex-grow: 1;
     align-self: center;
@@ -68,4 +73,16 @@
     align-items: center;
     color: $siteOrange;
     font-size: 1.8em;
+}
+
+.add-filter-button{
+    background: $siteBlue;
+    //opacity: 25%;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    font-size: 1.2em;
+}
+.add-filter-button:hover{
+    background: $siteOrange;
 }

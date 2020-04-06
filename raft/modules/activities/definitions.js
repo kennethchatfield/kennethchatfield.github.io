@@ -1,7 +1,30 @@
 
+import activitiesMap from "./activitiesMap.js";
+
+export const activityTypes = [ "Kayak", "Raft" ];
+
+export const getActivityTypeOptions = defaultText => {
+    return [
+        { id: "", name: defaultText },
+        ...activityTypes.map( activityType => ({
+            id: activityType.toLowerCase(),
+            name: activityType
+        }))
+    ]
+};
+
+
+export const getActivityNameOptions = defaultText => {
+    return [
+        { id: "", name: defaultText },
+        ...activitiesMap.map( ({ name },index) => ({
+            id: index, name
+        }))
+    ]
+};
 
 //filters
-export default {
+export const filterDefinitions = {
     price:{
         id: "price",
         name: "Price",
@@ -33,10 +56,7 @@ export default {
                 name: 'Adventure Type',
                 tag: 'select',
                 type: 'text',
-                selectOptions:[
-                    { id: "raft", name: "Raft"},
-                    { id: "kayak", name: "Kayak"}
-                ]
+                selectOptions: getActivityTypeOptions()
             }
         }
     }

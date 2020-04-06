@@ -56,7 +56,16 @@
             width: 100%;
             border-radius: 10px;
         }
-    
+        .book-adventure-button{
+            margin: 20px 10% 5px 10%;
+            width: 78%;
+            background-color: $siteBlue;
+            color: white;
+            border: none;
+            font-family: $fontFamily2;
+            font-size: 1.3em;
+            border-radius: 3px;
+        }
     }
     .activity:last-child{
         border-bottom: none;

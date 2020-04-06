@@ -7,7 +7,7 @@ import { SiteHeader } from '../modules/siteHeader.js'
 import { Activities } from '../modules/activities/index.js';
 import { Filter } from '../modules/filter/index.js';
 
-import filterDefinitions from '../modules/activities/activitiesFilterDefinition.js';
+import { filterDefinitions } from '../modules/activities/definitions.js';
 import activitiesMap from "../modules/activities/activitiesMap.js";
 
 const pageId = "reservations";
@@ -31,7 +31,7 @@ mainContent.elementContainer.onscroll = () => {
 
 
 
-const activities = new Activities( mainContent.element, activitiesMap, filterDefinitions );
+const activities = new Activities( mainContent.element, activitiesMap );
 activities.create();
 // activities.createActivitiesFilter();
 
@@ -43,7 +43,6 @@ const filter = new Filter({
     clearList: ()=>{ activities.clearActivities() },
     createList: ( list )=>{ activities.createActivities( list ); }
 });
-
 filter.create();
 
 const footer = new Footer(mainContent.elementContainer);

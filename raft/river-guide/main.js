@@ -8,6 +8,8 @@ import { SiteHeader } from '../modules/siteHeader.js'
 import { Guides } from '../modules/guides/index.js';
 import { Filter } from '../modules/filter/index.js'
 
+import guidesFilterDefinition from "../modules/guides/guidesFilterDefinition.js";
+
 const pageId = "river-guide";
 
 const navigation = new Navigation();
@@ -19,7 +21,6 @@ siteHeader.create();
 
 const mainContent = new MainContent();
 mainContent.create();
-mainContent.addTitle("River Guide");
 mainContent.elementContainer.onscroll = () => {
     const scrollTop = mainContent.elementContainer.scrollTop;
     if( scrollTop > 0 && siteHeader.visible || scrollTop === 0 && !siteHeader.visible ) { 
@@ -29,15 +30,16 @@ mainContent.elementContainer.onscroll = () => {
 const guidesData = generateGuideData();
 
 const guides = new Guides( mainContent.element,  guidesData);
-// parent, id, filterDefinitions, fullList, clearList, createList
-// const filter = new Filter({
-//     fullList: guidesData,
-//     parent: guides.element,
-// });
-
 guides.create();
 
-mainContent.addBreaks( 30 );
+const filter = new Filter({
+    fullList: guidesData,
+    parent: guides.element,
+    filterDefinitions: guidesFilterDefinition,
+    clearList: ()=>{ guides.clearGuidesList() },
+    createList: ( list )=>{ guides.createGuidesList(list); }
+});
+filter.create();
 
 import { Footer } from '../modules/footer.js'
 const footer = new Footer(mainContent.elementContainer);

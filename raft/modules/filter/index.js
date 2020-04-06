@@ -9,13 +9,15 @@ import {
     createSelectFilterContainer,
     clearActiveInputs,
     createSelectFilter,
-    createSelectOption,
     createSelectFilterOption,
     addToInputs,
     createFilterInputs,
     updateListCounter,
-    createListCounter
+    createListCounter,
+    verifyFilterHeaderText
 } from './filter.js';
+import { createSelectOption } from '../../js/utilities.js';
+
 
 class Filter {
     constructor({parent, id, filterDefinitions, fullList, clearList, createList}) {
@@ -39,6 +41,7 @@ class Filter {
     }
 }
 
+Filter.prototype.verifyFilterHeaderText = verifyFilterHeaderText;
 Filter.prototype.onFiltersUpdate = onFiltersUpdate;
 Filter.prototype.createFilterList = createFilterList;
 Filter.prototype.removeActiveFilterFromOptions = removeActiveFilterFromOptions;
