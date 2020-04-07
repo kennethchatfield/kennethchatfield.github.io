@@ -47,7 +47,7 @@
   background-color: #F7F7F7;
 }
 textarea.form-input{
-  border: 1px solid #dddddd;
+  max-width: calc( 100% - 5px);
 }
 select.form-input{
   border-radius: 0;
@@ -57,5 +57,31 @@ select.form-input{
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #dddddd;
-
+}
+.form-submit{
+  background-color: $siteBlue;
+  color: white;
+  border: none;
+  font-family: $fontFamily2;
+  font-size: 1.2em;
+  border-radius: 3px;
+  width: 100px;
+  align-self: flex-end;
+}
+fieldset.submission-results{
+  border: none;
+  .form-input-container{
+    flex-direction: column;
+  }
+  .form-input{
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+    color: #0a0f0d;
+    background-color: #ffffff !important;
+    max-width: 100%;
+  }
+  textarea.form-input{
+    border: 1px solid #dddddd;
+  }
 }

@@ -15,19 +15,19 @@
             font-size: 2.5em;
         }
         .activity-detail{
-            padding: 0 0 0 20px;
+            //padding: 0 0 0 20px;
             .detail-item{
+                padding-left: 10px;
                 .label{
-                    font-family: Sen;
+                    font-family: $fontFamily2;
                     font-weight: 700;
                     font-size: 0.9em;
                     margin-right: 10px;
                 }
             }
         }
-        .activity-services{
-            padding: 0 0 0 20px;
-
+        .services-contents{
+            padding: 0 0 0 10px;
         }
         .activity-prices{
             .price-table{
@@ -59,10 +59,12 @@
         .book-adventure-button{
             margin: 20px 10% 5px 10%;
             width: 78%;
+            min-width: 267px;
             background-color: $siteBlue;
             color: white;
             border: none;
             font-family: $fontFamily2;
+            font-weight: bold;
             font-size: 1.3em;
             border-radius: 3px;
         }

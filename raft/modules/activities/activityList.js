@@ -36,18 +36,22 @@ export function createActivitiesHeader(headerText){
         this.activitiesHeader = document.createElement('h1');
         this.activitiesHeader.classList.add("activities-header");
         this.activitiesHeader.innerHTML = headerText;
-        this.element.appendChild( this.activitiesHeader );
+        this.element.prepend( this.activitiesHeader );
     }
 
 }
-export function createActivities(activities){
-    this.list = [];
-    this.activities = activities.map( activity => {
-        return this.createActivity( activity );
-    });
+export function createActivities(activities, createEmpty){
+    this.list = activities;
+    if(activities.length > 0){
+        this.activities = activities.map( activity => {
+            return this.createActivity( activity );
+        });
+    } else {
+        createEmpty(this.element);
+    }
+
 }
 export function createActivity( activityData ){
-    this.list.push( activityData );
     const activity = document.createElement('div');
     activity.classList.add("activity");
     this.createActivityHeader( activityData, activity );
@@ -112,8 +116,10 @@ export function createActivityServices( activityData, parent ){
         const serviceItem = document.createElement('li');
         serviceItem.classList.add("service-item");
         serviceItem.innerHTML = serviceText;
-        activityServices.appendChild(serviceItem)
-    })
+        servicesContents.appendChild(serviceItem)
+    });
+    activityServices.appendChild(servicesContents);
+
 
     this.createActivityPrice( activityData, activityServices);
 
@@ -136,8 +142,8 @@ export function createPriceTable( activityData, parent ){
     const priceTable = document.createElement('div');
     priceTable.classList.add("price-table");
 
-    const days = ["Sunday", "Saturday"];
-    const headers = ["Day", "Individual", "Group"]
+    const days = ["Weekend", "Weekday"];
+    const headers = ["Day", "Individual", "Group"];
 
     let rows = [];
     days.map((day,index) => {
@@ -150,17 +156,17 @@ export function createPriceTable( activityData, parent ){
         column.classList.add("column");
         header.classList.add("table-header");
         header.innerHTML = headerText;
-        column.appendChild( header )
+        column.appendChild( header );
 
         rows.map( row => {
             const cell = document.createElement('div');
             cell.classList.add("cell");
             cell.innerHTML = row[index];
             column.appendChild( cell )
-        })
+        });
 
         priceTable.appendChild(column)
-    })
+    });
 
     parent.appendChild( priceTable );
 
@@ -173,11 +179,11 @@ export function createPriceTable( activityData, parent ){
 export function createBookAdventureButton( activityData, parent ){
     this.bookAdventureButton = document.createElement('input');
     this.bookAdventureButton.type = "submit";
-    this.bookAdventureButton.value = "Book an Adventure Today!";
+    this.bookAdventureButton.value = "Book an Adventure Today";
     this.bookAdventureButton.classList.add("book-adventure-button");
     this.visibilityButton = new VisibilityButton( parent );
     this.adventureForm = new Form();
-    this.adventureForm.createReservationsForm(activityData);
+    this.adventureForm.createReservationsForm(activityData, this.parent );
     this.adventureForm.element.classList.add("activities-form");
 
     this.visibilityButton.create( this.bookAdventureButton,  this.adventureForm.element)

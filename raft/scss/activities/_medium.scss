@@ -1,8 +1,9 @@
 #activities{
     .activity{
         display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: auto auto;
+        grid-template-columns: 49% 49%;
+        grid-template-rows: auto auto auto;
+        grid-column-gap: 2%;
         .activity-title{
             margin-top: 5px;
         }
@@ -16,6 +17,16 @@
         }
         .activity-services{
             grid-area: 1 / 2 / span 2 / span 1;
+        }
+        .book-adventure-button {
+            margin: 20px auto 5px auto;
+            width: 100%;
+        }
+        .activities-form .form-input-container{
+            .form-input{
+                max-width: 100%;
+            }
+            flex-direction: column;
         }
     }
 }

@@ -4,8 +4,8 @@ import {
     removeActiveFilterFromOptions,
     addNewFilter,
     createAddFilterButton,
-    createActivitiesFilter,
-    createActivitiesFilterHeader,
+    createFilter,
+    createFilterHeader,
     createSelectFilterContainer,
     clearActiveInputs,
     createSelectFilter,
@@ -14,7 +14,8 @@ import {
     createFilterInputs,
     updateListCounter,
     createListCounter,
-    verifyFilterHeaderText
+    verifyFilterHeaderText,
+    createEmptyResults
 } from './filter.js';
 import { createSelectOption } from '../../js/utilities.js';
 
@@ -35,20 +36,21 @@ class Filter {
         this.element = document.createElement('div');
         if(this.id) this.element.id = this.id;
 
-        this.createActivitiesFilter();
+        this.createFilter();
 
         if( this.parent ) this.parent.prepend(this.element );
     }
 }
 
+Filter.prototype.createEmptyResults = createEmptyResults;
 Filter.prototype.verifyFilterHeaderText = verifyFilterHeaderText;
 Filter.prototype.onFiltersUpdate = onFiltersUpdate;
 Filter.prototype.createFilterList = createFilterList;
 Filter.prototype.removeActiveFilterFromOptions = removeActiveFilterFromOptions;
 Filter.prototype.addNewFilter = addNewFilter;
 Filter.prototype.createAddFilterButton = createAddFilterButton;
-Filter.prototype.createActivitiesFilter = createActivitiesFilter;
-Filter.prototype.createActivitiesFilterHeader = createActivitiesFilterHeader;
+Filter.prototype.createFilter = createFilter;
+Filter.prototype.createFilterHeader = createFilterHeader;
 Filter.prototype.createSelectFilterContainer = createSelectFilterContainer;
 Filter.prototype.clearActiveInputs = clearActiveInputs;
 Filter.prototype.createSelectFilter = createSelectFilter;

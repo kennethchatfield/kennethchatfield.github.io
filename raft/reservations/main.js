@@ -22,12 +22,7 @@ siteHeader.create();
 const mainContent = new MainContent();
 mainContent.create();
 // mainContent.addTitle("Find an adventure that fits you!");
-mainContent.elementContainer.onscroll = () => {
-    const scrollTop = mainContent.elementContainer.scrollTop;
-    if( scrollTop > 0 && siteHeader.visible || scrollTop === 0 && !siteHeader.visible ) { 
-        siteHeader.toggleVisibility(); 
-    }
-}
+mainContent.createSiteHeaderScrollEvent(siteHeader);
 
 
 
@@ -40,10 +35,10 @@ const filter = new Filter({
     fullList: activitiesMap,
     parent: activities.element,
     filterDefinitions: filterDefinitions,
-    clearList: ()=>{ activities.clearActivities() },
-    createList: ( list )=>{ activities.createActivities( list ); }
+    clearList: activities.clearActivities.bind(activities),
+    createList: activities.createActivities.bind(activities)
 });
 filter.create();
 
 const footer = new Footer(mainContent.elementContainer);
-footer.create()
+footer.create();

@@ -14,19 +14,15 @@ const pageId = "river-guide";
 
 const navigation = new Navigation();
 navigation.create();
-navigation.setActivePage( pageId )
+navigation.setActivePage( pageId );
 
 const siteHeader = new SiteHeader(navigation.container);
 siteHeader.create();
 
 const mainContent = new MainContent();
 mainContent.create();
-mainContent.elementContainer.onscroll = () => {
-    const scrollTop = mainContent.elementContainer.scrollTop;
-    if( scrollTop > 0 && siteHeader.visible || scrollTop === 0 && !siteHeader.visible ) { 
-        siteHeader.toggleVisibility(); 
-    }
-};
+mainContent.createSiteHeaderScrollEvent(siteHeader);
+
 const guidesData = generateGuideData();
 
 const guides = new Guides( mainContent.element,  guidesData);
@@ -37,7 +33,7 @@ const filter = new Filter({
     parent: guides.element,
     filterDefinitions: guidesFilterDefinition,
     clearList: ()=>{ guides.clearGuidesList() },
-    createList: ( list )=>{ guides.createGuidesList(list); }
+    createList: ( list, createEmpty )=>{ guides.createGuidesList(list, createEmpty); }
 });
 filter.create();
 

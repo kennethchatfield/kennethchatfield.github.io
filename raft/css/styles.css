@@ -6,7 +6,7 @@ body {
   right: 0;
   bottom: 0;
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: 310px auto;
   margin: 0;
   font-family: Nunito, sans-serif; }
 
@@ -22,7 +22,8 @@ h3 {
   width: 100%;
   grid-row: 1;
   text-align: center;
-  box-shadow: 0 2px 6px #929292; }
+  box-shadow: 0 2px 6px #929292;
+  z-index: 1; }
 
 #nav-menu nav {
   background-color: #2a1e5c;
@@ -109,7 +110,8 @@ h3 {
   width: 100%;
   background-color: #0a0f0d;
   color: White;
-  text-align: center; }
+  text-align: center;
+  margin-top: 20px; }
   #site-footer .vertical-rod {
     display: inline-block; }
   #site-footer .footer-text {
@@ -118,27 +120,31 @@ h3 {
   #site-footer .footer-text:last-child {
     padding-bottom: 10px; }
 
-.activities-filter-container.shadow {
+.filters-container.shadow {
   box-shadow: 0 2px 6px #929292; }
 
-.activities-filter-container {
+.filters-container {
   position: relative;
   left: -2%;
   width: 100%;
-  padding: 0 2%;
+  padding: 5px 2%;
   display: flex;
   border-bottom: 1px solid #bfbfbf;
-  height: 70px; }
+  min-height: 60px;
+  align-items: center; }
 
-.activities-filter-header {
+.filters-header {
   color: #ff5100; }
 
-.activities-filter-header-container {
-  display: flex; }
+.filter-header-container {
+  display: flex;
+  flex-grow: 1;
+  flex-flow: row wrap; }
 
 .select-filter-container {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  flex-flow: row nowrap; }
 
 .select-filter {
   margin-left: 20px;
@@ -151,10 +157,12 @@ h3 {
 .filter-inputs-container {
   padding-left: 10px;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  flex-flow: nowrap; }
 
 .filter-inputs-label {
   font-size: 20px;
+  font-family: Sen, sans-serif;
   font-weight: bold;
   color: #0088d6;
   padding-right: 5px; }
@@ -164,22 +172,24 @@ h3 {
   color: #0088d6; }
 
 .filter-input {
-  border-left: none;
-  border-top: none;
-  border-right: none;
+  border: none;
+  border-bottom: 1px solid #dddddd;
   font-size: 1.1em;
   padding: .2em;
   width: 5ch; }
 
 select.filter-input {
+  background-color: transparent;
   min-width: 100px;
-  width: auto; }
+  width: auto;
+  border-radius: 0; }
 
 .filter-list {
+  display: flex;
+  flex-flow: row wrap;
   flex-grow: 1;
   align-self: center;
-  padding: 0 20px;
-  display: flex; }
+  padding: 0 20px; }
 
 .list-counter-container {
   display: flex;
@@ -192,7 +202,8 @@ select.filter-input {
   color: #fff;
   border-radius: 3px;
   border: none;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  height: 26px; }
 
 .add-filter-button:hover {
   background: #ff5100; }
@@ -211,15 +222,15 @@ select.filter-input {
     flex-direction: column; }
     #activities .activity .activity-title {
       font-size: 2.5em; }
-    #activities .activity .activity-detail {
-      padding: 0 0 0 20px; }
+    #activities .activity .activity-detail .detail-item {
+      padding-left: 10px; }
       #activities .activity .activity-detail .detail-item .label {
-        font-family: Sen;
+        font-family: Sen, sans-serif;
         font-weight: 700;
         font-size: 0.9em;
         margin-right: 10px; }
-    #activities .activity .activity-services {
-      padding: 0 0 0 20px; }
+    #activities .activity .services-contents {
+      padding: 0 0 0 10px; }
     #activities .activity .activity-prices .price-table {
       display: flex;
       padding: 0 10px; }
@@ -242,10 +253,12 @@ select.filter-input {
     #activities .activity .book-adventure-button {
       margin: 20px 10% 5px 10%;
       width: 78%;
+      min-width: 267px;
       background-color: #0088d6;
       color: white;
       border: none;
       font-family: Sen, sans-serif;
+      font-weight: bold;
       font-size: 1.3em;
       border-radius: 3px; }
   #activities .activity:last-child {
@@ -255,8 +268,9 @@ select.filter-input {
   display: flex;
   flex-direction: column; }
   #guides-list-container .guides-list {
-    display: inline-grid;
-    grid-template-columns: 33% 33% 33%; }
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px; }
   #guides-list-container .guide-container {
     box-shadow: 0 2px 6px #929292;
     margin: 0 5% 30px 5%;
@@ -327,7 +341,7 @@ select.filter-input {
   background-color: #F7F7F7; }
 
 textarea.form-input {
-  border: 1px solid #dddddd; }
+  max-width: calc( 100% - 5px); }
 
 select.form-input {
   border-radius: 0; }
@@ -337,6 +351,67 @@ select.form-input {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #dddddd; }
+
+.form-submit {
+  background-color: #0088d6;
+  color: white;
+  border: none;
+  font-family: Sen, sans-serif;
+  font-size: 1.2em;
+  border-radius: 3px;
+  width: 100px;
+  align-self: flex-end; }
+
+fieldset.submission-results {
+  border: none; }
+  fieldset.submission-results .form-input-container {
+    flex-direction: column; }
+  fieldset.submission-results .form-input {
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+    color: #0a0f0d;
+    background-color: #ffffff !important;
+    max-width: 100%; }
+  fieldset.submission-results textarea.form-input {
+    border: 1px solid #dddddd; }
+
+#contact-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column; }
+  #contact-container h2 {
+    color: #ff5100; }
+  #contact-container .contact-information-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0 10px; }
+  #contact-container .address-map-container {
+    flex-grow: 1; }
+
+.contact-info-item {
+  display: flex;
+  justify-content: space-between; }
+
+.contact-info-item.section-start {
+  border-top: 1px solid #dddddd; }
+
+.contact-info-item.section-end {
+  margin-bottom: 15px; }
+
+.contact-info-item.column {
+  flex-direction: column; }
+
+.contact-info-label {
+  margin: 0;
+  flex-grow: 1;
+  text-align: left;
+  font-size: 1.1em; }
+
+.contact-info-value {
+  text-align: right;
+  font-size: 1.1em; }
 
 #weather-summary-container {
   height: 300px;
@@ -369,7 +444,7 @@ select.form-input {
   #weather-summary-container .cell.value {
     border-top: 1px solid #2a1e5c; }
 
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: 680px) {
   #nav-menu {
     width: 100%; }
 
@@ -406,8 +481,9 @@ select.form-input {
 
   #activities .activity {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto; }
+    grid-template-columns: 49% 49%;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 2%; }
     #activities .activity .activity-title {
       margin-top: 5px; }
     #activities .activity .activity-header {
@@ -417,24 +493,73 @@ select.form-input {
       grid-row: 2;
       grid-column: 1; }
     #activities .activity .activity-services {
-      grid-area: 1 / 2 / span 2 / span 1; } }
+      grid-area: 1 / 2 / span 2 / span 1; }
+    #activities .activity .book-adventure-button {
+      margin: 20px auto 5px auto;
+      width: 100%; }
+    #activities .activity .activities-form .form-input-container {
+      flex-direction: column; }
+      #activities .activity .activities-form .form-input-container .form-input {
+        max-width: 100%; }
+
+  #guides-list-container {
+    display: flex;
+    flex-direction: column; }
+    #guides-list-container .guides-list {
+      display: inline-grid;
+      grid-template-columns: 49% 49%; }
+
+  fieldset.submission-results .form-input-container {
+    flex-direction: row; }
+  fieldset.submission-results .form-input-container.column {
+    flex-direction: column; }
+  fieldset.submission-results .form-input {
+    max-width: 70%; }
+  fieldset.submission-results textarea.form-input {
+    border: 1px solid #dddddd;
+    flex-direction: column;
+    max-width: 100%; } }
 @media only screen and (min-width: 960px) {
+  #contact-container {
+    flex-direction: row; }
+
   #activities .activity {
     display: grid;
-    grid-template-columns: 45% 55%;
-    grid-template-rows: auto auto auto; }
+    grid-template-columns: 44% 54%;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 2%; }
     #activities .activity .activity-header {
       grid-area: 1 / 1 / span 2 / span 1;
       width: 100%; }
     #activities .activity .activity-detail {
       grid-row: 3;
       grid-column: 1;
-      width: 95%; }
+      width: 94%; }
     #activities .activity .activity-services {
-      grid-row: 2;
-      grid-column: 2;
-      width: 95%; }
+      grid-area: 1 / 2 / span 3 / span 1; }
     #activities .activity .activity-prices {
-      grid-row: 3;
-      grid-column: 2;
-      width: 100%; } }
+      width: 100%; }
+    #activities .activity .book-adventure-button {
+      margin: 20px 10% 5px 10%;
+      width: 78%; }
+    #activities .activity .activities-form .form-input-container {
+      flex-direction: row; }
+      #activities .activity .activities-form .form-input-container .form-input {
+        max-width: 70%; }
+    #activities .activity .activities-form .form-input-container.column {
+      flex-direction: column; }
+      #activities .activity .activities-form .form-input-container.column .form-input {
+        max-width: 100%; }
+
+  #guides-list-container {
+    display: flex;
+    flex-direction: column; }
+    #guides-list-container .guides-list {
+      display: inline-grid;
+      grid-template-columns: 33% 33% 33%; }
+    #guides-list-container .guide-container {
+      box-shadow: 0 2px 6px #929292;
+      margin: 0 5% 30px 5%;
+      text-align: center;
+      padding: 10px 0;
+      border-radius: 3px; } }

@@ -26,15 +26,20 @@ class Guides {
         delete this.guidesList;
         delete this.guideElements;
     }
-    createGuidesList( guidesData ){
-        this.guidesList = document.createElement('div');
-        this.guidesList.classList.add("guides-list");
-        this.guideElements = guidesData.map( (guidData) => {
-            const guideElement = this.createGuide( guidData );
-            this.guidesList.appendChild( guideElement );
-            return guideElement;
-        });
-        this.element.appendChild(this.guidesList);
+    createGuidesList( guidesData, createEmpty ){
+        if( guidesData.length > 0 ){
+            this.guidesList = document.createElement('div');
+            this.guidesList.classList.add("guides-list");
+            this.guideElements = guidesData.map( (guidData) => {
+                const guideElement = this.createGuide( guidData );
+                this.guidesList.appendChild( guideElement );
+                return guideElement;
+            });
+            this.element.appendChild(this.guidesList);
+        } else {
+            createEmpty( this.element );
+        }
+
     }
     createGuide( guidData ){
         const guideContainer = guideComponent( guidData );

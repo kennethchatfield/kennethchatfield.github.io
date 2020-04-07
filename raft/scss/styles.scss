@@ -8,21 +8,27 @@
 @import "main-content/small";
 @import "site-header/small";
 @import "footer/small";
-@import "activities-filter/small";
+@import "filter/small";
 @import "activities/small";
 @import "guide/small";
 @import "form/small";
+@import "contact/small";
+@import "contact-information/small";
 
 @import "home/weather-summary/small";
 
 
 
 
-@media only screen and (min-width: 560px) {    
+@media only screen and (min-width: 680px) {
     @import "navigation/medium";
     @import "activities/medium";
+    @import "guide/medium";
+    @import "form/medium";
 }
 
-@media only screen and (min-width: 960px) {    
+@media only screen and (min-width: 960px) {
+    @import "contact/large";
     @import "activities/large";
+    @import "guide/large";
 }

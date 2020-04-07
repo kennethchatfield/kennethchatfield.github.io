@@ -12,7 +12,7 @@ import activitiesMap from "../modules/activities/activitiesMap.js";
 
 const navigation = new Navigation();
 navigation.create();
-navigation.setActivePage( pageId )
+navigation.setActivePage( pageId );
 
 const siteHeader = new SiteHeader(navigation.container);
 siteHeader.create();
@@ -20,19 +20,17 @@ siteHeader.create();
 const mainContent = new MainContent();
 mainContent.create( );
 mainContent.addTitle("Adventure Awaits! Call: 555.555.5555");
-mainContent.elementContainer.onscroll = () => {
-    const scrollTop = mainContent.elementContainer.scrollTop;
-    if( scrollTop > 0 && siteHeader.visible || scrollTop === 0 && !siteHeader.visible ) { 
-        siteHeader.toggleVisibility(); 
-    }
-}
+mainContent.createSiteHeaderScrollEvent(siteHeader);
 
 const weatherSummary = new WeatherSummary(mainContent.element);
 weatherSummary.create();
 
-const activities = new Activities( mainContent.element, activitiesMap );
-activities.create( "Featured Activities and Services" );
-// activities.createActivities();
+
+const featuredActivities = [ activitiesMap[0], activitiesMap[1], activitiesMap[4] ];
+
+const activities = new Activities( mainContent.element, featuredActivities );
+activities.create();
+activities.createActivitiesHeader( "Featured Activities and Services" );
 
 const footer = new Footer(mainContent.elementContainer);
-footer.create()
+footer.create();

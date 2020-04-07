@@ -1,7 +1,6 @@
 import { createSelectOptions } from '../js/utilities.js';
 import { getActivityNameOptions, getActivityTypeOptions } from "./activities/definitions.js";
 
-
 class Form {
   constructor( parent, id ) {
     this.id = id;
@@ -99,14 +98,30 @@ class Form {
   }
   createPhone(){
     const name = "phone-input";
-    const input = this.createInput( "phone", name );
+    const input = this.createInput( "tel", name );
+    input.pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}";
+    input.onkeyup = event => {
+      const value = event.target.value;
+      let num = value.replace(/-/g,'');
+      let result = '';
+      if( num.length > 10 ) input.pattern = "[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}";
+      num.split("").map((number,index) => {
+        if( num.length > 10 ){
+          if( index > 0 && index < 9 && (index + 2) % 3 === 0  ) result += "-";
+        } else {
+          if( index > 0 && index < 7 && index % 3 === 0  ) result += "-";
+        }
+        result += number;
+      });
+      input.value = result;
+    };
     const label = this.createLabel( "Phone Number:", input.id );
     return this.addToFormInputs(name, input, label);
   }
   createAdventureSelection(){}
   createStartDate(){
     const name = "start-input";
-    const input = this.createInput( "calendar", name );
+    const input = this.createInput( "date", name );
     const label = this.createLabel( "Start Date:", input.id );
     return this.addToFormInputs(name, input, label);
   }
@@ -121,12 +136,46 @@ class Form {
       this.inputs[name].element[attributeName] = attributeValue
     }
   }
-
-  createFormSubmitButton(){
-
+  createSubmitButton( ){
+    const input = document.createElement("input");
+    input.type = "submit";
+    input.classList.add(`form-submit`);
+    return input;
+  }
+  getFormInputValues(){
+    return Object.assign({},
+        ...Object.values(this.inputs).map( input => ({
+          [input.name]: input.element.value
+        }))
+    );
+  }
+  getViewOnlyForm(){
+    const fieldSet = document.createElement('fieldset');
+    fieldSet.classList.add("submission-results");
+    fieldSet.disabled = true;
+    Object.values(this.inputs).map(inputObj => {
+      fieldSet.appendChild( inputObj.container )
+    });
+    const readOnlyForm = document.createElement('form');
+    readOnlyForm.classList.add("site-form");
+    readOnlyForm.appendChild(fieldSet);
+    return readOnlyForm;
+  }
+  createReservationsFormSubmitButton( mainContent ){
+    const submitButton = this.createSubmitButton();
+    this.element.onsubmit = () => {
+      const readOnlyForm = this.getViewOnlyForm();
+      const title = document.createElement('h1');
+      title.classList.add("page-title");
+      title.innerHTML = "Submission Successful! Review Below.";
+      mainContent.innerHTML = "";
+      mainContent.prepend( title );
+      mainContent.appendChild( readOnlyForm );
+    };
+    this.element.appendChild( submitButton );
   }
 
-  createReservationsForm( activity ){
+  createReservationsForm( activity, mainContent ){
     this.formCount = activity.index;
     this.create();
     const adventureNameInput = this.createAdventureName();
@@ -138,13 +187,32 @@ class Form {
     adventureTypeInput.container.classList.add("section-end");
     const fullNameInput = this.createFullName();
     fullNameInput.container.classList.add("section-start");
-    this.createPhone();
+    fullNameInput.element.required = true;
+    const phoneInput = this.createPhone();
+    phoneInput.element.required = true;
     const emailInput = this.createEmail();
     emailInput.container.classList.add("section-end");
+    emailInput.element.required = true;
     const startDateInput = this.createStartDate();
+    startDateInput.element.required = true;
     startDateInput.container.classList.add( "section-start" );
     const commentInput = this.createComment();
     commentInput.container.classList.add("column");
+    this.createReservationsFormSubmitButton( mainContent );
+  }
+
+  createContactForm( mainContent ){
+    this.formCount = "";
+    this.create();
+    const fullNameInput = this.createFullName();
+    fullNameInput.container.classList.add("section-start");
+    this.createPhone();
+    const emailInput = this.createEmail();
+    emailInput.container.classList.add("section-end");
+    const commentInput = this.createComment();
+    commentInput.container.classList.add("section-start");
+    commentInput.container.classList.add("column");
+    this.createReservationsFormSubmitButton( mainContent );
   }
 }
 
