@@ -1,3 +1,34 @@
+import { getRandomInt } from "../../js/utilities.js";
+
+const rivers = [
+    "Kootenai River - Montana",
+    "Koyuk River - Alaska",
+    "Colorado River, Arizona",
+    "Salmon River, Idaho",
+    "Chattooga River, South Carolina/Georgia",
+    "Gauley River, West Virginia",
+    "Arkansas River, Colorado",
+    "Nahatlatch River, British Columbia",
+    "Kennebec River and Dead River, Maine",
+    "Youghiogheny, Maryland and Pennsylvania",
+    "Tuolumne River, California",
+    "Rio Santa Maria, Mexico"
+];
+
+const getRandomRiver = () => rivers[Math.floor(Math.random() * rivers.length)];
+
+const getRandomRivers = ( count ) => {
+    let randomRivers = [];
+    for(let i = 0; i< count; i++){
+        let randomRIver = getRandomRiver();
+        while ( randomRivers.includes(randomRIver) ){
+            randomRIver = getRandomRiver();
+        }
+        randomRivers.push( randomRIver )
+    }
+    return randomRivers;
+};
+
 const source = [
     {
         gender: "male",
@@ -12,7 +43,8 @@ const source = [
         start: {
             date: "2002-06-23T00:22:42.509Z",
             age: 18
-        }
+        },
+        otherPersonalInfo: ["Baking, Bartending"]
     },
     {
         gender: "female",
@@ -27,7 +59,8 @@ const source = [
         start: {
             date: "2002-06-15T04:51:37.464Z",
             age: 18
-        }
+        },
+        otherPersonalInfo: ["Wine Making"]
     },
     {
         gender: "male",
@@ -42,7 +75,8 @@ const source = [
         start: {
             date: "2017-09-30T02:10:39.449Z",
             age: 3
-        }
+        },
+        otherPersonalInfo: ["Playing The Stock Market"]
     },
     {
         gender: "male",
@@ -58,6 +92,7 @@ const source = [
             date: "2019-06-25T11:54:03.720Z",
             age: 1
         },
+        otherPersonalInfo: ["Beekeeping"]
     },
     {
         gender: "female",
@@ -72,7 +107,8 @@ const source = [
         start: {
             date: "2010-10-04T00:54:29.437Z",
             age: 10
-        }
+        },
+        otherPersonalInfo:[ "Programming"]
     },
     {
         gender: "female",
@@ -87,7 +123,8 @@ const source = [
         start: {
             date: "2017-12-15T12:39:13.583Z",
             age: 3
-        }
+        },
+        otherPersonalInfo: ["Tattoo Artist"]
     },
     {
         gender: "female",
@@ -102,7 +139,8 @@ const source = [
         start: {
             date: "2017-11-25T04:35:48.152Z",
             age: 3
-        }
+        },
+        otherPersonalInfo: ["Performing Stand Up Comedy"]
     },
     {
         gender: "male",
@@ -118,7 +156,8 @@ const source = [
             date: "2003-10-22T13:05:31.498Z",
             age: 17
         },
-        phone: "03-0500-2950"
+        phone: "03-0500-2950",
+        otherPersonalInfo: ["Plays the guitar"]
     },
     {
         gender: "male",
@@ -134,7 +173,8 @@ const source = [
             date: "2003-08-09T17:29:28.342Z",
             age: 17
         },
-        phone: "07-4387-5093"
+        phone: "07-4387-5093",
+        otherPersonalInfo: ["Motor Head"]
     },
     {
         gender: "male",
@@ -150,7 +190,8 @@ const source = [
             date: "2014-08-22T03:37:06.266Z",
             age: 6
         },
-        phone: "(535)-620-5059"
+        phone: "(535)-620-5059",
+        otherPersonalInfo: ["Financial Planning"]
     },
     {
         gender: "female",
@@ -166,7 +207,8 @@ const source = [
             date: "2015-11-15T08:25:46.713Z",
             age: 5
         },
-        phone: "992-739-518"
+        phone: "992-739-518",
+        otherPersonalInfo: ["Photography"]
     },
     {
         gender: "male",
@@ -182,7 +224,8 @@ const source = [
             date: "2012-04-18T09:27:32.865Z",
             age: 8
         },
-        phone: "25078584"
+        phone: "25078584",
+        otherPersonalInfo: ["Youtube channel all about rapids! Check me out!"]
     },
     {
         gender: "male",
@@ -198,7 +241,8 @@ const source = [
             date: "2008-04-06T12:29:33.560Z",
             age: 12
         },
-        phone: "03-200-056"
+        phone: "03-200-056",
+        otherPersonalInfo:[ "Fitness Instructor"]
     },
     {
         gender: "female",
@@ -214,7 +258,8 @@ const source = [
             date: "2008-01-29T23:31:25.676Z",
             age: 12
         },
-        phone: "(789)-026-0857"
+        phone: "(789)-026-0857",
+        otherPersonalInfo: [" Becoming A Fitness Instructor"]
     }
 ];
 
@@ -224,6 +269,7 @@ export default ( ) => {
     return source.map( (sourceItem, index) => {
         const { name, gender, dob, start, phone, otherPersonalInfo, tour } = sourceItem;
         const picture = `https://randomuser.me/api/portraits/${ gender === "male" ? "men" : "women" }/${8+index}.jpg`;
+        const riverCount = getRandomInt(2,4);
         return {
             gender,
             name,
@@ -233,11 +279,8 @@ export default ( ) => {
             email: `${name.first}.${name.last}@example.com`,
             dob: Object.assign({}, { date: "1993-07-20T09:44:18.674Z", age: 26, state: "California", city: "Lotus", nation: "USA"}, dob ),
             tour: tour || {
-                count: 40,
-                rivers: [
-                    "South Fork American River",
-                    "Salmon River"
-                ]
+                count: riverCount * getRandomInt(25, 45) + getRandomInt(0,1),
+                rivers: getRandomRivers( riverCount )
             },
             otherPersonalInfo:  otherPersonalInfo || [
                 "Only has eight toes!"

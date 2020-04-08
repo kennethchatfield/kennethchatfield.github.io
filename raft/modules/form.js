@@ -206,9 +206,12 @@ class Form {
     this.create();
     const fullNameInput = this.createFullName();
     fullNameInput.container.classList.add("section-start");
-    this.createPhone();
+    fullNameInput.element.required = true;
+    const phoneInput = this.createPhone();
+    phoneInput.element.required = true;
     const emailInput = this.createEmail();
     emailInput.container.classList.add("section-end");
+    emailInput.element.required = true;
     const commentInput = this.createComment();
     commentInput.container.classList.add("section-start");
     commentInput.container.classList.add("column");

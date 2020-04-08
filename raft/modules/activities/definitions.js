@@ -2,6 +2,24 @@
 import activitiesMap from "./activitiesMap.js";
 
 export const activityTypes = [ "Kayak", "Raft" ];
+export const minimumAges = [
+    {id: 12, name: 12 },
+    {id: 12, name: 12 },
+    {id: 14, name: 14 },
+    {id: 16, name: 16 },
+    {id: 18, name: "18+" }
+    ];
+export const selectOptionSeeds = {
+    activityTypes,
+    minimumAges
+};
+
+export const getActivityMinAgeOptions = defaultText => {
+    return [
+        { id: "", name: defaultText },
+        ...minimumAges
+    ];
+}
 
 export const getActivityTypeOptions = defaultText => {
     return [
@@ -57,6 +75,23 @@ export const filterDefinitions = {
                 tag: 'select',
                 type: 'text',
                 selectOptions: getActivityTypeOptions()
+            }
+        }
+    },
+    minimumAge:{
+        id: "minimumAge",
+        name: "Minimum Age",
+        filter: (item) => {
+            if(!item._var.minimumAge) return item;
+            return ( item.minimumAge < (item._var.minimumAge !== "" ? parseFloat(item._var.minimumAge) : 1000 ) )
+        },
+        inputs: {
+            minimumAge: {
+                id: 'minimumAge',
+                name: 'Minimum Age',
+                tag: 'select',
+                type: 'text',
+                selectOptions: getActivityMinAgeOptions()
             }
         }
     }

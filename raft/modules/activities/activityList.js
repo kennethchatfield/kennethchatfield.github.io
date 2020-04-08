@@ -14,7 +14,7 @@ const getDetailContents = ( activity ) => {
         },
         skillLevel: {
             label: "Skill Level",
-            text: activity.skillLevel
+            text: `${activity.skillLevel.val} - ${ activity.skillLevel.text }`
         }
     };
 };
@@ -109,7 +109,7 @@ export function createActivityServices( activityData, parent ){
     activityServices.classList.add("activity-services");
     servicesTitle.classList.add("services-title");
     servicesContents.classList.add("services-contents");
-    servicesTitle.innerHTML = "Services";
+    servicesTitle.innerHTML = "Package Includes";
     activityServices.appendChild( servicesTitle );
 
     activityData.services.map( serviceText => {
