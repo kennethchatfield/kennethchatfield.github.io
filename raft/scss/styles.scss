@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Days+One|Krona+One|Nunito|Sen:400,700&display=swap');
 
+@import "normalize";
+
 @import "variables";
 @import "global-styles";
 
@@ -14,6 +16,7 @@
 @import "form/small";
 @import "contact/small";
 @import "contact-information/small";
+@import "references/small";
 
 @import "home/weather-summary/small";
 

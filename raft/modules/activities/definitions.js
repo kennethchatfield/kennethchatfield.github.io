@@ -19,11 +19,11 @@ export const getActivityMinAgeOptions = defaultText => {
         { id: "", name: defaultText },
         ...minimumAges
     ];
-}
+};
 
 export const getActivityTypeOptions = defaultText => {
     return [
-        { id: "", name: defaultText },
+        { id: "", name: defaultText || "Select Activity Types..." },
         ...activityTypes.map( activityType => ({
             id: activityType.toLowerCase(),
             name: activityType
@@ -34,7 +34,7 @@ export const getActivityTypeOptions = defaultText => {
 
 export const getActivityNameOptions = defaultText => {
     return [
-        { id: "", name: defaultText },
+        { id: "", name: defaultText || "Select Activity..." },
         ...activitiesMap.map( ({ name },index) => ({
             id: index, name
         }))
@@ -74,7 +74,7 @@ export const filterDefinitions = {
                 name: 'Adventure Type',
                 tag: 'select',
                 type: 'text',
-                selectOptions: getActivityTypeOptions()
+                selectOptions: getActivityTypeOptions("Select Activity Type...")
             }
         }
     },
@@ -91,7 +91,7 @@ export const filterDefinitions = {
                 name: 'Minimum Age',
                 tag: 'select',
                 type: 'text',
-                selectOptions: getActivityMinAgeOptions()
+                selectOptions: getActivityMinAgeOptions("Select Min Age...")
             }
         }
     }

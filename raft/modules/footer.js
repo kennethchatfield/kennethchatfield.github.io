@@ -51,7 +51,7 @@ class Footer {
     this.parent = parent || document.body;
     this.footerTextPortions = [
       "© Salmon River Adventures",
-      "Weather Summary © 2012—2020 OpenWeather ®",
+      "references",
       "Created by Kenneth R. Chatfield",
       getCurrentDateText()
     ];
@@ -64,7 +64,9 @@ class Footer {
     this.footerTextPortions.map(( footerText, index ) => {
       const footerTextElement = document.createElement('div');
       footerTextElement.classList.add("footer-text");
-      footerTextElement.textContent = footerText;
+      if( footerText !== "references" ) footerTextElement.innerHTML = footerText;
+      else footerTextElement.innerHTML = `<a href="../references">External References</a>`
+
       this.element.appendChild( footerTextElement );
       if( index < this.footerTextPortions.length - 1 ){
         const vertRod = document.createElement('div');

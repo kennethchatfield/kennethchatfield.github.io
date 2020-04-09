@@ -8,7 +8,7 @@ import { SiteHeader } from '../modules/siteHeader.js'
 import { Guides } from '../modules/guides/index.js';
 import { Filter } from '../modules/filter/index.js'
 
-import guidesFilterDefinition from "../modules/guides/guidesFilterDefinition.js";
+import { filterDefinitions } from "../modules/guides/definitions.js";
 
 const pageId = "river-guide";
 
@@ -31,7 +31,7 @@ guides.create();
 const filter = new Filter({
     fullList: guidesData,
     parent: guides.element,
-    filterDefinitions: guidesFilterDefinition,
+    filterDefinitions: filterDefinitions,
     clearList: ()=>{ guides.clearGuidesList() },
     createList: ( list, createEmpty )=>{ guides.createGuidesList(list, createEmpty); }
 });

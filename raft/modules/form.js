@@ -1,4 +1,4 @@
-import { createSelectOptions } from '../js/utilities.js';
+import { createSelectOptions, formatPhoneNumber } from '../js/utilities.js';
 import { getActivityNameOptions, getActivityTypeOptions } from "./activities/definitions.js";
 
 class Form {
@@ -103,16 +103,8 @@ class Form {
     input.onkeyup = event => {
       const value = event.target.value;
       let num = value.replace(/-/g,'');
-      let result = '';
       if( num.length > 10 ) input.pattern = "[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}";
-      num.split("").map((number,index) => {
-        if( num.length > 10 ){
-          if( index > 0 && index < 9 && (index + 2) % 3 === 0  ) result += "-";
-        } else {
-          if( index > 0 && index < 7 && index % 3 === 0  ) result += "-";
-        }
-        result += number;
-      });
+      const result = formatPhoneNumber( num );
       input.value = result;
     };
     const label = this.createLabel( "Phone Number:", input.id );

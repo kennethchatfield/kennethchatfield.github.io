@@ -1,19 +1,22 @@
 import dropDownArrowComponent from "../components/dropdown-arrow.js";
 
 const pages = {
-    "home":{
+    "home": {
         name: "Home"
     },
-    "river-guide":{
+    "river-guide": {
         name: "River Guide"
     },
-    "contact":{
+    "contact": {
         name: "Contact Information"
     },
-    "reservations":{
+    "reservations": {
         name: "Reservations"
+    },
+    "references": {
+        name: "References"
     }
-}
+};
 
 class Navigation {
     constructor(id, parent ) {
@@ -27,7 +30,7 @@ class Navigation {
         this.element = document.createElement('nav');
         this.element.classList.add("collapsed");
         this.menuExpandButton = document.createElement('div');
-        this.menuExpandButton.id = "menu-button"
+        this.menuExpandButton.id = "menu-button";
         this.element.classList.toggle("expanded");
 
         this.container.appendChild( this.menuExpandButton );
