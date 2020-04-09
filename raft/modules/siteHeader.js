@@ -17,16 +17,31 @@ class SiteHeader {
   }
   addSiteName( name ){
     this.siteName = document.createElement('h1');
-    this.siteName.classList.toggle("site-name")
+    this.siteName.classList.toggle("site-name");
     this.siteName.innerHTML = name;
     this.element.appendChild( this.siteName );
   }
   toggleVisibility(){
+    this.element.classList.toggle("collapsed");
+    if( this.visible ) {
+      document.body.style.gridTemplateRows = "auto auto";
+      setTimeout(()=>{
+        document.body.style.gridTemplateRows = "60px auto";
+      }, 300);
+      this.visible = false;
+    } else {
+      document.body.style.gridTemplateRows = "auto auto";
+      setTimeout(()=>{
+        document.body.style.gridTemplateRows = "310px auto";
+      }, 300);
+      this.visible = true;
+    }
+  }
 
-    if( this.visible ) this.visible = false;
-    else this.visible = true;
-
-    this.element.classList.toggle("collapsed")
+  setVisibility( visible ){
+    this.visible = visible;
+    if( this.visible && !this.element.classList.contains("collapsed") ) this.element.classList.add("collapsed");
+    if( !this.visible && this.element.classList.contains("collapsed") ) this.element.classList.remove("collapsed");
   }
 
 

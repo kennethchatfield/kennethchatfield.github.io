@@ -1,0 +1,71 @@
+
+.references-container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 96%;
+  padding: 0 2%;
+}
+.reference-page-container{
+  margin:  0 5% 30px 5%;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 3px;
+  border-top: 1px solid #dddddd;
+}
+.reference-page-container:first-child{
+  border: none;
+}
+.reference-page-container>*{
+  margin: 0 15px;
+}
+.reference-item-container{
+  display: flex;
+  width: 100%;
+  position: relative;
+  padding: 5px 0;
+  .reference-label{
+    display: inline-block;
+    float: left;
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+  }
+  .reference-item{
+    display: inline-block;
+    float: right;
+    font-size: 1.1em;
+  }
+  h5{
+    color: $siteOrange;
+    font-weight: bold;
+    margin: 0;
+    text-align: left;
+    font-family: $fontFamily2;
+  }
+}
+.reference-item-container.column{
+  display: flex;
+  flex-direction: column;
+  .reference-label{
+    margin: 0 0 5px 0;
+    flex-grow: 1;
+    text-align: left;
+    font-size: 1.1em;
+    display: block;
+  }
+  .reference-item{
+    text-align: right;
+    font-size: 1.1em;
+    display: block;
+  }
+}
+.reference-item-container.section-start{
+  border-top: 1px solid #dddddd;
+  padding-top: 15px;
+}
+.reference-item-container.section-end{
+  margin-bottom: 15px;
+}
+.reference-item-container.column{
+  flex-direction: column;
+}

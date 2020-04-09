@@ -1,9 +1,13 @@
 #nav-menu{
     width: 100%;
+    
 }
-// #nav-menu nav {
-//     height: 60px;
-// }
+#nav-menu nav {
+    height: 60px;
+    .active{
+        display: flex;
+    }
+}
 #nav-menu ul{
     height: 100%;
     display: flex;
@@ -24,4 +28,10 @@
 }
 #nav-menu a{
     height: 90%;
+}
+#menu-button{
+    display: none;
+}
+#nav-menu nav.collapsed{
+    display: block;
 }

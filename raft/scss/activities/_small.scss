@@ -1,45 +1,37 @@
 #activities{
     display: flex;
     flex-direction: column;
-    .activity{
-        display: flex;
-        border-top: 1px solid #c0c0c0;
-        padding-bottom: 20px;
+    .activities-header{
+        margin: 0;
+        padding: 0.67em 0 0.67em 0;
+        border-bottom: 1px solid #c0c0c0;
     }
     .activity{
-        display: grid;
-        grid-template-columns: 45% 55%;
-        grid-template-rows: auto auto;
-
-        .activity-header{
-            grid-area: 1 / 1 / span 2 / span 1;
-            .activity-title{
-                font-size: 1.8em;
-            }
+        border-bottom: 1px solid #c0c0c0;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        .activity-title{
+            font-size: 2.5em;
         }
         .activity-detail{
-            grid-row: 1;
-            grid-column: 2;
-            padding: 0 0 0 20px;
             .detail-item{
+                padding-left: 10px;
                 .label{
-                    font-family: Sen;
+                    font-family: $fontFamily2;
                     font-weight: 700;
                     font-size: 0.9em;
                     margin-right: 10px;
                 }
             }
         }
+        .services-contents{
+            padding: 0 0 0 10px;
+        }
         .activity-prices{
-            padding: 0 0 0 20px;
-            grid-row: 2;
-            grid-column: 2;
-            // display: flex;
-            // flex-direction: column;
             .price-table{
                 display: flex;
                 padding: 0 10px;
-                max-width: 80%;
                 .table-header{
                     font-family: Sen;
                     font-weight: 700;
@@ -63,6 +55,20 @@
             width: 100%;
             border-radius: 10px;
         }
-    
+        .book-adventure-button{
+            margin: 20px 10% 5px 10%;
+            width: 78%;
+            min-width: 267px;
+            background-color: $siteBlue;
+            color: white;
+            border: none;
+            font-family: $fontFamily2;
+            font-weight: bold;
+            font-size: 1.3em;
+            border-radius: 3px;
+        }
+    }
+    .activity:last-child{
+        border-bottom: none;
     }
 }

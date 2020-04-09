@@ -1,4 +1,13 @@
 
+const getValue = (obj, path) => {
+  let object = obj;
+  const array =  typeof path === 'string' ? path.split('.') : path;
+  array.map(item => {
+    object = object[ item ]
+  });
+  return object;
+}
+
 
 class WeatherSummary {
     constructor( parent ) {
@@ -8,31 +17,30 @@ class WeatherSummary {
         "currently":{
           id: "currently",
           path: "weather.0.main",
-          name: "Currently",
-          value: 5
+          name: "Currently"
         },
         "high-temp": {
           id: "high-temp",
           path: "main.temp_max",
           units:String.fromCharCode(176) + "F",
-          name: "High Temp",
-          value: 5
+          name: "High Temp"
         },
         "humidity": {
           id: "humidity",
           path: "main.humidity",
           units: "%",
-          name: "Humidity",
-          value: 5
+          name: "Humidity"
         },
         "wind-speed": {
           id: "wind-speed",
           path: "wind.speed",
           units: "mph",
-          name: "Wind Speed",
-          value: 5
+          name: "Wind Speed"
         }
       }
+      this.areaId = 4092267;
+      this.APPID = "ab77c470222b292dac0b5ace3c31fb06";
+      this.apiURL = `https://api.openweathermap.org/data/2.5/weather?id=${ this.areaId }&APPID=${ this.APPID }&units=imperial`;
     }
   
     create() {
@@ -42,12 +50,13 @@ class WeatherSummary {
       this.createWidget();
 
       this.parent.append(this.element);
+      this.fetchWeatherData();
     }
     
     createWidget(){
       this.widget = document.createElement('div');
       this.widget.classList.add("widget")
-      const caption = document.createElement('div');
+      const caption = document.createElement('h3');
       caption.innerHTML = "Weather Summary";
       caption.classList.add("caption");
 
@@ -86,7 +95,24 @@ class WeatherSummary {
       } )
       this.table.appendChild( fieldColumn );
       this.table.appendChild( valueColumn );
-  
+    }
+    fetchWeatherData() {
+      return fetch(this.apiURL)
+      .then((response) => response.json())
+      .then( weatherData => {
+        Object.values( this.summary ).map( summaryItem => {
+          const value = getValue( weatherData, summaryItem.path );
+          this.summary[ summaryItem.id ].value = value;
+          summaryItem.element.innerHTML = value;
+          if(summaryItem.value !== undefined && summaryItem.units ){
+            const units = document.createElement("span");
+            units.classList.add("units")
+            units.textContent = summaryItem.units;
+            summaryItem.element.appendChild( units );
+          }
+
+        })
+      })
     }
 
   }

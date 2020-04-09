@@ -1,0 +1,27 @@
+
+.contact-info-item{
+  display: flex;
+  justify-content: space-between;
+}
+.contact-info-item.section-start{
+  border-top: 1px solid #dddddd;
+  //margin-top: 15px;
+}
+.contact-info-item.section-end{
+  //border-bottom: 1px solid #dddddd;
+  margin-bottom: 15px;
+}
+.contact-info-item.column{
+  flex-direction: column;
+}
+
+.contact-info-label{
+  margin: 0;
+  flex-grow: 1;
+  text-align: left;
+  font-size: 1.1em;
+}
+.contact-info-value{
+  text-align: right;
+  font-size: 1.1em;
+}

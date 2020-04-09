@@ -1,0 +1,18 @@
+
+fieldset.submission-results{
+  .form-input-container{
+    flex-direction: row;
+  }
+  .form-input-container.column{
+    flex-direction: column;
+  }
+  .form-input{
+    max-width: 70%;
+  }
+  textarea.form-input{
+    border: 1px solid #dddddd;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+}

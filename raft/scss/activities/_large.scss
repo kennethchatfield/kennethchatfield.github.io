@@ -1,0 +1,43 @@
+#activities{
+    .activity{
+        display: grid;
+        grid-template-columns: 44% 54%;
+        grid-template-rows: auto auto auto;
+        grid-column-gap: 2%;
+        .activity-header{
+            grid-area: 1 / 1 / span 2 / span 1;
+            width: 100%;
+        }
+        .activity-detail{
+            grid-row: 3;
+            grid-column: 1;
+            width: 94%;
+        }
+        .activity-services{
+            //grid-row: 2;
+            //grid-column: 2;
+            //width: 94%;
+            grid-area: 1 / 2 / span 3 / span 1;
+        }
+        .activity-prices{
+
+            width: 100%;
+        }
+        .book-adventure-button {
+            margin: 20px 10% 5px 10%;
+            width: 78%;
+        }
+        .activities-form .form-input-container{
+            .form-input{
+                max-width: 70%;
+            }
+            flex-direction: row;
+        }
+        .activities-form .form-input-container.column{
+            .form-input{
+                max-width: 100%;
+            }
+            flex-direction: column;
+        }
+    }
+}

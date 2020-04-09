@@ -3,13 +3,13 @@ import { MainContent } from '../modules/mainContent.js'
 import { Navigation } from '../modules/navigation.js'
 import { SiteHeader } from '../modules/siteHeader.js'
 import { Footer } from '../modules/footer.js'
-import { Contact } from "../modules/contact.js";
+import { References } from "../modules/references.js";
 
-const pageId = "contact";
+const pageId = "references";
 
 const navigation = new Navigation();
 navigation.create();
-navigation.setActivePage( pageId )
+navigation.setActivePage( pageId );
 
 const siteHeader = new SiteHeader(navigation.container);
 siteHeader.create();
@@ -24,8 +24,8 @@ mainContent.create();
 // };
 mainContent.createSiteHeaderScrollEvent(siteHeader);
 
-const contact = new Contact( mainContent.element );
-contact.create();
+const references = new References( mainContent.element );
+references.create();
 
 const footer = new Footer(mainContent.elementContainer);
 footer.create();

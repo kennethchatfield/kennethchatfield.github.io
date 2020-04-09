@@ -1,0 +1,10 @@
+
+
+#guides-list-container{
+  display: flex;
+  flex-direction: column;
+  .guides-list{
+    display: inline-grid;
+    grid-template-columns: 49% 49%;
+  }
+}
